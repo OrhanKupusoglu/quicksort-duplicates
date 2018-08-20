@@ -70,7 +70,7 @@ public class QuickSort {
         this.meta = meta;
         meta.startTime();
         meta.step(Arrays.toString(arr)); // record the original array
-        meta.step(" : [ lo - hi ] : pv : ix"); // the first "hi" is the last index = len - 1
+        meta.step(" : [ lo - hi ] : pv : dnf[ lo - hi ]"); // the first "hi" is the last index = len - 1
         meta.step("\n");
     }
 
@@ -123,34 +123,44 @@ public class QuickSort {
         return p;
     }
 
+    // inner class to pass index values: Dutch National Flag
+    private class DNF {
+        final int lo;
+        final int hi;
+
+        DNF(int lo, int hi) {
+            this.lo = lo;
+            this.hi = hi;
+        }
+    }
+
     /**
-     * Hoare partition scheme
+     * Partition by Dutch national flag method by Edsger Dijkstra, "A Discipline of Programming", 1976
      * <br>
      * @param lo = starting index on the array
      * @param hi = ending index on the array
-     * @return starting index of low elements > pivot
+     * @return DNF.lo = index of low elements < pivot
+     *         DNF.hi = index of high elements > pivot
      */
-    private int partition(int lo, int hi) {
+    private DNF partition(int lo, int hi) {
         partition++;
 
         int pv = pivot(lo, hi); // value of the pivot element
-        int i = lo - 1;
-        int j = hi + 1;
+        int i = lo;
+        int j = lo;
+        int n = hi;
 
-        while (true) {
-            do {
+        while (j <=n) {
+            if (arr[j] < pv) {
+                swap(i, j);
                 i++;
-            } while (arr[i] < pv);
-
-            do {
-                j--;
-            } while (arr[j] > pv);
-
-            if (i >= j) {
-                break;
+                j++;
+            } else if (arr[j] > pv) {
+                swap(j, n);
+                n--;
+            } else {
+                j++;
             }
-
-            swap(i, j);
         }
 
         if (meta != null) {
@@ -161,19 +171,22 @@ public class QuickSort {
             meta.step(hi);
             meta.step(" ] : ");
             meta.step(pv);
-            meta.step(" : ");
+            meta.step(" : [ ");
+            meta.step(i);
+            meta.step(" - ");
             meta.step(j);
+            meta.step(" ]");
             meta.step("\n");
         }
 
-        return j;
+        return new DNF(i, j);
     }
 
     private void quickSort(int lo, int hi) {
         if (lo < hi) {
-            int ix = partition(lo, hi);
-            quickSort(lo, ix);
-            quickSort(ix + 1, hi);
+            DNF dnf = partition(lo, hi);
+            quickSort(lo, dnf.lo - 1);
+            quickSort(dnf.hi, hi);
         }
     }
 

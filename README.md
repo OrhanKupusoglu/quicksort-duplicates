@@ -65,7 +65,7 @@ For the Median pivot selection, see [Choice of pivot](https://en.wikipedia.org/w
 
 Quicksort's partitioning swaps elements of array relative to the pivot element.
 
-In this implementation the original [Hoare partition](https://gir.im/https://en.wikipedia.org/wiki/Quicksort#Hoare_partition_scheme) is used.
+In this implementation the **DNF**, [Dutch National Flag](https://en.wikipedia.org/wiki/Dutch_national_flag_problem) method by [Edsger Dijkstra](https://en.wikipedia.org/wiki/Edsger_Dijkstra) is used.
 
 &nbsp;
 
@@ -104,62 +104,62 @@ There are six test cases:
 | 3   | Reversed  | Reverse ordered arrays [N..1] are sorted M times    |
 | 4   | One-Off   | One-off arrays [2..N,1] are sorted M times          |
 | 5   | Shuffled  | Shuffled arrays [1..N] are sorted M times           |
-| 6   | Random  | At each run random values fill the arrays M times     |
+| 6   | Random    | At each run random values fill the arrays M times   |
 
 A summary of a typical test run is given below:
 
 ```
 QUICKSORT: basics
 total duration [ns]:
-1600086
+1278542
 
 averages: 10 x array[100] - ORDERED
 --------------------------------------------------------------------------------
   pivot type | duration [ns]
 --------------------------------------------------------------------------------
-         LOW |        32030
-         MID |        14539
-      MEDIAN |        18784
-        HIGH |        35284
-      RANDOM |        30800
+         LOW |        17558
+         MID |        11775
+      MEDIAN |        11778
+        HIGH |        21695
+      RANDOM |        18391
 
 averages: 10 x array[100] - REVERSE
 --------------------------------------------------------------------------------
   pivot type | duration [ns]
 --------------------------------------------------------------------------------
-         LOW |        13354
-         MID |         8155
-      MEDIAN |         9153
-        HIGH |        12737
-      RANDOM |        14436
+         LOW |       308213
+         MID |        69301
+      MEDIAN |        96979
+        HIGH |       231960
+      RANDOM |        84254
 
 averages: 10 x array[100] - ONEOFF
 --------------------------------------------------------------------------------
   pivot type | duration [ns]
 --------------------------------------------------------------------------------
-         LOW |       182354
-         MID |        17460
-      MEDIAN |        20255
-        HIGH |        39950
-      RANDOM |       108618
+         LOW |       254691
+         MID |        21253
+      MEDIAN |        37715
+        HIGH |        68856
+      RANDOM |        74953
 
 averages: 10 x array[100] - SHUFFLED
 --------------------------------------------------------------------------------
   pivot type | duration [ns]
 --------------------------------------------------------------------------------
-         LOW |        15230
-         MID |        13744
-      MEDIAN |        11844
-        HIGH |        11985
-      RANDOM |        16358
+         LOW |        77441
+         MID |        82668
+      MEDIAN |        76270
+        HIGH |        77260
+      RANDOM |        83737
 
 averages: 10 x array[100] - RANDOM
 --------------------------------------------------------------------------------
   pivot type | duration [ns]
 --------------------------------------------------------------------------------
-         LOW |        13418
-         MID |        14694
-      MEDIAN |        43559
-        HIGH |        24359
-      RANDOM |        31018
+         LOW |        16447
+         MID |        14969
+      MEDIAN |        14523
+        HIGH |        15259
+      RANDOM |        18887
 ```
