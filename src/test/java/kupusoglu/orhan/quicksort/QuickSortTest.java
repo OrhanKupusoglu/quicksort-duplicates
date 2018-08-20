@@ -161,7 +161,7 @@ public class QuickSortTest {
                           this.SEP, this.SEP);
 
         for (QuickSort.PIVOT_TYPE pivot : QuickSort.PIVOT_TYPE.values()) {
-            System.out.printf("%s\nPIVOT: %s\n%s\n", this.SEP, pivot, this.SEP);
+            System.out.printf("%s\npivot: %s\n%s\n", this.SEP, pivot, this.SEP);
 
             long startTime = System.nanoTime();
 

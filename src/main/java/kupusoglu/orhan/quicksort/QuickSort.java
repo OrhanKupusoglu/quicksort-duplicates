@@ -135,7 +135,7 @@ public class QuickSort {
     }
 
     /**
-     * Partition by Dutch national flag method by Edsger Dijkstra, "A Discipline of Programming", 1976
+     * Partition by Dutch National Flag method by Edsger Dijkstra, "A Discipline of Programming", 1976
      * <br>
      * @param lo = starting index on the array
      * @param hi = ending index on the array

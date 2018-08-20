@@ -112,7 +112,7 @@ A summary of a typical test run is given below:
 QUICKSORT: basics
 
 --------------------------------------------------------------------------------
-PIVOT: MEDIAN
+pivot: MEDIAN
 --------------------------------------------------------------------------------
 
 duration [ns]: 14192
