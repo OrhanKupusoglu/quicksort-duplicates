@@ -4,7 +4,7 @@ import java.util.Arrays;
 import java.util.Random;
 
 /**
- * Quicksort - can handle duplicates
+ * Quicksort - sorts in-place, can handle duplicate values as well
  * <br>
  * @see <a href="https://en.wikipedia.org/wiki/Quicksort#Hoare_partition_scheme">Wikipedia - Quicksort - Hoare partition scheme</a>
  */
