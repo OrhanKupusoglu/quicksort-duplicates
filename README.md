@@ -59,7 +59,9 @@ Given a range of **[lo, hi]** index values, in this implementation the **pivot e
 | High     | Select the next to last index: **hi - 1**                  |
 | Random   | Select a random index: **random[lo, hi]**                  |
 
-For the Median pivot selection, see [Choice of pivot](https://en.wikipedia.org/wiki/Quicksort#Choice_of_pivot).
+For the **Mid** pivot selection, see the [article](https://ai.googleblog.com/2006/06/extra-extra-read-all-about-it-nearly.html) by [Joshua Bloch](https://en.wikipedia.org/wiki/Joshua_Bloch).
+
+For the **Median** pivot selection, see [Choice of pivot](https://en.wikipedia.org/wiki/Quicksort#Choice_of_pivot).
 
 ### Partition Selection
 
@@ -71,7 +73,7 @@ In this implementation the original [Hoare partition](https://gir.im/https://en.
 
 ## Build
 
-The project can be both built with [Apache Maven](https://maven.apache.org/) or [Google Bazel](https://bazel.build/). For further information about the build tools, please refer to the [Bazelize Maven Pulgin](https://github.com/OrhanKupusoglu/bazelize-maven-plugin).
+The project can be both built with [Apache Maven](https://maven.apache.org/) or [Google Bazel](https://bazel.build/). For further information about the build tools, please refer to the [Bazelize Maven Plugin](https://github.com/OrhanKupusoglu/bazelize-maven-plugin).
 
 ### Maven
 Commands for a typical Maven build is given below:
@@ -84,13 +86,14 @@ $ mvn clean install
 Commands for a typical Maven build is given below:
 
 ```
-$ ./bazelize.sh
-
 $ bazel build
 
 $ bazel test ... --test_output all
 ```
-
+If the pom.xml changes, you can re-genearate the Bazel scripts by the [Bazelize Maven Plugin](https://github.com/OrhanKupusoglu/bazelize-maven-plugin).
+```
+$ ./bazelize.sh
+```
 &nbsp;
 
 ## Test Results
@@ -106,7 +109,18 @@ There are six test cases:
 | 5   | Shuffled  | Shuffled arrays [1..N] are sorted M times           |
 | 6   | Random  | At each run random values fill the arrays M times     |
 
-A summary of a typical test run is given below:
+A summary of a typical test run is given below.
+To see the algoritm in action, give a [QuickSortMeta](./src/main/java/kupusoglu/orhan/quicksort/QuickSortMeta.java) instance, as in the first example.
+The last values after the array are:
+
+- **[lo - hi]** : range, ax expected the first **hi = len -1**
+- **pv** : pivot value
+- **ix** : index value returned
+- **sw** : swaps of this partition
+
+Each value applies to the previous array.
+
+The default **Median** pivot type swaps, too. therefore total swaps of all the partitions combined may be less than the **number of partitions** line.
 
 ```
 QUICKSORT: basics
@@ -115,29 +129,29 @@ QUICKSORT: basics
 pivot: MEDIAN
 --------------------------------------------------------------------------------
 
-duration [ns]: 59969
+duration [ns]: 65173
 number of partitions: 19
 number of swaps: 37
-[16, 9, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 9, 16] : [ lo - hi ] : pv : ix
-[7, 9, 0, 1, 2, 3, 4, 5, 6, 16, 8, 9, 10, 11, 12, 13, 14, 9, 16] : [ 0 - 18 ] : 16 : 17
-[6, 9, 0, 1, 2, 3, 4, 5, 7, 9, 8, 16, 10, 11, 12, 13, 14, 9, 16] : [ 0 - 17 ] : 9 : 10
-[3, 8, 0, 1, 2, 6, 4, 5, 7, 9, 9, 16, 10, 11, 12, 13, 14, 9, 16] : [ 0 - 10 ] : 8 : 8
-[2, 7, 0, 1, 3, 6, 4, 5, 8, 9, 9, 16, 10, 11, 12, 13, 14, 9, 16] : [ 0 - 8 ] : 7 : 7
-[1, 5, 0, 2, 3, 4, 6, 7, 8, 9, 9, 16, 10, 11, 12, 13, 14, 9, 16] : [ 0 - 7 ] : 5 : 5
-[0, 4, 1, 2, 3, 5, 6, 7, 8, 9, 9, 16, 10, 11, 12, 13, 14, 9, 16] : [ 0 - 5 ] : 4 : 4
-[0, 1, 3, 2, 4, 5, 6, 7, 8, 9, 9, 16, 10, 11, 12, 13, 14, 9, 16] : [ 0 - 4 ] : 1 : 1
-[0, 1, 3, 2, 4, 5, 6, 7, 8, 9, 9, 16, 10, 11, 12, 13, 14, 9, 16] : [ 0 - 1 ] : 0 : 0
-[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 9, 16, 10, 11, 12, 13, 14, 9, 16] : [ 2 - 4 ] : 4 : 4
-[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 9, 16, 10, 11, 12, 13, 14, 9, 16] : [ 2 - 4 ] : 3 : 3
-[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 9, 16, 10, 11, 12, 13, 14, 9, 16] : [ 2 - 3 ] : 2 : 2
-[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 9, 16, 10, 11, 12, 13, 14, 9, 16] : [ 6 - 7 ] : 6 : 6
-[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 9, 16, 10, 11, 12, 13, 14, 9, 16] : [ 9 - 10 ] : 9 : 9
-[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 9, 9, 10, 11, 16, 13, 14, 12, 16] : [ 11 - 17 ] : 9 : 11
-[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 9, 9, 10, 11, 12, 13, 14, 16, 16] : [ 12 - 17 ] : 12 : 14
-[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 9, 9, 10, 11, 12, 13, 14, 16, 16] : [ 12 - 14 ] : 11 : 13
-[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 9, 9, 10, 11, 12, 13, 14, 16, 16] : [ 12 - 13 ] : 10 : 12
-[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 9, 9, 10, 11, 12, 13, 14, 16, 16] : [ 15 - 17 ] : 14 : 16
-[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 9, 9, 10, 11, 12, 13, 14, 16, 16] : [ 15 - 16 ] : 13 : 15
+[16, 9, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 9, 16] : [ lo - hi ] : pv : ix : sw
+[7, 9, 0, 1, 2, 3, 4, 5, 6, 16, 8, 9, 10, 11, 12, 13, 14, 9, 16] : [ 0 - 18 ] : 16 : 17 : 1
+[6, 9, 0, 1, 2, 3, 4, 5, 7, 9, 8, 16, 10, 11, 12, 13, 14, 9, 16] : [ 0 - 17 ] : 9 : 10 : 2
+[3, 8, 0, 1, 2, 6, 4, 5, 7, 9, 9, 16, 10, 11, 12, 13, 14, 9, 16] : [ 0 - 10 ] : 8 : 8 : 1
+[2, 7, 0, 1, 3, 6, 4, 5, 8, 9, 9, 16, 10, 11, 12, 13, 14, 9, 16] : [ 0 - 8 ] : 7 : 7 : 1
+[1, 5, 0, 2, 3, 4, 6, 7, 8, 9, 9, 16, 10, 11, 12, 13, 14, 9, 16] : [ 0 - 7 ] : 5 : 5 : 2
+[0, 4, 1, 2, 3, 5, 6, 7, 8, 9, 9, 16, 10, 11, 12, 13, 14, 9, 16] : [ 0 - 5 ] : 4 : 4 : 1
+[0, 1, 3, 2, 4, 5, 6, 7, 8, 9, 9, 16, 10, 11, 12, 13, 14, 9, 16] : [ 0 - 4 ] : 1 : 1 : 1
+[0, 1, 3, 2, 4, 5, 6, 7, 8, 9, 9, 16, 10, 11, 12, 13, 14, 9, 16] : [ 0 - 1 ] : 0 : 0 : 1
+[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 9, 16, 10, 11, 12, 13, 14, 9, 16] : [ 2 - 4 ] : 4 : 4 : 0
+[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 9, 16, 10, 11, 12, 13, 14, 9, 16] : [ 2 - 4 ] : 3 : 3 : 1
+[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 9, 16, 10, 11, 12, 13, 14, 9, 16] : [ 2 - 3 ] : 2 : 2 : 1
+[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 9, 16, 10, 11, 12, 13, 14, 9, 16] : [ 6 - 7 ] : 6 : 6 : 1
+[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 9, 16, 10, 11, 12, 13, 14, 9, 16] : [ 9 - 10 ] : 9 : 9 : 1
+[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 9, 9, 10, 11, 16, 13, 14, 12, 16] : [ 11 - 17 ] : 9 : 11 : 1
+[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 9, 9, 10, 11, 12, 13, 14, 16, 16] : [ 12 - 17 ] : 12 : 14 : 1
+[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 9, 9, 10, 11, 12, 13, 14, 16, 16] : [ 12 - 14 ] : 11 : 13 : 1
+[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 9, 9, 10, 11, 12, 13, 14, 16, 16] : [ 12 - 13 ] : 10 : 12 : 1
+[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 9, 9, 10, 11, 12, 13, 14, 16, 16] : [ 15 - 17 ] : 14 : 16 : 1
+[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 9, 9, 10, 11, 12, 13, 14, 16, 16] : [ 15 - 16 ] : 13 : 15 : 1
 
 
 total duration [ns]:
