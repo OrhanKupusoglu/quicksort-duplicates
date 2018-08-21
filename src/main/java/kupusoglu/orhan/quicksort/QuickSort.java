@@ -19,7 +19,7 @@ public class QuickSort {
     };
 
     public static int[] sort(int[] arr) {
-        QuickSort qs = new QuickSort(arr, PIVOT_TYPE.MEDIAN);
+        QuickSort qs = new QuickSort(arr);
         qs.sort();
         return qs.arr;
     }
@@ -56,7 +56,7 @@ public class QuickSort {
             this.arr = arr;
             this.len = arr.length;
         }
-        this.pivot = PIVOT_TYPE.LOW;
+        this.pivot = PIVOT_TYPE.MEDIAN;
         this.random = new Random();
     }
 
@@ -130,10 +130,10 @@ public class QuickSort {
     private int partition(int lo, int hi) {
         partition++;
 
+        long sw = swap; // median swaps, too
         int pv = pivot(lo, hi); // value of the pivot element
         int i = lo - 1;
         int j = hi + 1;
-        long sw = swap; // median swaps, too
 
         while (true) {
             do {
