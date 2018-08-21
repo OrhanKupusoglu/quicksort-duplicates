@@ -7,7 +7,6 @@ import java.util.Random;
  * Quicksort - can handle duplicates
  * <br>
  * @see <a href="https://en.wikipedia.org/wiki/Quicksort#Hoare_partition_scheme">Wikipedia - Quicksort - Hoare partition scheme</a>
- * @see <a href="https://en.wikipedia.org/wiki/Dutch_national_flag_problem">Wikipedia - Dutch national flag problem</a>
  */
 public class QuickSort {
     // PUBLIC INTERFACE - static factory methods
@@ -20,7 +19,7 @@ public class QuickSort {
     };
 
     public static int[] sort(int[] arr) {
-        QuickSort qs = new QuickSort(arr, PIVOT_TYPE.LOW);
+        QuickSort qs = new QuickSort(arr, PIVOT_TYPE.MEDIAN);
         qs.sort();
         return qs.arr;
     }
@@ -92,13 +91,11 @@ public class QuickSort {
                 break;
 
             case MID:
-                long sumMid = lo + hi;
-                p = this.arr[(int)(sumMid / 2)];
+                p = this.arr[lo + ((hi - lo) / 2)];
                 break;
 
             case MEDIAN:
-                long sumMed = lo + hi;
-                int mid = (int)(sumMed / 2);
+                int mid = lo + ((hi - lo) / 2);
 
                 if (arr[mid] < arr[lo]) {
                     swap(lo, mid);
@@ -136,7 +133,7 @@ public class QuickSort {
         int pv = pivot(lo, hi); // value of the pivot element
         int i = lo - 1;
         int j = hi + 1;
-        long sw = swap;
+        long sw = swap; // median swaps, too
 
         while (true) {
             do {
