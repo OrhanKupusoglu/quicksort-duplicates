@@ -121,7 +121,7 @@ The last values after the array are:
 
 Each value applies to the previous array.
 
-The default **Median** pivot type swaps, too. therefore total swaps of all the partitions combined may be less than the **number of partitions** line.
+Please note that the default **Median** pivot type swaps, too.
 
 ```
 QUICKSORT: basics
