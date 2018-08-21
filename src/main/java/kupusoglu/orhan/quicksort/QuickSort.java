@@ -44,8 +44,8 @@ public class QuickSort {
     private final int len;
     private final Random random;
     private PIVOT_TYPE pivot;
-    private int partition;
-    private int swap;
+    private long partition;
+    private long swap;
     private QuickSortMeta meta;
 
 
@@ -70,7 +70,7 @@ public class QuickSort {
         this.meta = meta;
         meta.startTime();
         meta.step(Arrays.toString(arr)); // record the original array
-        meta.step(" : [ lo - hi ] : pv : ix"); // the first "hi" is the last index = len - 1
+        meta.step(" : [ lo - hi ] : pv : ix : sw"); // the first "hi" is the last index = len - 1
         meta.step("\n");
     }
 
@@ -136,6 +136,7 @@ public class QuickSort {
         int pv = pivot(lo, hi); // value of the pivot element
         int i = lo - 1;
         int j = hi + 1;
+        long sw = swap;
 
         while (true) {
             do {
@@ -163,6 +164,8 @@ public class QuickSort {
             meta.step(pv);
             meta.step(" : ");
             meta.step(j);
+            meta.step(" : ");
+            meta.step(swap - sw);
             meta.step("\n");
         }
 
