@@ -59,21 +59,26 @@ Given a range of **[lo, hi]** index values, in this implementation the **pivot e
 | High     | Select the next to last index: **hi - 1**                  |
 | Random   | Select a random index: **random[lo, hi]**                  |
 
-For the Median pivot selection, see [Choice of pivot](https://en.wikipedia.org/wiki/Quicksort#Choice_of_pivot).
+For the **Mid** pivot selection, see the [article](https://ai.googleblog.com/2006/06/extra-extra-read-all-about-it-nearly.html) by [Joshua Bloch](https://en.wikipedia.org/wiki/Joshua_Bloch).
+
+For the **Median** pivot selection, see [Choice of pivot](https://en.wikipedia.org/wiki/Quicksort#Choice_of_pivot).
 
 ### Partition Selection
 
 Quicksort's partitioning swaps elements of array relative to the pivot element.
 
-In this implementation the **DNF**, [Dutch National Flag](https://en.wikipedia.org/wiki/Dutch_national_flag_problem) method by [Edsger Dijkstra](https://en.wikipedia.org/wiki/Edsger_Dijkstra) is used.
+In this implementation the more efficient **DNF**, [Dutch National Flag](https://en.wikipedia.org/wiki/Dutch_national_flag_problem) partition by [Edsger Dijkstra](https://en.wikipedia.org/wiki/Edsger_Dijkstra) is used.
+
+The original [Hoare partition](https://gir.im/https://en.wikipedia.org/wiki/Quicksort#Hoare_partition_scheme) can be checked at its own branch **feature/partition-hoare**.
 
 &nbsp;
 
 ## Build
 
-The project can be both built with [Apache Maven](https://maven.apache.org/) or [Google Bazel](https://bazel.build/). For further information about the build tools, please refer to the [Bazelize Maven Pulgin](https://github.com/OrhanKupusoglu/bazelize-maven-plugin).
+The project can be both built with [Apache Maven](https://maven.apache.org/) or [Google Bazel](https://bazel.build/). For further information about the build tools, please refer to the [Bazelize Maven Plugin](https://github.com/OrhanKupusoglu/bazelize-maven-plugin).
 
 ### Maven
+
 Commands for a typical Maven build is given below:
 
 ```
@@ -84,13 +89,14 @@ $ mvn clean install
 Commands for a typical Maven build is given below:
 
 ```
-$ ./bazelize.sh
-
 $ bazel build
 
 $ bazel test ... --test_output all
 ```
-
+If the pom.xml changes, you can re-genearate the Bazel scripts by the [Bazelize Maven Plugin](https://github.com/OrhanKupusoglu/bazelize-maven-plugin).
+```
+$ ./bazelize.sh
+```
 &nbsp;
 
 ## Test Results
@@ -104,9 +110,20 @@ There are six test cases:
 | 3   | Reversed  | Reverse ordered arrays [N..1] are sorted M times    |
 | 4   | One-Off   | One-off arrays [2..N,1] are sorted M times          |
 | 5   | Shuffled  | Shuffled arrays [1..N] are sorted M times           |
-| 6   | Random    | At each run random values fill the arrays M times   |
+| 6   | Random  | At each run random values fill the arrays M times     |
 
-A summary of a typical test run is given below:
+A summary of a typical test run is given below.
+To see the algoritm in action, give a [QuickSortMeta](./src/main/java/kupusoglu/orhan/quicksort/QuickSortMeta.java) instance, as in the first example.
+The last values after the array are:
+
+- **[lo - hi]** : range, ax expected the first **hi = len -1**
+- **pv** : pivot value
+- **dnf[lo - hi]** : index values returned by DNF
+- **sw** : swaps of this partition
+
+Each value applies to the previous array.
+
+Please note that the default **Median** pivot type swaps, too.
 
 ```
 QUICKSORT: basics
@@ -115,72 +132,69 @@ QUICKSORT: basics
 pivot: MEDIAN
 --------------------------------------------------------------------------------
 
-duration [ns]: 59087
+duration [ns]: 126155
 number of partitions: 10
 number of swaps: 37
-[16, 9, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 9, 16] : [ lo - hi ] : pv : dnf[ lo - hi ]
-[7, 9, 0, 1, 2, 3, 4, 5, 6, 8, 9, 10, 11, 12, 13, 14, 9, 16, 16] : [ 0 - 18 ] : 16 : [ 17 - 19 ]
-[6, 0, 1, 2, 3, 4, 5, 7, 8, 9, 9, 9, 12, 13, 14, 11, 10, 16, 16] : [ 0 - 16 ] : 9 : [ 9 - 12 ]
-[3, 0, 1, 2, 6, 4, 5, 7, 8, 9, 9, 9, 12, 13, 14, 11, 10, 16, 16] : [ 0 - 8 ] : 8 : [ 8 - 9 ]
-[2, 0, 1, 3, 6, 4, 5, 7, 8, 9, 9, 9, 12, 13, 14, 11, 10, 16, 16] : [ 0 - 7 ] : 7 : [ 7 - 8 ]
-[2, 0, 1, 3, 4, 6, 5, 7, 8, 9, 9, 9, 12, 13, 14, 11, 10, 16, 16] : [ 0 - 6 ] : 3 : [ 3 - 4 ]
-[0, 1, 2, 3, 4, 6, 5, 7, 8, 9, 9, 9, 12, 13, 14, 11, 10, 16, 16] : [ 0 - 2 ] : 1 : [ 1 - 2 ]
-[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 9, 9, 12, 13, 14, 11, 10, 16, 16] : [ 4 - 6 ] : 5 : [ 5 - 6 ]
-[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 9, 9, 10, 11, 12, 14, 13, 16, 16] : [ 12 - 16 ] : 12 : [ 14 - 15 ]
-[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 9, 9, 10, 11, 12, 14, 13, 16, 16] : [ 12 - 13 ] : 10 : [ 12 - 13 ]
-[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 9, 9, 10, 11, 12, 13, 14, 16, 16] : [ 15 - 16 ] : 14 : [ 16 - 17 ]
+[16, 9, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 9, 16] : [ lo - hi ] : pv : dnf[ lo - hi ] : sw
+[7, 9, 0, 1, 2, 3, 4, 5, 6, 8, 9, 10, 11, 12, 13, 14, 9, 16, 16] : [ 0 - 18 ] : 16 : [ 17 - 19 ] : 9
+[6, 0, 1, 2, 3, 4, 5, 7, 8, 9, 9, 9, 12, 13, 14, 11, 10, 16, 16] : [ 0 - 16 ] : 9 : [ 9 - 12 ] : 13
+[3, 0, 1, 2, 6, 4, 5, 7, 8, 9, 9, 9, 12, 13, 14, 11, 10, 16, 16] : [ 0 - 8 ] : 8 : [ 8 - 9 ] : 1
+[2, 0, 1, 3, 6, 4, 5, 7, 8, 9, 9, 9, 12, 13, 14, 11, 10, 16, 16] : [ 0 - 7 ] : 7 : [ 7 - 8 ] : 1
+[2, 0, 1, 3, 4, 6, 5, 7, 8, 9, 9, 9, 12, 13, 14, 11, 10, 16, 16] : [ 0 - 6 ] : 3 : [ 3 - 4 ] : 3
+[0, 1, 2, 3, 4, 6, 5, 7, 8, 9, 9, 9, 12, 13, 14, 11, 10, 16, 16] : [ 0 - 2 ] : 1 : [ 1 - 2 ] : 2
+[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 9, 9, 12, 13, 14, 11, 10, 16, 16] : [ 4 - 6 ] : 5 : [ 5 - 6 ] : 1
+[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 9, 9, 10, 11, 12, 14, 13, 16, 16] : [ 12 - 16 ] : 12 : [ 14 - 15 ] : 4
+[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 9, 9, 10, 11, 12, 14, 13, 16, 16] : [ 12 - 13 ] : 10 : [ 12 - 13 ] : 2
+[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 9, 9, 10, 11, 12, 13, 14, 16, 16] : [ 15 - 16 ] : 14 : [ 16 - 17 ] : 1
 
-
-total duration [ns]:
-1278542
 
 averages: 10 x array[100] - ORDERED
 --------------------------------------------------------------------------------
   pivot type | duration [ns]
 --------------------------------------------------------------------------------
-         LOW |        17558
-         MID |        11775
-      MEDIAN |        11778
-        HIGH |        21695
-      RANDOM |        18391
+         LOW |        14409
+         MID |        10604
+      MEDIAN |        11355
+        HIGH |        18533
+      RANDOM |        18418
 
 averages: 10 x array[100] - REVERSE
 --------------------------------------------------------------------------------
   pivot type | duration [ns]
 --------------------------------------------------------------------------------
-         LOW |       308213
-         MID |        69301
-      MEDIAN |        96979
-        HIGH |       231960
-      RANDOM |        84254
+         LOW |       302830
+         MID |        68305
+      MEDIAN |        93319
+        HIGH |       205327
+      RANDOM |        78754
 
 averages: 10 x array[100] - ONEOFF
 --------------------------------------------------------------------------------
   pivot type | duration [ns]
 --------------------------------------------------------------------------------
-         LOW |       254691
-         MID |        21253
-      MEDIAN |        37715
-        HIGH |        68856
-      RANDOM |        74953
+         LOW |       250155
+         MID |        14125
+      MEDIAN |        22888
+        HIGH |        55935
+      RANDOM |        83344
 
 averages: 10 x array[100] - SHUFFLED
 --------------------------------------------------------------------------------
   pivot type | duration [ns]
 --------------------------------------------------------------------------------
-         LOW |        77441
-         MID |        82668
-      MEDIAN |        76270
-        HIGH |        77260
-      RANDOM |        83737
+         LOW |        58181
+         MID |        79078
+      MEDIAN |        72888
+        HIGH |        82110
+      RANDOM |        81857
 
 averages: 10 x array[100] - RANDOM
 --------------------------------------------------------------------------------
   pivot type | duration [ns]
 --------------------------------------------------------------------------------
-         LOW |        16447
-         MID |        14969
-      MEDIAN |        14523
-        HIGH |        15259
-      RANDOM |        18887
+         LOW |        11895
+         MID |        13248
+      MEDIAN |        11726
+        HIGH |        11013
+      RANDOM |        13977
 ```
