@@ -143,11 +143,11 @@ public class QuickSort {
     private DNF partition(int lo, int hi) {
         partition++;
 
+        long sw = swap; // median swaps, too
         int pv = pivot(lo, hi); // value of the pivot element
         int i = lo;
         int j = lo;
         int n = hi;
-        long sw = swap; // median swaps, too
 
         while (j <=n) {
             if (arr[j] < pv) {
