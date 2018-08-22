@@ -244,12 +244,15 @@ public class QuickSortTest {
             sarr[i] = i + 1;
         }
 
+        // to List with <Integer>
         List<Integer> larr  = Arrays.stream(arr)
                                     .boxed()
                                     .collect(Collectors.toList());
 
+        // shuffle requires list with Generics
         Collections.shuffle(larr);
 
+        // back to Array
         int[] xarr = larr.stream()
                          .mapToInt(Integer::valueOf)
                          .toArray();
