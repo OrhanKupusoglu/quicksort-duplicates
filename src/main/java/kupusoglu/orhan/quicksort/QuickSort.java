@@ -95,6 +95,7 @@ public class QuickSort {
                 break;
 
             case MEDIAN:
+                long sw = swap;
                 int mid = lo + ((hi - lo) / 2);
 
                 if (arr[mid] < arr[lo]) {
@@ -103,6 +104,13 @@ public class QuickSort {
                     swap(lo, hi);
                 } else if (arr[mid] < arr[hi]) {
                     swap(mid, hi);
+                }
+
+                if (meta != null) {
+                    meta.step(Arrays.toString(arr));
+                    meta.step(" : median : ");
+                    meta.step(swap - sw);
+                    meta.step("\n");
                 }
 
                 p = arr[hi];
@@ -130,10 +138,10 @@ public class QuickSort {
     private int partition(int lo, int hi) {
         partition++;
 
-        long sw = swap; // median swaps, too
         int pv = pivot(lo, hi); // value of the pivot element
         int i = lo - 1;
         int j = hi + 1;
+        long sw = swap; // median swaps, too
 
         while (true) {
             do {
