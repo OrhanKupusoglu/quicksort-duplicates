@@ -108,7 +108,7 @@ There are six test cases:
 | 3   | Reversed  | Reverse ordered arrays [N..1] are sorted M times    |
 | 4   | One-Off   | One-off arrays [2..N,1] are sorted M times          |
 | 5   | Shuffled  | Shuffled arrays [1..N] are sorted M times           |
-| 6   | Random  | At each run random values fill the arrays M times     |
+| 6   | Random    | At each run N random values fill the arrays M times |
 
 To see the algoritm in action, give a [QuickSortMeta](./src/main/java/kupusoglu/orhan/quicksort/QuickSortMeta.java) instance, as in the first test **testSortBasic()**. This is called [Dependency Injection](https://en.wikipedia.org/wiki/Dependency_injection).
 
