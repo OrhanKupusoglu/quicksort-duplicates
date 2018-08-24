@@ -112,9 +112,9 @@ There are six test cases:
 | 5   | Shuffled  | Shuffled arrays [1..N] are sorted M times           |
 | 6   | Random  | At each run random values fill the arrays M times     |
 
-A summary of a typical test run is given below.
-To see the algoritm in action, give a [QuickSortMeta](./src/main/java/kupusoglu/orhan/quicksort/QuickSortMeta.java) instance, as in the first example.
-The last values after the array are:
+To see the algoritm in action, give a [QuickSortMeta](./src/main/java/kupusoglu/orhan/quicksort/QuickSortMeta.java) instance, as in the first test **testSortBasic()**. This is called [Dependency Injection](https://en.wikipedia.org/wiki/Dependency_injection).
+
+A summary of a typical test run is given below. The last values after the array are:
 
 - **[lo - hi]** : range, ax expected the first **hi = len -1**
 - **pv** : pivot value
