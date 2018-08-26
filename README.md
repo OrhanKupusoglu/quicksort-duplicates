@@ -63,7 +63,7 @@ Given a range of **[lo, hi]** index values, in this implementation the **pivot e
 
 For the **Mid** pivot selection, see the [article](https://ai.googleblog.com/2006/06/extra-extra-read-all-about-it-nearly.html) by [Joshua Bloch](https://en.wikipedia.org/wiki/Joshua_Bloch).
 
-For the **Median** pivot selection, see [Choice of pivot](https://en.wikipedia.org/wiki/Quicksort#Choice_of_pivot).
+For the **Median** pivot selection, see [Choice of Pivot](https://en.wikipedia.org/wiki/Quicksort#Choice_of_pivot).
 
 ### Partition Selection
 
