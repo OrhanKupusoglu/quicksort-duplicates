@@ -105,7 +105,6 @@ public class QuickSortTest {
 
             for (int j = 0; j < loop; j++) {
                 if (isRandom) {
-                    isRandom = true;
                     arr = new int[len];
                     Random random = new Random();
 
