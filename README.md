@@ -75,16 +75,16 @@ In this implementation the original [Hoare partition](https://gir.im/https://en.
 
 The project can be both built with [Apache Maven](https://maven.apache.org/) or [Google Bazel](https://bazel.build/). For further information about the build tools, please refer to the [Bazelize Maven Plugin](https://github.com/OrhanKupusoglu/bazelize-maven-plugin).
 
-### Maven
+### Apache Maven
 
-Commands for a typical Maven build is given below:
+To build and test with Maven:
 
 ```
-$ mvn clean install
+$ mvn clean package
 ```
-### Bazel
+### Google Bazel
 
-Commands for a typical Maven build is given below:
+To build and test with Bazel:
 
 ```
 $ bazel build
