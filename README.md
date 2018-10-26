@@ -95,9 +95,13 @@ $ bazel build
 
 $ bazel test ... --test_output all
 ```
-If the pom.xml changes, you can re-genearate the Bazel scripts by the [Bazelize Maven Plugin](https://github.com/OrhanKupusoglu/bazelize-maven-plugin).
+Or you can use the [bazelize.sh](./bazelize.sh) script:
 ```
 $ ./bazelize.sh
+```
+If the pom.xml changes, you can re-genearate the Bazel scripts by the [Bazelize Maven Plugin](https://github.com/OrhanKupusoglu/bazelize-maven-plugin).
+```
+$ ./bazelize.sh -g
 ```
 &nbsp;
 
