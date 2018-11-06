@@ -5,6 +5,7 @@ MAVEN_PLUGIN=kupusoglu.orhan:bazelize-maven-plugin
 MIGRATE=$1
 
 bazel clean --expunge
+rm -f bazelize.out bazelize.out.html
 
 if [[ $MIGRATE == "-g" ]]
 then
