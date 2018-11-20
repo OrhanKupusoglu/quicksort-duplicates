@@ -2,7 +2,7 @@
 /bazel*
 !bazelize.sh
 .idea
-tmp-bzl-*.json
+tmp-bzl-*.json*
 BUILD*
 !BUILD
 WORKSPACE*
