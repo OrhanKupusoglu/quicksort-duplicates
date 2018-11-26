@@ -62,7 +62,7 @@ public class QuickSort {
         this.meta = meta;
         meta.startTime();
         meta.step(Arrays.toString(arr)); // record the original array
-        meta.step(" : [ lo - hi ] : pv : dnf[ lo - hi ] : sw"); // the first "hi" is the last index = len - 1
+        meta.step(this.partition.getHeadersLine()); // the first "hi" is the last index = len - 1
         meta.step("\n");
     }
 
@@ -123,7 +123,7 @@ public class QuickSort {
     // INNER CLASSES
     // -----------------------------------------------------------------------------------------------------------------
 
-    // STRATEGY PATTERNS - Pivots
+    // FACTORY METHOD PATTERN - Pivots
 
     class PivotLow implements Pivot {
         @Override
@@ -179,8 +179,6 @@ public class QuickSort {
         }
     }
 
-    // FACTORY PATTERN - Pivots
-
     public class PivotFactory extends BasePivotFactory {
         @Override
         public Pivot createPivot(PIVOT_TYPE type){
@@ -214,7 +212,64 @@ public class QuickSort {
         }
     }
 
-    // STRATEGY PATTERNS - Partitions
+    // FACTORY METHOD PATTERN - Partitions
+
+    class PartitionHoare implements Partition {
+        /**
+         * Hoare partition scheme
+         * <br>
+         * @param lo = starting index on the array
+         * @param hi = ending index on the array
+         * @return starting index of low elements > pivot
+         */
+        @Override
+        public int[] getPartition(int lo, int hi) {
+            numPartitions++;
+
+            int pv = pivot.getPivot(lo, hi); // value of the pivot element
+            int i = lo - 1;
+            int j = hi + 1;
+            long sw = numSwaps; // median swaps, too
+
+            while (true) {
+                do {
+                    i++;
+                } while (arr[i] < pv);
+
+                do {
+                    j--;
+                } while (arr[j] > pv);
+
+                if (i >= j) {
+                    break;
+                }
+
+                swap(i, j);
+            }
+
+            if (meta != null) {
+                meta.step(Arrays.toString(arr));
+                meta.step(" : [ ");
+                meta.step(lo);
+                meta.step(" - ");
+                meta.step(hi);
+                meta.step(" ] : ");
+                meta.step(pv);
+                meta.step(" : ");
+                meta.step(j);
+                meta.step(" : ");
+                meta.step(numSwaps - sw);
+                meta.step("\n");
+            }
+
+            return new int[] {j};
+        }
+
+        @Override
+        public String getHeadersLine() {
+            return " : [ lo - hi ] : pv : ix : sw";
+        }
+    }
 
     class PartitionDNF implements Partition {
         /**
@@ -267,61 +322,12 @@ public class QuickSort {
 
             return new int[] {i, j};
         }
-    }
 
-    class PartitionHoare implements Partition {
-        /**
-         * Hoare partition scheme
-         * <br>
-         * @param lo = starting index on the array
-         * @param hi = ending index on the array
-         * @return starting index of low elements > pivot
-         */
         @Override
-        public int[] getPartition(int lo, int hi) {
-            numPartitions++;
-
-            int pv = pivot.getPivot(lo, hi); // value of the pivot element
-            int i = lo - 1;
-            int j = hi + 1;
-            long sw = numSwaps; // median swaps, too
-
-            while (true) {
-                do {
-                    i++;
-                } while (arr[i] < pv);
-
-                do {
-                    j--;
-                } while (arr[j] > pv);
-
-                if (i >= j) {
-                    break;
-                }
-
-                swap(i, j);
-            }
-
-            if (meta != null) {
-                meta.step(Arrays.toString(arr));
-                meta.step(" : [ ");
-                meta.step(lo);
-                meta.step(" - ");
-                meta.step(hi);
-                meta.step(" ] : ");
-                meta.step(pv);
-                meta.step(" : ");
-                meta.step(j);
-                meta.step(" : ");
-                meta.step(numSwaps - sw);
-                meta.step("\n");
-            }
-
-            return new int[] {j};
+        public String getHeadersLine() {
+            return " : [ lo - hi ] : pv : dnf[ lo - hi ] : sw";
         }
     }
-
-    // FACTORY PATTERN - Partitions
 
     public class PartitionFactory extends BasePartitionFactory {
         @Override
