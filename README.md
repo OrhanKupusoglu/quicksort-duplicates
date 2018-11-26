@@ -51,7 +51,7 @@ The algorithm depends upon the selection of the **pivot** and **partitioning** f
 
 ### Pivot Selection
 
-Given a range of **[lo, hi]** index values, in this implementation the **pivot element** can be chosen in five different ways:
+Given a range of **[lo, hi]** index values, the **pivot element** can be chosen in five different ways using using the [Gang of Four](https://en.wikipedia.org/wiki/Design_Patterns) [Factory Method Pattern](https://en.wikipedia.org/wiki/Factory_method_pattern):
 
 | PIVOT    | SELECTION                                                  |
 | :------- | ---------------------------------------------------------- |
@@ -69,9 +69,7 @@ For the **Median** pivot selection, see [Choice of Pivot](https://en.wikipedia.o
 
 Quicksort's partitioning swaps elements of array relative to the pivot element.
 
-In this implementation the more efficient **DNF**, [Dutch National Flag](https://en.wikipedia.org/wiki/Dutch_national_flag_problem) partition by [Edsger Dijkstra](https://en.wikipedia.org/wiki/Edsger_Dijkstra) is used.
-
-The original [Hoare partition](https://gir.im/https://en.wikipedia.org/wiki/Quicksort#Hoare_partition_scheme) can be checked at its own branch **feature/partition-hoare**.
+In this implementation, using the [Gang of Four](https://en.wikipedia.org/wiki/Design_Patterns) [Factory Method Pattern](https://en.wikipedia.org/wiki/Factory_method_pattern), both the more efficient **DNF**, [Dutch National Flag](https://en.wikipedia.org/wiki/Dutch_national_flag_problem) partition by [Edsger Dijkstra](https://en.wikipedia.org/wiki/Edsger_Dijkstra) and the original [Hoare Partition](https://en.wikipedia.org/wiki/Quicksort#Hoare_partition_scheme) can be used.
 
 &nbsp;
 
@@ -84,7 +82,7 @@ The project can be both built with [Apache Maven](https://maven.apache.org/) or 
 To build and test with Maven:
 
 ```
-$ mvn clean package
+$ mvn clean test
 ```
 ### Google Bazel
 
@@ -124,84 +122,157 @@ A summary of a typical test run is given below. The last values after the array 
 
 - **[lo - hi]** : range, ax expected the first **hi = len -1**
 - **pv** : pivot value
-- **dnf[lo - hi]** : index values returned by DNF
+- **ix** : index value returned by Hoare partition - or -
+- **dnf[lo - hi]** : index values returned by DNF partition
 - **sw** : swaps of this partition
 
-Each value applies to the previous array.
+The first line is the input array and headers, thereafter each line's fields apply to the previous array. The final line is the sorted array.
 
 Please note that the default **Median** pivot type swaps, too.
 
 ```
+--------------------------------------------------------------------------------
 QUICKSORT: basics
 
+partition: HOARE - pivot: MID
 --------------------------------------------------------------------------------
-pivot: LOW
---------------------------------------------------------------------------------
+duration [ns]: 141762
+number of partitions: 18
+number of swaps: 14
+[16, 9, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 9, 16] : [ lo - hi ] : pv : ix : sw
+[7, 6, 0, 1, 2, 3, 4, 5, 9, 16, 8, 9, 10, 11, 12, 13, 14, 9, 16] : [ 0 - 18 ] : 7 : 7 : 2
+[1, 0, 6, 7, 2, 3, 4, 5, 9, 16, 8, 9, 10, 11, 12, 13, 14, 9, 16] : [ 0 - 7 ] : 1 : 1 : 2
+[0, 1, 6, 7, 2, 3, 4, 5, 9, 16, 8, 9, 10, 11, 12, 13, 14, 9, 16] : [ 0 - 1 ] : 1 : 0 : 1
+[0, 1, 2, 7, 6, 3, 4, 5, 9, 16, 8, 9, 10, 11, 12, 13, 14, 9, 16] : [ 2 - 7 ] : 2 : 2 : 1
+[0, 1, 2, 3, 6, 7, 4, 5, 9, 16, 8, 9, 10, 11, 12, 13, 14, 9, 16] : [ 3 - 7 ] : 3 : 3 : 1
+[0, 1, 2, 3, 6, 5, 4, 7, 9, 16, 8, 9, 10, 11, 12, 13, 14, 9, 16] : [ 4 - 7 ] : 7 : 6 : 1
+[0, 1, 2, 3, 4, 5, 6, 7, 9, 16, 8, 9, 10, 11, 12, 13, 14, 9, 16] : [ 4 - 6 ] : 5 : 5 : 1
+[0, 1, 2, 3, 4, 5, 6, 7, 9, 16, 8, 9, 10, 11, 12, 13, 14, 9, 16] : [ 4 - 5 ] : 4 : 4 : 0
+[0, 1, 2, 3, 4, 5, 6, 7, 9, 9, 8, 9, 10, 11, 12, 13, 14, 16, 16] : [ 8 - 18 ] : 11 : 13 : 1
+[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 9, 9, 10, 11, 12, 13, 14, 16, 16] : [ 8 - 13 ] : 8 : 8 : 1
+[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 9, 9, 10, 11, 12, 13, 14, 16, 16] : [ 9 - 13 ] : 9 : 10 : 1
+[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 9, 9, 10, 11, 12, 13, 14, 16, 16] : [ 9 - 10 ] : 9 : 9 : 1
+[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 9, 9, 10, 11, 12, 13, 14, 16, 16] : [ 11 - 13 ] : 10 : 12 : 0
+[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 9, 9, 10, 11, 12, 13, 14, 16, 16] : [ 11 - 12 ] : 9 : 11 : 0
+[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 9, 9, 10, 11, 12, 13, 14, 16, 16] : [ 14 - 18 ] : 14 : 16 : 0
+[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 9, 9, 10, 11, 12, 13, 14, 16, 16] : [ 14 - 16 ] : 13 : 15 : 0
+[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 9, 9, 10, 11, 12, 13, 14, 16, 16] : [ 14 - 15 ] : 12 : 14 : 0
+[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 9, 9, 10, 11, 12, 13, 14, 16, 16] : [ 17 - 18 ] : 16 : 17 : 1
 
-duration [ns]: 294384
-number of partitions: 11
-number of swaps: 55
+partition: DNF - pivot: MID
+--------------------------------------------------------------------------------
+duration [ns]: 64473
+number of partitions: 10
+number of swaps: 35
 [16, 9, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 9, 16] : [ lo - hi ] : pv : dnf[ lo - hi ] : sw
-[9, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 9, 16, 16] : [ 0 - 18 ] : 16 : [ 17 - 19 ] : 17
-[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 9, 9, 12, 13, 14, 11, 10, 16, 16] : [ 0 - 16 ] : 9 : [ 9 - 12 ] : 13
-[0, 2, 3, 4, 5, 6, 7, 8, 1, 9, 9, 9, 12, 13, 14, 11, 10, 16, 16] : [ 0 - 8 ] : 0 : [ 0 - 1 ] : 7
-[0, 1, 2, 5, 6, 7, 8, 4, 3, 9, 9, 9, 12, 13, 14, 11, 10, 16, 16] : [ 1 - 8 ] : 2 : [ 2 - 3 ] : 6
-[0, 1, 2, 3, 4, 5, 8, 7, 6, 9, 9, 9, 12, 13, 14, 11, 10, 16, 16] : [ 3 - 8 ] : 5 : [ 5 - 6 ] : 4
-[0, 1, 2, 3, 4, 5, 8, 7, 6, 9, 9, 9, 12, 13, 14, 11, 10, 16, 16] : [ 3 - 4 ] : 3 : [ 3 - 4 ] : 0
-[0, 1, 2, 3, 4, 5, 7, 6, 8, 9, 9, 9, 12, 13, 14, 11, 10, 16, 16] : [ 6 - 8 ] : 8 : [ 8 - 9 ] : 2
-[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 9, 9, 12, 13, 14, 11, 10, 16, 16] : [ 6 - 7 ] : 7 : [ 7 - 8 ] : 1
-[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 9, 9, 10, 11, 12, 14, 13, 16, 16] : [ 12 - 16 ] : 12 : [ 14 - 15 ] : 4
-[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 9, 9, 10, 11, 12, 14, 13, 16, 16] : [ 12 - 13 ] : 10 : [ 12 - 13 ] : 0
+[6, 0, 1, 2, 3, 4, 5, 7, 9, 8, 9, 10, 11, 12, 13, 14, 9, 16, 16] : [ 0 - 18 ] : 7 : [ 7 - 8 ] : 18
+[0, 1, 2, 3, 4, 5, 6, 7, 9, 8, 9, 10, 11, 12, 13, 14, 9, 16, 16] : [ 0 - 6 ] : 2 : [ 2 - 3 ] : 6
+[0, 1, 2, 3, 4, 5, 6, 7, 9, 8, 9, 10, 11, 12, 13, 14, 9, 16, 16] : [ 0 - 1 ] : 0 : [ 0 - 1 ] : 0
+[0, 1, 2, 3, 4, 6, 5, 7, 9, 8, 9, 10, 11, 12, 13, 14, 9, 16, 16] : [ 3 - 6 ] : 4 : [ 4 - 5 ] : 1
+[0, 1, 2, 3, 4, 5, 6, 7, 9, 8, 9, 10, 11, 12, 13, 14, 9, 16, 16] : [ 5 - 6 ] : 6 : [ 6 - 7 ] : 1
+[0, 1, 2, 3, 4, 5, 6, 7, 9, 8, 9, 10, 11, 9, 12, 14, 16, 16, 13] : [ 8 - 18 ] : 12 : [ 14 - 15 ] : 4
+[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 9, 9, 11, 10, 12, 14, 16, 16, 13] : [ 8 - 13 ] : 9 : [ 9 - 12 ] : 2
+[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 9, 9, 10, 11, 12, 14, 16, 16, 13] : [ 12 - 13 ] : 11 : [ 13 - 14 ] : 1
+[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 9, 9, 10, 11, 12, 14, 13, 16, 16] : [ 15 - 18 ] : 16 : [ 17 - 19 ] : 1
 [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 9, 9, 10, 11, 12, 13, 14, 16, 16] : [ 15 - 16 ] : 14 : [ 16 - 17 ] : 1
 
+name: ORDERED - partition: HOARE - averages: 10 x array[100]
+--------------------------------------------------------------------------------
+       pivot | duration [ns]
+--------------------------------------------------------------------------------
+         LOW |        50392
+         MID |        29697
+      MEDIAN |        57052
+        HIGH |        51407
+      RANDOM |       123980
 
-averages: 10 x array[100] - ORDERED
+name: ORDERED - partition: DNF - averages: 10 x array[100]
 --------------------------------------------------------------------------------
-  pivot type | duration [ns]
+       pivot | duration [ns]
 --------------------------------------------------------------------------------
-         LOW |        14409
-         MID |        10604
-      MEDIAN |        11355
-        HIGH |        18533
-      RANDOM |        18418
+         LOW |       167026
+         MID |        92649
+      MEDIAN |        95994
+        HIGH |       218286
+      RANDOM |        25202
 
-averages: 10 x array[100] - REVERSE
+name: REVERSE - partition: HOARE - averages: 10 x array[100]
 --------------------------------------------------------------------------------
-  pivot type | duration [ns]
+       pivot | duration [ns]
 --------------------------------------------------------------------------------
-         LOW |       302830
-         MID |        68305
-      MEDIAN |        93319
-        HIGH |       205327
-      RANDOM |        78754
+         LOW |        41212
+         MID |        11543
+      MEDIAN |        17280
+        HIGH |        26455
+      RANDOM |        38344
 
-averages: 10 x array[100] - ONEOFF
+name: REVERSE - partition: DNF - averages: 10 x array[100]
 --------------------------------------------------------------------------------
-  pivot type | duration [ns]
+       pivot | duration [ns]
 --------------------------------------------------------------------------------
-         LOW |       250155
-         MID |        14125
-      MEDIAN |        22888
-        HIGH |        55935
-      RANDOM |        83344
+         LOW |        39667
+         MID |        13869
+      MEDIAN |        20195
+        HIGH |        33912
+      RANDOM |        21325
 
-averages: 10 x array[100] - SHUFFLED
+name: ONEOFF - partition: HOARE - averages: 10 x array[100]
 --------------------------------------------------------------------------------
-  pivot type | duration [ns]
+       pivot | duration [ns]
 --------------------------------------------------------------------------------
-         LOW |        58181
-         MID |        79078
-      MEDIAN |        72888
-        HIGH |        82110
-      RANDOM |        81857
+         LOW |        35013
+         MID |        15264
+      MEDIAN |        26820
+        HIGH |        36193
+      RANDOM |        16274
 
-averages: 10 x array[100] - RANDOM
+name: ONEOFF - partition: DNF - averages: 10 x array[100]
 --------------------------------------------------------------------------------
-  pivot type | duration [ns]
+       pivot | duration [ns]
 --------------------------------------------------------------------------------
-         LOW |        11895
-         MID |        13248
-      MEDIAN |        11726
-        HIGH |        11013
-      RANDOM |        13977
+         LOW |        22036
+         MID |        16734
+      MEDIAN |        17313
+        HIGH |        30740
+      RANDOM |        13596
+
+name: SHUFFLED - partition: HOARE - averages: 10 x array[100]
+--------------------------------------------------------------------------------
+       pivot | duration [ns]
+--------------------------------------------------------------------------------
+         LOW |        13976
+         MID |        17366
+      MEDIAN |        32473
+        HIGH |        23578
+      RANDOM |        37244
+
+name: SHUFFLED - partition: DNF - averages: 10 x array[100]
+--------------------------------------------------------------------------------
+       pivot | duration [ns]
+--------------------------------------------------------------------------------
+         LOW |        16452
+         MID |        16636
+      MEDIAN |         9864
+        HIGH |         9236
+      RANDOM |        15276
+
+name: RANDOM - partition: HOARE - averages: 10 x array[100]
+--------------------------------------------------------------------------------
+       pivot | duration [ns]
+--------------------------------------------------------------------------------
+         LOW |        13332
+         MID |        18385
+      MEDIAN |        22061
+        HIGH |        17189
+      RANDOM |        27693
+
+name: RANDOM - partition: DNF - averages: 10 x array[100]
+--------------------------------------------------------------------------------
+       pivot | duration [ns]
+--------------------------------------------------------------------------------
+         LOW |        12062
+         MID |        16978
+      MEDIAN |        12182
+        HIGH |        12398
+      RANDOM |        21091
 ```
