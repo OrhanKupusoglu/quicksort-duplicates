@@ -3,8 +3,8 @@ package kupusoglu.orhan.quicksort;
 public class QuickSortMeta {
     private long timeStart;
     private long duration;
-    private long partition;
-    private long swap;
+    private int numPartitions;
+    private int numSwaps;
     private StringBuilder steps = new StringBuilder();
 
     public QuickSortMeta() {
@@ -19,12 +19,12 @@ public class QuickSortMeta {
         this.duration = System.nanoTime() - this.timeStart;
     }
 
-    public void setPartition(long partition) {
-        this.partition = partition;
+    public void setNumPartitions(int numPartitions) {
+        this.numPartitions = numPartitions;
     }
 
-    public void setSwap(long swap) {
-        this.swap = swap;
+    public void setNumSwaps(int numSwaps) {
+        this.numSwaps = numSwaps;
     }
 
     public <T> void step(T step) {
@@ -35,12 +35,12 @@ public class QuickSortMeta {
         return this.duration;
     }
 
-    public long partition() {
-        return this.partition;
+    public long numPartitions() {
+        return this.numPartitions;
     }
 
-    public long swap() {
-        return this.swap;
+    public long numSwaps() {
+        return this.numSwaps;
     }
 
     public String steps() {
@@ -49,6 +49,6 @@ public class QuickSortMeta {
 
     public String display() {
         return String.format("duration [ns]: %d\nnumber of partitions: %d\nnumber of swaps: %d\n%s\n",
-                             this.duration(), this.partition(), this.swap(), this.steps());
+                             this.duration(), this.numPartitions(), this.numSwaps(), this.steps());
     }
 }
