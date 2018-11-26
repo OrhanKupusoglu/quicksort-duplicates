@@ -73,6 +73,47 @@ In this implementation, using the [Gang of Four](https://en.wikipedia.org/wiki/D
 
 &nbsp;
 
+## Source Lines of Code
+
+[Source Lines of Code](https://en.wikipedia.org/wiki/Source_lines_of_code) of the package can be counted by the [sloc-maven-plugin](https://github.com/OrhanKupusoglu/sloc-maven-plugin).
+
+```
+$ mvn kupusoglu.orhan:sloc-maven-plugin:sloc
+[INFO] Scanning for projects...
+[INFO] Inspecting build with total of 1 modules...
+[INFO] Installing Nexus Staging features:
+[INFO]   ... total of 1 executions of maven-deploy-plugin replaced with nexus-staging-maven-plugin
+[INFO]
+[INFO] ----------------< kupusoglu.orhan:quicksort-duplicates >----------------
+[INFO] Building quicksort-duplicates 0.3.1
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO]
+[INFO] --- sloc-maven-plugin:0.1.4:sloc (default-cli) @ quicksort-duplicates ---
+[INFO] SLOC - directory: /home/orhanku/ME/DEV/OK/quicksort-duplicates/src
++------------------+---------------------------+----------+----------+----------+----------+----------+----------+
+| Package Name     | File Name                 | Type     | Blank    | JavaDoc  | Comment  | Code     | Total    |
++------------------+---------------------------+----------+----------+----------+----------+----------+----------+
+| quicksort        | BasePartitionFactory.java | src      |        1 |        0 |        0 |        4 |        5 |
+| quicksort        | BasePivotFactory.java     | src      |        1 |        0 |        0 |        4 |        5 |
+| quicksort        | Partition.java            | src      |        1 |        0 |        0 |        5 |        6 |
+| quicksort        | Pivot.java                | src      |        1 |        0 |        0 |        4 |        5 |
+| quicksort        | QuickSort.java            | src      |       56 |       20 |        5 |      271 |      352 |
+| quicksort        | QuickSortMeta.java        | src      |       12 |        0 |        1 |       41 |       54 |
+| quicksort        | QuickSortTest.java        | test     |       50 |        9 |        4 |      195 |      258 |
++------------------+---------------------------+----------+----------+----------+----------+----------+----------+
+| 1 package(s)     | 7 file(s)                 | java     |      122 |       29 |       10 |      524 |      685 |
++------------------+---------------------------+----------+----------+----------+----------+----------+----------+
+
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time: 0.955 s
+[INFO] Finished at: 2018-11-26T09:44:34+03:00
+[INFO] ------------------------------------------------------------------------
+
+```
+&nbsp;
+
 ## Build
 
 The project can be both built with [Apache Maven](https://maven.apache.org/) or [Google Bazel](https://bazel.build/). For further information about the build tools, please refer to the [Bazelize Maven Plugin](https://github.com/OrhanKupusoglu/bazelize-maven-plugin).
