@@ -69,7 +69,7 @@ For the **Median** pivot selection, see [Choice of Pivot](https://en.wikipedia.o
 
 Quicksort's partitioning swaps elements of array relative to the pivot element.
 
-In this implementation, using the [Gang of Four](https://en.wikipedia.org/wiki/Design_Patterns) [Factory Method Pattern](https://en.wikipedia.org/wiki/Factory_method_pattern), both the more efficient **DNF**, [Dutch National Flag](https://en.wikipedia.org/wiki/Dutch_national_flag_problem) partition by [Edsger Dijkstra](https://en.wikipedia.org/wiki/Edsger_Dijkstra) and the original [Hoare Partition](https://en.wikipedia.org/wiki/Quicksort#Hoare_partition_scheme) can be used.
+In this implementation, using the [Gang of Four](https://en.wikipedia.org/wiki/Design_Patterns) [Factory Method Pattern](https://en.wikipedia.org/wiki/Factory_method_pattern), both the original [Hoare Partition](https://en.wikipedia.org/wiki/Quicksort#Hoare_partition_scheme) and the more efficient **DNF**, [Dutch National Flag](https://en.wikipedia.org/wiki/Dutch_national_flag_problem) partition, by [Edsger Dijkstra](https://en.wikipedia.org/wiki/Edsger_Dijkstra) can be used.
 
 &nbsp;
 
