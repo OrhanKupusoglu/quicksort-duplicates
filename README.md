@@ -75,7 +75,7 @@ In this implementation, using the [Gang of Four](https://en.wikipedia.org/wiki/D
 
 ## Source Lines of Code
 
-[Source Lines of Code](https://en.wikipedia.org/wiki/Source_lines_of_code) of the package can be counted by the [sloc-maven-plugin](https://github.com/OrhanKupusoglu/sloc-maven-plugin).
+[SLOC](https://en.wikipedia.org/wiki/Source_lines_of_code) of the project can be counted by the [Source Lines of Code Maven Plugin](https://github.com/OrhanKupusoglu/sloc-maven-plugin).
 
 ```
 $ mvn kupusoglu.orhan:sloc-maven-plugin:sloc
