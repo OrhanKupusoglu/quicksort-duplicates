@@ -1,12 +1,14 @@
 package kupusoglu.orhan.quicksort;
 
 import org.junit.Assert;
+import org.junit.FixMethodOrder;
 import org.junit.Test;
+import org.junit.runners.MethodSorters;
 
 import java.util.*;
 import java.util.stream.Collectors;
 
-
+@FixMethodOrder(MethodSorters.NAME_ASCENDING)
 public class QuickSortTest {
     private enum UNIT_TIME {
         NANO_SECOND(1, "ns"),
@@ -89,68 +91,44 @@ public class QuickSortTest {
      */
     public void testSortArrays(String name, int loop, int len, int[] arr, int[] sarr) {
         Map<QuickSort.PIVOT_TYPE, long[]> pivotDurations = new HashMap<>();
-        boolean isRandom = false;
 
-        if ((arr == null) || (sarr == null)) {
-            isRandom = true;
-        }
-
-        System.out.printf("\n%s\nQUICKSORT: %d x array[%d] - %s\n%s\n",
+        System.out.printf("\n\n%s\nQUICKSORT: %d x array[%d] - %s\n%s\n",
                           this.SEP, loop, len, name, this.SEP);
+
+        System.out.printf("original:\n%s\nsorted:\n%s\n",
+                Arrays.toString(arr), Arrays.toString(sarr));
 
         for (QuickSort.PARTITION_TYPE partitionType : QuickSort.PARTITION_TYPE.values()) {
             for (QuickSort.PIVOT_TYPE pivotType : QuickSort.PIVOT_TYPE.values()) {
+                System.out.printf("\nname: %s - partition: %s - pivot: %s\n%s\n",
+                                  name, partitionType, pivotType, this.SEP);
+
                 long[] durations = new long[loop];
 
-                System.out.printf("PARTITION: %s - PIVOT: %s\n%s\n", partitionType, pivotType, this.SEP);
-
                 for (int j = 0; j < loop; j++) {
-                    if (isRandom) {
-                        arr = new int[len];
-                        Random random = new Random();
-
-                        for (int k = 0; k < len; k++) {
-                            int rnd = random.nextInt(len);
-                            arr[k] = rnd;
-                        }
-
-                        sarr = arr.clone();
-                        Arrays.sort(sarr);
-                    }
-
-                    System.out.printf("loop: #%d - %s - %s - sorted\n%s\n", j, name, pivotType, this.SEP);
-
-                    if (isRandom) {
-                        System.out.printf("original:\n%s\n", Arrays.toString(arr));
-                    }
-
                     long startTime = System.nanoTime();
 
-                    QuickSort quicksort = new QuickSort(arr == null ? null : (isRandom ? arr : arr.clone()), pivotType, partitionType);
+                    QuickSort quicksort = new QuickSort(arr == null ? null : arr.clone(), pivotType, partitionType);
                     quicksort.sort();
                     int[] sorted_arr = quicksort.getArray();
 
                     long duration = System.nanoTime() - startTime;
                     durations[j] = duration;
 
-                    if (isRandom) {
-                        System.out.printf("sorted:\n%s\n%s\n", Arrays.toString(sorted_arr), this.SEP);
-                    }
-
                     Assert.assertTrue("NOT sorted - " + name + " - array length = " + len,
-                            Arrays.equals(sorted_arr, sarr));
+                                      Arrays.equals(sorted_arr, sarr));
 
-                    System.out.printf("duration [%s]:\n%d\n\n",
-                                      UNIT_TIME.NANO_SECOND.unit(), (duration / UNIT_TIME.NANO_SECOND.conversionFactor()));
+                    System.out.printf("loop: #%d - %s - duration [%s]: %d\n",
+                                      j, pivotType, UNIT_TIME.NANO_SECOND.unit(), (duration / UNIT_TIME.NANO_SECOND.conversionFactor()));
                 }
 
                 pivotDurations.put(pivotType, durations);
             }
 
-            System.out.printf("averages: %d x array[%d] - %s\n%s\n",
-                    loop, len, name, this.SEP);
+            System.out.printf("\nname: %s - partition: %s - averages: %d x array[%d]\n%s\n",
+                              name, partitionType, loop, len, this.SEP);
 
-            System.out.printf("%12s | %-20s\n%s\n", "pivot type", "duration [ns]", this.SEP);
+            System.out.printf("%12s | %-20s\n%s\n", "pivot", "duration [ns]", this.SEP);
             for (QuickSort.PIVOT_TYPE pivotType : QuickSort.PIVOT_TYPE.values()) {
                 double avg = Arrays.stream(pivotDurations.get(pivotType)).average().orElse(0.0);
                 System.out.printf("%12s | %12.0f\n",
@@ -160,14 +138,12 @@ public class QuickSortTest {
     }
 
     @Test
-    public void testSortBasic() {
-        System.out.printf("\n%s\nQUICKSORT: basics\n%s\n\n",
-                          this.SEP, this.SEP);
+    public void test1SortBasic() {
+        //System.out.printf("nQUICKSORT: basics\n");
+        System.out.printf("\n\n%s\nQUICKSORT: basics\n", this.SEP);
 
         for (QuickSort.PARTITION_TYPE partitionType : QuickSort.PARTITION_TYPE.values()) {
             for (QuickSort.PIVOT_TYPE pivotType : QuickSort.PIVOT_TYPE.values()) {
-                System.out.printf("%s\nPARTITION: %s - PIVOT: %s\n%s\n", this.SEP, partitionType, pivotType, this.SEP);
-
                 long startTime = System.nanoTime();
 
                 for (int i = 0; i < this.ARRS_RAW.length; i++) {
@@ -176,6 +152,9 @@ public class QuickSortTest {
                     quicksort.setMeta(meta);
                     quicksort.sort();
                     int[] sorted_arr = quicksort.getArray();
+
+                    System.out.printf("\npartition: %s - pivot: %s\n%s\n",
+                                      partitionType, pivotType, this.SEP);
 
                     System.out.print(meta.display());
 
@@ -193,7 +172,7 @@ public class QuickSortTest {
     }
 
     @Test
-    public void testSortOrdered() {
+    public void test2SortOrdered() {
         int[] arr = new int[this.ARR_ARR_LEN];
         int[] sarr = new int[this.ARR_ARR_LEN];
 
@@ -202,14 +181,11 @@ public class QuickSortTest {
             sarr[i] = i + 1;
         }
 
-        System.out.printf("\n%s\noriginal:\n%s\nsorted:\n%s\n%s\n",
-                          this.SEP, Arrays.toString(arr), Arrays.toString(sarr), this.SEP);
-
         testSortArrays("ORDERED", this.ARR_TOTAL_LOOP, this.ARR_ARR_LEN, arr, sarr);
     }
 
     @Test
-    public void testSortReverse() {
+    public void test3SortReverse() {
         int[] arr = new int[this.ARR_ARR_LEN];
         int[] sarr = new int[this.ARR_ARR_LEN];
 
@@ -218,14 +194,11 @@ public class QuickSortTest {
             sarr[i] = i + 1;
         }
 
-        System.out.printf("\n%s\noriginal:\n%s\nsorted:\n%s\n%s\n",
-                          this.SEP, Arrays.toString(arr), Arrays.toString(sarr), this.SEP);
-
         testSortArrays("REVERSE", this.ARR_TOTAL_LOOP, this.ARR_ARR_LEN, arr, sarr);
     }
 
     @Test
-    public void testSortOneOff() {
+    public void test4SortOneOff() {
         int[] arr = new int[this.ARR_ARR_LEN];
         int[] sarr = new int[this.ARR_ARR_LEN];
 
@@ -236,14 +209,11 @@ public class QuickSortTest {
         arr[this.ARR_ARR_LEN - 1] = 1;
         sarr[this.ARR_ARR_LEN - 1] = this.ARR_ARR_LEN;
 
-        System.out.printf("\n%s\noriginal:\n%s\nsorted:\n%s\n%s\n",
-                          this.SEP, Arrays.toString(arr), Arrays.toString(sarr), this.SEP);
-
         testSortArrays("ONEOFF", this.ARR_TOTAL_LOOP, this.ARR_ARR_LEN, arr, sarr);
     }
 
     @Test
-    public void testSortShuffled() {
+    public void test5SortShuffled() {
         int[] arr = new int[this.ARR_ARR_LEN];
         int[] sarr = new int[this.ARR_ARR_LEN];
 
@@ -265,14 +235,24 @@ public class QuickSortTest {
                          .mapToInt(Integer::valueOf)
                          .toArray();
 
-        System.out.printf("\n%s\noriginal:\n%s\nsorted:\n%s\n%s\n",
-                          this.SEP, Arrays.toString(xarr), Arrays.toString(sarr), this.SEP);
-
         testSortArrays("SHUFFLED", this.ARR_TOTAL_LOOP, this.ARR_ARR_LEN, xarr, sarr);
     }
 
     @Test
-    public void testSortRandom() {
-        testSortArrays("RANDOM", this.RND_TOTAL_LOOP, this.RND_ARR_LEN, null, null);
+    public void test6SortRandom() {
+        int[] arr = new int[this.ARR_ARR_LEN];
+        int[] sarr;
+
+        Random random = new Random();
+
+        for (int k = 0; k < this.ARR_ARR_LEN; k++) {
+            int rnd = random.nextInt(this.ARR_ARR_LEN);
+            arr[k] = rnd;
+        }
+
+        sarr = arr.clone();
+        Arrays.sort(sarr);
+
+        testSortArrays("RANDOM", this.RND_TOTAL_LOOP, this.RND_ARR_LEN, arr, sarr);
     }
 }

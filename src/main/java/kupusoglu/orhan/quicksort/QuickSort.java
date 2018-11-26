@@ -155,7 +155,7 @@ public class QuickSort {
 
             if (meta != null) {
                 meta.step(Arrays.toString(arr));
-                meta.step(" : median : ");
+                meta.step(" : median swaps : ");
                 meta.step(numSwaps - sw);
                 meta.step("\n");
             }
