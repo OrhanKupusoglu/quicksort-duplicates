@@ -1,5 +1,5 @@
 java_library(
-    name = "kupusoglu_orhan_quicksort_duplicates_0_2_1",
+    name = "kupusoglu_orhan_quicksort_duplicates_0_3_1",
     visibility = ["//visibility:public"],
     srcs = glob(["src/main/java/kupusoglu/orhan/quicksort/*.java"]),
     resources = [
@@ -18,6 +18,6 @@ java_test(
     resources = [
     ],
     deps = [
-        ":kupusoglu_orhan_quicksort_duplicates_0_2_1",
+        ":kupusoglu_orhan_quicksort_duplicates_0_3_1",
     ],
 )
