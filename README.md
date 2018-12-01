@@ -90,27 +90,22 @@ $ mvn kupusoglu.orhan:sloc-maven-plugin:sloc
 [INFO]
 [INFO] --- sloc-maven-plugin:0.1.4:sloc (default-cli) @ quicksort-duplicates ---
 [INFO] SLOC - directory: /home/orhanku/ME/DEV/OK/quicksort-duplicates/src
-+------------------+---------------------------+----------+----------+----------+----------+----------+----------+
-| Package Name     | File Name                 | Type     | Blank    | JavaDoc  | Comment  | Code     | Total    |
-+------------------+---------------------------+----------+----------+----------+----------+----------+----------+
-| quicksort        | BasePartitionFactory.java | src      |        1 |        0 |        0 |        4 |        5 |
-| quicksort        | BasePivotFactory.java     | src      |        1 |        0 |        0 |        4 |        5 |
-| quicksort        | Partition.java            | src      |        1 |        0 |        0 |        5 |        6 |
-| quicksort        | Pivot.java                | src      |        1 |        0 |        0 |        4 |        5 |
-| quicksort        | QuickSort.java            | src      |       56 |       20 |        5 |      271 |      352 |
-| quicksort        | QuickSortMeta.java        | src      |       12 |        0 |        1 |       41 |       54 |
-| quicksort        | QuickSortTest.java        | test     |       50 |        9 |        4 |      195 |      258 |
-+------------------+---------------------------+----------+----------+----------+----------+----------+----------+
-| 1 package(s)     | 7 file(s)                 | java     |      122 |       29 |       10 |      524 |      685 |
-+------------------+---------------------------+----------+----------+----------+----------+----------+----------+
++------------------+--------------------+----------+----------+----------+----------+----------+----------+
+| Package Name     | File Name          | Type     | Blank    | JavaDoc  | Comment  | Code     | Total    |
++------------------+--------------------+----------+----------+----------+----------+----------+----------+
+| quicksort        | QuickSort.java     | src      |       60 |       20 |        5 |      284 |      369 |
+| quicksort        | QuickSortMeta.java | src      |       12 |        0 |        1 |       41 |       54 |
+| quicksort        | QuickSortTest.java | test     |       50 |        9 |        4 |      195 |      258 |
++------------------+--------------------+----------+----------+----------+----------+----------+----------+
+| 1 package(s)     | 3 file(s)          | java     |      122 |       29 |       10 |      520 |      681 |
++------------------+--------------------+----------+----------+----------+----------+----------+----------+
 
 [INFO] ------------------------------------------------------------------------
 [INFO] BUILD SUCCESS
 [INFO] ------------------------------------------------------------------------
-[INFO] Total time: 0.955 s
-[INFO] Finished at: 2018-11-26T09:44:34+03:00
+[INFO] Total time: 0.836 s
+[INFO] Finished at: 2018-12-01T20:40:09+03:00
 [INFO] ------------------------------------------------------------------------
-
 ```
 &nbsp;
 
