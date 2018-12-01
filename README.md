@@ -169,6 +169,42 @@ Please note that the default **Median** pivot type swaps, too.
 Output of a test run is given below:
 
 ```
+$ mvn clean test
+[INFO] Scanning for projects...
+[INFO] Inspecting build with total of 1 modules...
+[INFO] Installing Nexus Staging features:
+[INFO]   ... total of 1 executions of maven-deploy-plugin replaced with nexus-staging-maven-plugin
+[INFO]
+[INFO] ----------------< kupusoglu.orhan:quicksort-duplicates >----------------
+[INFO] Building quicksort-duplicates 0.3.1
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO]
+[INFO] --- maven-clean-plugin:2.5:clean (default-clean) @ quicksort-duplicates ---
+[INFO] Deleting /home/orhanku/ME/DEV/OK/quicksort-duplicates/target
+[INFO]
+[INFO] --- maven-enforcer-plugin:3.0.0-M2:enforce (default-cli) @ quicksort-duplicates ---
+[INFO]
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ quicksort-duplicates ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /home/orhanku/ME/DEV/OK/quicksort-duplicates/src/main/resources
+[INFO]
+[INFO] --- maven-compiler-plugin:3.7.0:compile (default-compile) @ quicksort-duplicates ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 2 source files to /home/orhanku/ME/DEV/OK/quicksort-duplicates/target/classes
+[INFO]
+[INFO] --- plexus-component-metadata:1.7.1:generate-metadata (default) @ quicksort-duplicates ---
+[INFO]
+[INFO] --- maven-resources-plugin:2.6:testResources (default-testResources) @ quicksort-duplicates ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /home/orhanku/ME/DEV/OK/quicksort-duplicates/src/test/resources
+[INFO]
+[INFO] --- maven-compiler-plugin:3.7.0:testCompile (default-testCompile) @ quicksort-duplicates ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 1 source file to /home/orhanku/ME/DEV/OK/quicksort-duplicates/target/test-classes
+[INFO]
+[INFO] --- maven-surefire-plugin:2.12.4:test (default-test) @ quicksort-duplicates ---
+[INFO] Surefire report directory: /home/orhanku/ME/DEV/OK/quicksort-duplicates/target/surefire-reports
+
 -------------------------------------------------------
  T E S T S
 -------------------------------------------------------
@@ -180,7 +216,7 @@ QUICKSORT: basics
 
 partition: HOARE - pivot: LOW
 --------------------------------------------------------------------------------
-duration [ns]: 37974
+duration [ns]: 20543
 number of partitions: 0
 number of swaps: 0
 [] : [ lo - hi ] : pv : ix : sw
@@ -188,7 +224,7 @@ number of swaps: 0
 
 partition: HOARE - pivot: LOW
 --------------------------------------------------------------------------------
-duration [ns]: 4024
+duration [ns]: 3208
 number of partitions: 0
 number of swaps: 0
 [] : [ lo - hi ] : pv : ix : sw
@@ -196,7 +232,7 @@ number of swaps: 0
 
 partition: HOARE - pivot: LOW
 --------------------------------------------------------------------------------
-duration [ns]: 20436
+duration [ns]: 10142
 number of partitions: 0
 number of swaps: 0
 [1] : [ lo - hi ] : pv : ix : sw
@@ -204,7 +240,7 @@ number of swaps: 0
 
 partition: HOARE - pivot: LOW
 --------------------------------------------------------------------------------
-duration [ns]: 111079
+duration [ns]: 105100
 number of partitions: 1
 number of swaps: 1
 [2, 1] : [ lo - hi ] : pv : ix : sw
@@ -213,7 +249,7 @@ number of swaps: 1
 
 partition: HOARE - pivot: LOW
 --------------------------------------------------------------------------------
-duration [ns]: 44094
+duration [ns]: 39970
 number of partitions: 2
 number of swaps: 0
 [1, 2, 3] : [ lo - hi ] : pv : ix : sw
@@ -223,7 +259,7 @@ number of swaps: 0
 
 partition: HOARE - pivot: LOW
 --------------------------------------------------------------------------------
-duration [ns]: 37424
+duration [ns]: 46379
 number of partitions: 2
 number of swaps: 1
 [3, 2, 1] : [ lo - hi ] : pv : ix : sw
@@ -233,7 +269,7 @@ number of swaps: 1
 
 partition: HOARE - pivot: LOW
 --------------------------------------------------------------------------------
-duration [ns]: 72461
+duration [ns]: 78531
 number of partitions: 3
 number of swaps: 4
 [1, 1, 1, 1] : [ lo - hi ] : pv : ix : sw
@@ -244,7 +280,7 @@ number of swaps: 4
 
 partition: HOARE - pivot: LOW
 --------------------------------------------------------------------------------
-duration [ns]: 131364
+duration [ns]: 147859
 number of partitions: 5
 number of swaps: 4
 [1, 3, 3, 3, 3, 2] : [ lo - hi ] : pv : ix : sw
@@ -257,7 +293,7 @@ number of swaps: 4
 
 partition: HOARE - pivot: LOW
 --------------------------------------------------------------------------------
-duration [ns]: 115243
+duration [ns]: 124185
 number of partitions: 6
 number of swaps: 7
 [1, 2, 3, 4, 2, 1, 1] : [ lo - hi ] : pv : ix : sw
@@ -271,7 +307,7 @@ number of swaps: 7
 
 partition: HOARE - pivot: LOW
 --------------------------------------------------------------------------------
-duration [ns]: 157275
+duration [ns]: 169431
 number of partitions: 7
 number of swaps: 7
 [1000000, 10001, 10, 30, 40, 50, 1, 999] : [ lo - hi ] : pv : ix : sw
@@ -286,7 +322,7 @@ number of swaps: 7
 
 partition: HOARE - pivot: LOW
 --------------------------------------------------------------------------------
-duration [ns]: 384891
+duration [ns]: 321688
 number of partitions: 15
 number of swaps: 14
 [1, 1, 1, 2, 2, 2, 2, 2, 3, 3, 3, 4, 4, 4, 4, 4] : [ lo - hi ] : pv : ix : sw
@@ -309,7 +345,7 @@ number of swaps: 14
 
 partition: HOARE - pivot: LOW
 --------------------------------------------------------------------------------
-duration [ns]: 379213
+duration [ns]: 253803
 number of partitions: 15
 number of swaps: 23
 [4, 2, 1, 2, 4, 2, 4, 2, 4, 3, 2, 3, 1, 3, 4, 1] : [ lo - hi ] : pv : ix : sw
@@ -332,7 +368,7 @@ number of swaps: 23
 
 partition: HOARE - pivot: LOW
 --------------------------------------------------------------------------------
-duration [ns]: 355475
+duration [ns]: 250551
 number of partitions: 15
 number of swaps: 16
 [1, 1, 4, 4, 2, 2, 2, 2, 3, 3, 3, 4, 4, 4, 1, 1] : [ lo - hi ] : pv : ix : sw
@@ -355,7 +391,7 @@ number of swaps: 16
 
 partition: HOARE - pivot: LOW
 --------------------------------------------------------------------------------
-duration [ns]: 387313
+duration [ns]: 205552
 number of partitions: 16
 number of swaps: 33
 [2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2] : [ lo - hi ] : pv : ix : sw
@@ -379,7 +415,7 @@ number of swaps: 33
 
 partition: HOARE - pivot: LOW
 --------------------------------------------------------------------------------
-duration [ns]: 387203
+duration [ns]: 185760
 number of partitions: 16
 number of swaps: 33
 [2, 2, 2, 2, 2, 2, 2, 2, 2, 1, 2, 2, 2, 2, 2, 2, 2] : [ lo - hi ] : pv : ix : sw
@@ -403,7 +439,7 @@ number of swaps: 33
 
 partition: HOARE - pivot: LOW
 --------------------------------------------------------------------------------
-duration [ns]: 358254
+duration [ns]: 130530
 number of partitions: 16
 number of swaps: 32
 [2, 2, 2, 2, 2, 2, 2, 2, 2, 3, 2, 2, 2, 2, 2, 2, 2] : [ lo - hi ] : pv : ix : sw
@@ -427,7 +463,7 @@ number of swaps: 32
 
 partition: HOARE - pivot: LOW
 --------------------------------------------------------------------------------
-duration [ns]: 350079
+duration [ns]: 183726
 number of partitions: 17
 number of swaps: 31
 [100, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 100] : [ lo - hi ] : pv : ix : sw
@@ -452,7 +488,7 @@ number of swaps: 31
 
 partition: HOARE - pivot: LOW
 --------------------------------------------------------------------------------
-duration [ns]: 465057
+duration [ns]: 147272
 number of partitions: 17
 number of swaps: 30
 [100, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 100, 2] : [ lo - hi ] : pv : ix : sw
@@ -477,7 +513,7 @@ number of swaps: 30
 
 partition: HOARE - pivot: LOW
 --------------------------------------------------------------------------------
-duration [ns]: 248062
+duration [ns]: 156972
 number of partitions: 18
 number of swaps: 16
 [16, 9, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 9, 16] : [ lo - hi ] : pv : ix : sw
@@ -501,12 +537,12 @@ number of swaps: 16
 [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 9, 9, 10, 11, 12, 13, 14, 16, 16] : [ 15 - 16 ] : 13 : 15 : 0
 
 total duration [ns]:
-34660078
+23904105
 
 
 partition: HOARE - pivot: MID
 --------------------------------------------------------------------------------
-duration [ns]: 13863
+duration [ns]: 4136
 number of partitions: 0
 number of swaps: 0
 [] : [ lo - hi ] : pv : ix : sw
@@ -514,7 +550,7 @@ number of swaps: 0
 
 partition: HOARE - pivot: MID
 --------------------------------------------------------------------------------
-duration [ns]: 2175
+duration [ns]: 2242
 number of partitions: 0
 number of swaps: 0
 [] : [ lo - hi ] : pv : ix : sw
@@ -522,7 +558,7 @@ number of swaps: 0
 
 partition: HOARE - pivot: MID
 --------------------------------------------------------------------------------
-duration [ns]: 3310
+duration [ns]: 2960
 number of partitions: 0
 number of swaps: 0
 [1] : [ lo - hi ] : pv : ix : sw
@@ -530,7 +566,7 @@ number of swaps: 0
 
 partition: HOARE - pivot: MID
 --------------------------------------------------------------------------------
-duration [ns]: 37508
+duration [ns]: 45792
 number of partitions: 1
 number of swaps: 1
 [2, 1] : [ lo - hi ] : pv : ix : sw
@@ -539,7 +575,7 @@ number of swaps: 1
 
 partition: HOARE - pivot: MID
 --------------------------------------------------------------------------------
-duration [ns]: 45454
+duration [ns]: 34338
 number of partitions: 2
 number of swaps: 0
 [1, 2, 3] : [ lo - hi ] : pv : ix : sw
@@ -549,7 +585,7 @@ number of swaps: 0
 
 partition: HOARE - pivot: MID
 --------------------------------------------------------------------------------
-duration [ns]: 25143
+duration [ns]: 20487
 number of partitions: 2
 number of swaps: 1
 [3, 2, 1] : [ lo - hi ] : pv : ix : sw
@@ -559,7 +595,7 @@ number of swaps: 1
 
 partition: HOARE - pivot: MID
 --------------------------------------------------------------------------------
-duration [ns]: 30477
+duration [ns]: 41162
 number of partitions: 3
 number of swaps: 4
 [1, 1, 1, 1] : [ lo - hi ] : pv : ix : sw
@@ -570,7 +606,7 @@ number of swaps: 4
 
 partition: HOARE - pivot: MID
 --------------------------------------------------------------------------------
-duration [ns]: 46140
+duration [ns]: 33452
 number of partitions: 5
 number of swaps: 4
 [1, 3, 3, 3, 3, 2] : [ lo - hi ] : pv : ix : sw
@@ -583,7 +619,7 @@ number of swaps: 4
 
 partition: HOARE - pivot: MID
 --------------------------------------------------------------------------------
-duration [ns]: 61344
+duration [ns]: 37091
 number of partitions: 6
 number of swaps: 7
 [1, 2, 3, 4, 2, 1, 1] : [ lo - hi ] : pv : ix : sw
@@ -597,7 +633,7 @@ number of swaps: 7
 
 partition: HOARE - pivot: MID
 --------------------------------------------------------------------------------
-duration [ns]: 80087
+duration [ns]: 49656
 number of partitions: 7
 number of swaps: 7
 [1000000, 10001, 10, 30, 40, 50, 1, 999] : [ lo - hi ] : pv : ix : sw
@@ -612,7 +648,7 @@ number of swaps: 7
 
 partition: HOARE - pivot: MID
 --------------------------------------------------------------------------------
-duration [ns]: 129183
+duration [ns]: 112053
 number of partitions: 15
 number of swaps: 14
 [1, 1, 1, 2, 2, 2, 2, 2, 3, 3, 3, 4, 4, 4, 4, 4] : [ lo - hi ] : pv : ix : sw
@@ -635,7 +671,7 @@ number of swaps: 14
 
 partition: HOARE - pivot: MID
 --------------------------------------------------------------------------------
-duration [ns]: 132233
+duration [ns]: 99085
 number of partitions: 15
 number of swaps: 20
 [4, 2, 1, 2, 4, 2, 4, 2, 4, 3, 2, 3, 1, 3, 4, 1] : [ lo - hi ] : pv : ix : sw
@@ -658,7 +694,7 @@ number of swaps: 20
 
 partition: HOARE - pivot: MID
 --------------------------------------------------------------------------------
-duration [ns]: 139377
+duration [ns]: 56884
 number of partitions: 15
 number of swaps: 17
 [1, 1, 4, 4, 2, 2, 2, 2, 3, 3, 3, 4, 4, 4, 1, 1] : [ lo - hi ] : pv : ix : sw
@@ -681,7 +717,7 @@ number of swaps: 17
 
 partition: HOARE - pivot: MID
 --------------------------------------------------------------------------------
-duration [ns]: 151864
+duration [ns]: 126025
 number of partitions: 16
 number of swaps: 33
 [2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2] : [ lo - hi ] : pv : ix : sw
@@ -705,7 +741,7 @@ number of swaps: 33
 
 partition: HOARE - pivot: MID
 --------------------------------------------------------------------------------
-duration [ns]: 3454255
+duration [ns]: 159892
 number of partitions: 16
 number of swaps: 33
 [2, 2, 2, 2, 2, 2, 2, 2, 2, 1, 2, 2, 2, 2, 2, 2, 2] : [ lo - hi ] : pv : ix : sw
@@ -729,7 +765,7 @@ number of swaps: 33
 
 partition: HOARE - pivot: MID
 --------------------------------------------------------------------------------
-duration [ns]: 128907
+duration [ns]: 110405
 number of partitions: 16
 number of swaps: 32
 [2, 2, 2, 2, 2, 2, 2, 2, 2, 3, 2, 2, 2, 2, 2, 2, 2] : [ lo - hi ] : pv : ix : sw
@@ -753,7 +789,7 @@ number of swaps: 32
 
 partition: HOARE - pivot: MID
 --------------------------------------------------------------------------------
-duration [ns]: 107530
+duration [ns]: 102977
 number of partitions: 17
 number of swaps: 31
 [100, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 100] : [ lo - hi ] : pv : ix : sw
@@ -778,7 +814,7 @@ number of swaps: 31
 
 partition: HOARE - pivot: MID
 --------------------------------------------------------------------------------
-duration [ns]: 91305
+duration [ns]: 82030
 number of partitions: 17
 number of swaps: 30
 [100, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 100, 2] : [ lo - hi ] : pv : ix : sw
@@ -803,7 +839,7 @@ number of swaps: 30
 
 partition: HOARE - pivot: MID
 --------------------------------------------------------------------------------
-duration [ns]: 104022
+duration [ns]: 93573
 number of partitions: 18
 number of swaps: 14
 [16, 9, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 9, 16] : [ lo - hi ] : pv : ix : sw
@@ -827,12 +863,12 @@ number of swaps: 14
 [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 9, 9, 10, 11, 12, 13, 14, 16, 16] : [ 17 - 18 ] : 16 : 17 : 1
 
 total duration [ns]:
-22002278
+15091665
 
 
 partition: HOARE - pivot: MEDIAN
 --------------------------------------------------------------------------------
-duration [ns]: 3270
+duration [ns]: 3203
 number of partitions: 0
 number of swaps: 0
 [] : [ lo - hi ] : pv : ix : sw
@@ -840,7 +876,7 @@ number of swaps: 0
 
 partition: HOARE - pivot: MEDIAN
 --------------------------------------------------------------------------------
-duration [ns]: 1871
+duration [ns]: 2578
 number of partitions: 0
 number of swaps: 0
 [] : [ lo - hi ] : pv : ix : sw
@@ -848,7 +884,7 @@ number of swaps: 0
 
 partition: HOARE - pivot: MEDIAN
 --------------------------------------------------------------------------------
-duration [ns]: 3215
+duration [ns]: 2363
 number of partitions: 0
 number of swaps: 0
 [1] : [ lo - hi ] : pv : ix : sw
@@ -856,7 +892,7 @@ number of swaps: 0
 
 partition: HOARE - pivot: MEDIAN
 --------------------------------------------------------------------------------
-duration [ns]: 58818
+duration [ns]: 52562
 number of partitions: 2
 number of swaps: 3
 [2, 1] : [ lo - hi ] : pv : ix : sw
@@ -868,7 +904,7 @@ number of swaps: 3
 
 partition: HOARE - pivot: MEDIAN
 --------------------------------------------------------------------------------
-duration [ns]: 22344
+duration [ns]: 12732
 number of partitions: 2
 number of swaps: 4
 [1, 2, 3] : [ lo - hi ] : pv : ix : sw
@@ -880,7 +916,7 @@ number of swaps: 4
 
 partition: HOARE - pivot: MEDIAN
 --------------------------------------------------------------------------------
-duration [ns]: 23693
+duration [ns]: 21001
 number of partitions: 3
 number of swaps: 5
 [3, 2, 1] : [ lo - hi ] : pv : ix : sw
@@ -894,7 +930,7 @@ number of swaps: 5
 
 partition: HOARE - pivot: MEDIAN
 --------------------------------------------------------------------------------
-duration [ns]: 23193
+duration [ns]: 22414
 number of partitions: 3
 number of swaps: 4
 [1, 1, 1, 1] : [ lo - hi ] : pv : ix : sw
@@ -908,7 +944,7 @@ number of swaps: 4
 
 partition: HOARE - pivot: MEDIAN
 --------------------------------------------------------------------------------
-duration [ns]: 39390
+duration [ns]: 36021
 number of partitions: 5
 number of swaps: 7
 [1, 3, 3, 3, 3, 2] : [ lo - hi ] : pv : ix : sw
@@ -926,7 +962,7 @@ number of swaps: 7
 
 partition: HOARE - pivot: MEDIAN
 --------------------------------------------------------------------------------
-duration [ns]: 53650
+duration [ns]: 38362
 number of partitions: 7
 number of swaps: 12
 [1, 2, 3, 4, 2, 1, 1] : [ lo - hi ] : pv : ix : sw
@@ -948,7 +984,7 @@ number of swaps: 12
 
 partition: HOARE - pivot: MEDIAN
 --------------------------------------------------------------------------------
-duration [ns]: 67601
+duration [ns]: 64306
 number of partitions: 8
 number of swaps: 17
 [1000000, 10001, 10, 30, 40, 50, 1, 999] : [ lo - hi ] : pv : ix : sw
@@ -972,7 +1008,7 @@ number of swaps: 17
 
 partition: HOARE - pivot: MEDIAN
 --------------------------------------------------------------------------------
-duration [ns]: 6466195
+duration [ns]: 111638
 number of partitions: 15
 number of swaps: 26
 [1, 1, 1, 2, 2, 2, 2, 2, 3, 3, 3, 4, 4, 4, 4, 4] : [ lo - hi ] : pv : ix : sw
@@ -1010,7 +1046,7 @@ number of swaps: 26
 
 partition: HOARE - pivot: MEDIAN
 --------------------------------------------------------------------------------
-duration [ns]: 120589
+duration [ns]: 63946
 number of partitions: 15
 number of swaps: 26
 [4, 2, 1, 2, 4, 2, 4, 2, 4, 3, 2, 3, 1, 3, 4, 1] : [ lo - hi ] : pv : ix : sw
@@ -1048,7 +1084,7 @@ number of swaps: 26
 
 partition: HOARE - pivot: MEDIAN
 --------------------------------------------------------------------------------
-duration [ns]: 200639
+duration [ns]: 59301
 number of partitions: 15
 number of swaps: 26
 [1, 1, 4, 4, 2, 2, 2, 2, 3, 3, 3, 4, 4, 4, 1, 1] : [ lo - hi ] : pv : ix : sw
@@ -1086,7 +1122,7 @@ number of swaps: 26
 
 partition: HOARE - pivot: MEDIAN
 --------------------------------------------------------------------------------
-duration [ns]: 103926
+duration [ns]: 111123
 number of partitions: 16
 number of swaps: 33
 [2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2] : [ lo - hi ] : pv : ix : sw
@@ -1126,7 +1162,7 @@ number of swaps: 33
 
 partition: HOARE - pivot: MEDIAN
 --------------------------------------------------------------------------------
-duration [ns]: 74115
+duration [ns]: 110377
 number of partitions: 16
 number of swaps: 35
 [2, 2, 2, 2, 2, 2, 2, 2, 2, 1, 2, 2, 2, 2, 2, 2, 2] : [ lo - hi ] : pv : ix : sw
@@ -1166,7 +1202,7 @@ number of swaps: 35
 
 partition: HOARE - pivot: MEDIAN
 --------------------------------------------------------------------------------
-duration [ns]: 117450
+duration [ns]: 114260
 number of partitions: 17
 number of swaps: 34
 [2, 2, 2, 2, 2, 2, 2, 2, 2, 3, 2, 2, 2, 2, 2, 2, 2] : [ lo - hi ] : pv : ix : sw
@@ -1208,7 +1244,7 @@ number of swaps: 34
 
 partition: HOARE - pivot: MEDIAN
 --------------------------------------------------------------------------------
-duration [ns]: 97144
+duration [ns]: 141023
 number of partitions: 18
 number of swaps: 38
 [100, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 100] : [ lo - hi ] : pv : ix : sw
@@ -1252,7 +1288,7 @@ number of swaps: 38
 
 partition: HOARE - pivot: MEDIAN
 --------------------------------------------------------------------------------
-duration [ns]: 102904
+duration [ns]: 211010
 number of partitions: 18
 number of swaps: 38
 [100, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 100, 2] : [ lo - hi ] : pv : ix : sw
@@ -1296,7 +1332,7 @@ number of swaps: 38
 
 partition: HOARE - pivot: MEDIAN
 --------------------------------------------------------------------------------
-duration [ns]: 84599
+duration [ns]: 96553
 number of partitions: 19
 number of swaps: 37
 [16, 9, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 9, 16] : [ lo - hi ] : pv : ix : sw
@@ -1340,12 +1376,12 @@ number of swaps: 37
 [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 9, 9, 10, 11, 12, 13, 14, 16, 16] : [ 15 - 16 ] : 13 : 15 : 1
 
 total duration [ns]:
-37949489
+15949070
 
 
 partition: HOARE - pivot: HIGH
 --------------------------------------------------------------------------------
-duration [ns]: 3255
+duration [ns]: 2794
 number of partitions: 0
 number of swaps: 0
 [] : [ lo - hi ] : pv : ix : sw
@@ -1353,7 +1389,7 @@ number of swaps: 0
 
 partition: HOARE - pivot: HIGH
 --------------------------------------------------------------------------------
-duration [ns]: 1726
+duration [ns]: 1655
 number of partitions: 0
 number of swaps: 0
 [] : [ lo - hi ] : pv : ix : sw
@@ -1361,7 +1397,7 @@ number of swaps: 0
 
 partition: HOARE - pivot: HIGH
 --------------------------------------------------------------------------------
-duration [ns]: 2915
+duration [ns]: 2430
 number of partitions: 0
 number of swaps: 0
 [1] : [ lo - hi ] : pv : ix : sw
@@ -1369,7 +1405,7 @@ number of swaps: 0
 
 partition: HOARE - pivot: HIGH
 --------------------------------------------------------------------------------
-duration [ns]: 32462
+duration [ns]: 27807
 number of partitions: 1
 number of swaps: 1
 [2, 1] : [ lo - hi ] : pv : ix : sw
@@ -1378,7 +1414,7 @@ number of swaps: 1
 
 partition: HOARE - pivot: HIGH
 --------------------------------------------------------------------------------
-duration [ns]: 8160
+duration [ns]: 7272
 number of partitions: 2
 number of swaps: 0
 [1, 2, 3] : [ lo - hi ] : pv : ix : sw
@@ -1388,7 +1424,7 @@ number of swaps: 0
 
 partition: HOARE - pivot: HIGH
 --------------------------------------------------------------------------------
-duration [ns]: 10759
+duration [ns]: 8835
 number of partitions: 2
 number of swaps: 1
 [3, 2, 1] : [ lo - hi ] : pv : ix : sw
@@ -1398,7 +1434,7 @@ number of swaps: 1
 
 partition: HOARE - pivot: HIGH
 --------------------------------------------------------------------------------
-duration [ns]: 8847
+duration [ns]: 8871
 number of partitions: 3
 number of swaps: 4
 [1, 1, 1, 1] : [ lo - hi ] : pv : ix : sw
@@ -1409,7 +1445,7 @@ number of swaps: 4
 
 partition: HOARE - pivot: HIGH
 --------------------------------------------------------------------------------
-duration [ns]: 16079
+duration [ns]: 13533
 number of partitions: 5
 number of swaps: 4
 [1, 3, 3, 3, 3, 2] : [ lo - hi ] : pv : ix : sw
@@ -1422,7 +1458,7 @@ number of swaps: 4
 
 partition: HOARE - pivot: HIGH
 --------------------------------------------------------------------------------
-duration [ns]: 14424
+duration [ns]: 17224
 number of partitions: 6
 number of swaps: 7
 [1, 2, 3, 4, 2, 1, 1] : [ lo - hi ] : pv : ix : sw
@@ -1436,7 +1472,7 @@ number of swaps: 7
 
 partition: HOARE - pivot: HIGH
 --------------------------------------------------------------------------------
-duration [ns]: 23575
+duration [ns]: 15805
 number of partitions: 7
 number of swaps: 7
 [1000000, 10001, 10, 30, 40, 50, 1, 999] : [ lo - hi ] : pv : ix : sw
@@ -1451,7 +1487,7 @@ number of swaps: 7
 
 partition: HOARE - pivot: HIGH
 --------------------------------------------------------------------------------
-duration [ns]: 44531
+duration [ns]: 26497
 number of partitions: 15
 number of swaps: 14
 [1, 1, 1, 2, 2, 2, 2, 2, 3, 3, 3, 4, 4, 4, 4, 4] : [ lo - hi ] : pv : ix : sw
@@ -1474,7 +1510,7 @@ number of swaps: 14
 
 partition: HOARE - pivot: HIGH
 --------------------------------------------------------------------------------
-duration [ns]: 39591
+duration [ns]: 34678
 number of partitions: 15
 number of swaps: 23
 [4, 2, 1, 2, 4, 2, 4, 2, 4, 3, 2, 3, 1, 3, 4, 1] : [ lo - hi ] : pv : ix : sw
@@ -1497,7 +1533,7 @@ number of swaps: 23
 
 partition: HOARE - pivot: HIGH
 --------------------------------------------------------------------------------
-duration [ns]: 45464
+duration [ns]: 44579
 number of partitions: 15
 number of swaps: 17
 [1, 1, 4, 4, 2, 2, 2, 2, 3, 3, 3, 4, 4, 4, 1, 1] : [ lo - hi ] : pv : ix : sw
@@ -1520,7 +1556,7 @@ number of swaps: 17
 
 partition: HOARE - pivot: HIGH
 --------------------------------------------------------------------------------
-duration [ns]: 54471
+duration [ns]: 46227
 number of partitions: 16
 number of swaps: 33
 [2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2] : [ lo - hi ] : pv : ix : sw
@@ -1544,7 +1580,7 @@ number of swaps: 33
 
 partition: HOARE - pivot: HIGH
 --------------------------------------------------------------------------------
-duration [ns]: 45952
+duration [ns]: 46205
 number of partitions: 16
 number of swaps: 33
 [2, 2, 2, 2, 2, 2, 2, 2, 2, 1, 2, 2, 2, 2, 2, 2, 2] : [ lo - hi ] : pv : ix : sw
@@ -1568,7 +1604,7 @@ number of swaps: 33
 
 partition: HOARE - pivot: HIGH
 --------------------------------------------------------------------------------
-duration [ns]: 50081
+duration [ns]: 48401
 number of partitions: 16
 number of swaps: 32
 [2, 2, 2, 2, 2, 2, 2, 2, 2, 3, 2, 2, 2, 2, 2, 2, 2] : [ lo - hi ] : pv : ix : sw
@@ -1592,7 +1628,7 @@ number of swaps: 32
 
 partition: HOARE - pivot: HIGH
 --------------------------------------------------------------------------------
-duration [ns]: 55932
+duration [ns]: 53381
 number of partitions: 17
 number of swaps: 31
 [100, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 100] : [ lo - hi ] : pv : ix : sw
@@ -1617,7 +1653,7 @@ number of swaps: 31
 
 partition: HOARE - pivot: HIGH
 --------------------------------------------------------------------------------
-duration [ns]: 59152
+duration [ns]: 55470
 number of partitions: 17
 number of swaps: 30
 [100, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 100, 2] : [ lo - hi ] : pv : ix : sw
@@ -1642,7 +1678,7 @@ number of swaps: 30
 
 partition: HOARE - pivot: HIGH
 --------------------------------------------------------------------------------
-duration [ns]: 59762
+duration [ns]: 51917
 number of partitions: 18
 number of swaps: 15
 [16, 9, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 9, 16] : [ lo - hi ] : pv : ix : sw
@@ -1666,12 +1702,12 @@ number of swaps: 15
 [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 9, 9, 10, 11, 12, 13, 14, 16, 16] : [ 11 - 12 ] : 9 : 11 : 0
 
 total duration [ns]:
-14365948
+12455169
 
 
 partition: HOARE - pivot: RANDOM
 --------------------------------------------------------------------------------
-duration [ns]: 3535
+duration [ns]: 3542
 number of partitions: 0
 number of swaps: 0
 [] : [ lo - hi ] : pv : ix : sw
@@ -1679,7 +1715,7 @@ number of swaps: 0
 
 partition: HOARE - pivot: RANDOM
 --------------------------------------------------------------------------------
-duration [ns]: 2538
+duration [ns]: 2224
 number of partitions: 0
 number of swaps: 0
 [] : [ lo - hi ] : pv : ix : sw
@@ -1687,7 +1723,7 @@ number of swaps: 0
 
 partition: HOARE - pivot: RANDOM
 --------------------------------------------------------------------------------
-duration [ns]: 2524
+duration [ns]: 2824
 number of partitions: 0
 number of swaps: 0
 [1] : [ lo - hi ] : pv : ix : sw
@@ -1695,37 +1731,39 @@ number of swaps: 0
 
 partition: HOARE - pivot: RANDOM
 --------------------------------------------------------------------------------
-duration [ns]: 32706
+duration [ns]: 27876
 number of partitions: 1
 number of swaps: 1
 [2, 1] : [ lo - hi ] : pv : ix : sw
-[1, 2] : [ 0 - 1 ] : 2 : 0 : 1
+[1, 2] : [ 0 - 1 ] : 1 : 0 : 1
 
 
 partition: HOARE - pivot: RANDOM
 --------------------------------------------------------------------------------
-duration [ns]: 12215
-number of partitions: 3
+duration [ns]: 19472
+number of partitions: 5
 number of swaps: 0
 [1, 2, 3] : [ lo - hi ] : pv : ix : sw
 [1, 2, 3] : [ 0 - 2 ] : 3 : 2 : 0
 [1, 2, 3] : [ 0 - 2 ] : 1 : 0 : 0
+[1, 2, 3] : [ 1 - 2 ] : 3 : 2 : 0
+[1, 2, 3] : [ 1 - 2 ] : 3 : 2 : 0
 [1, 2, 3] : [ 1 - 2 ] : 2 : 1 : 0
 
 
 partition: HOARE - pivot: RANDOM
 --------------------------------------------------------------------------------
-duration [ns]: 9149
+duration [ns]: 12667
 number of partitions: 2
 number of swaps: 1
 [3, 2, 1] : [ lo - hi ] : pv : ix : sw
-[1, 2, 3] : [ 0 - 2 ] : 2 : 1 : 1
+[1, 2, 3] : [ 0 - 2 ] : 3 : 1 : 1
 [1, 2, 3] : [ 0 - 1 ] : 1 : 0 : 0
 
 
 partition: HOARE - pivot: RANDOM
 --------------------------------------------------------------------------------
-duration [ns]: 12420
+duration [ns]: 15433
 number of partitions: 3
 number of swaps: 4
 [1, 1, 1, 1] : [ lo - hi ] : pv : ix : sw
@@ -1736,65 +1774,62 @@ number of swaps: 4
 
 partition: HOARE - pivot: RANDOM
 --------------------------------------------------------------------------------
-duration [ns]: 18285
+duration [ns]: 18780
 number of partitions: 5
-number of swaps: 4
+number of swaps: 5
 [1, 3, 3, 3, 3, 2] : [ lo - hi ] : pv : ix : sw
-[1, 2, 3, 3, 3, 3] : [ 0 - 5 ] : 3 : 3 : 2
-[1, 2, 3, 3, 3, 3] : [ 0 - 3 ] : 3 : 2 : 1
-[1, 2, 3, 3, 3, 3] : [ 0 - 2 ] : 1 : 0 : 0
-[1, 2, 3, 3, 3, 3] : [ 1 - 2 ] : 2 : 1 : 0
+[1, 2, 3, 3, 3, 3] : [ 0 - 5 ] : 2 : 1 : 1
+[1, 2, 3, 3, 3, 3] : [ 0 - 1 ] : 1 : 0 : 0
+[1, 2, 3, 3, 3, 3] : [ 2 - 5 ] : 3 : 3 : 2
+[1, 2, 3, 3, 3, 3] : [ 2 - 3 ] : 3 : 2 : 1
 [1, 2, 3, 3, 3, 3] : [ 4 - 5 ] : 3 : 4 : 1
 
 
 partition: HOARE - pivot: RANDOM
 --------------------------------------------------------------------------------
-duration [ns]: 18032
-number of partitions: 8
-number of swaps: 6
+duration [ns]: 21744
+number of partitions: 6
+number of swaps: 7
 [1, 2, 3, 4, 2, 1, 1] : [ lo - hi ] : pv : ix : sw
-[1, 2, 3, 1, 2, 1, 4] : [ 0 - 6 ] : 4 : 5 : 1
-[1, 1, 3, 2, 2, 1, 4] : [ 0 - 5 ] : 1 : 1 : 2
-[1, 1, 3, 2, 2, 1, 4] : [ 0 - 1 ] : 1 : 0 : 1
-[1, 1, 1, 2, 2, 3, 4] : [ 2 - 5 ] : 2 : 3 : 2
-[1, 1, 1, 2, 2, 3, 4] : [ 2 - 3 ] : 1 : 2 : 0
-[1, 1, 1, 2, 2, 3, 4] : [ 4 - 5 ] : 3 : 5 : 0
-[1, 1, 1, 2, 2, 3, 4] : [ 4 - 5 ] : 3 : 5 : 0
-[1, 1, 1, 2, 2, 3, 4] : [ 4 - 5 ] : 2 : 4 : 0
+[1, 1, 3, 4, 2, 2, 1] : [ 0 - 6 ] : 1 : 1 : 2
+[1, 1, 3, 4, 2, 2, 1] : [ 0 - 1 ] : 1 : 0 : 1
+[1, 1, 1, 2, 2, 4, 3] : [ 2 - 6 ] : 3 : 4 : 2
+[1, 1, 1, 2, 2, 4, 3] : [ 2 - 4 ] : 1 : 2 : 0
+[1, 1, 1, 2, 2, 4, 3] : [ 3 - 4 ] : 2 : 3 : 1
+[1, 1, 1, 2, 2, 3, 4] : [ 5 - 6 ] : 3 : 5 : 1
 
 
 partition: HOARE - pivot: RANDOM
 --------------------------------------------------------------------------------
-duration [ns]: 22395
+duration [ns]: 29002
 number of partitions: 7
 number of swaps: 7
 [1000000, 10001, 10, 30, 40, 50, 1, 999] : [ lo - hi ] : pv : ix : sw
-[1, 10001, 10, 30, 40, 50, 1000000, 999] : [ 0 - 7 ] : 1 : 0 : 1
-[1, 50, 10, 30, 40, 10001, 1000000, 999] : [ 1 - 7 ] : 50 : 4 : 1
-[1, 30, 10, 50, 40, 10001, 1000000, 999] : [ 1 - 4 ] : 30 : 2 : 1
-[1, 10, 30, 50, 40, 10001, 1000000, 999] : [ 1 - 2 ] : 10 : 1 : 1
-[1, 10, 30, 40, 50, 10001, 1000000, 999] : [ 3 - 4 ] : 50 : 3 : 1
-[1, 10, 30, 40, 50, 10001, 999, 1000000] : [ 5 - 7 ] : 1000000 : 6 : 1
-[1, 10, 30, 40, 50, 999, 10001, 1000000] : [ 5 - 6 ] : 999 : 5 : 1
+[999, 1, 10, 30, 40, 50, 10001, 1000000] : [ 0 - 7 ] : 10001 : 5 : 2
+[10, 1, 999, 30, 40, 50, 10001, 1000000] : [ 0 - 5 ] : 10 : 1 : 1
+[1, 10, 999, 30, 40, 50, 10001, 1000000] : [ 0 - 1 ] : 1 : 0 : 1
+[1, 10, 40, 30, 999, 50, 10001, 1000000] : [ 2 - 5 ] : 40 : 3 : 1
+[1, 10, 30, 40, 999, 50, 10001, 1000000] : [ 2 - 3 ] : 30 : 2 : 1
+[1, 10, 30, 40, 50, 999, 10001, 1000000] : [ 4 - 5 ] : 50 : 4 : 1
+[1, 10, 30, 40, 50, 999, 10001, 1000000] : [ 6 - 7 ] : 10001 : 6 : 0
 
 
 partition: HOARE - pivot: RANDOM
 --------------------------------------------------------------------------------
-duration [ns]: 45615
-number of partitions: 16
+duration [ns]: 58765
+number of partitions: 15
 number of swaps: 14
 [1, 1, 1, 2, 2, 2, 2, 2, 3, 3, 3, 4, 4, 4, 4, 4] : [ lo - hi ] : pv : ix : sw
-[1, 1, 1, 2, 2, 2, 2, 2, 3, 3, 3, 4, 4, 4, 4, 4] : [ 0 - 15 ] : 2 : 5 : 2
-[1, 1, 1, 2, 2, 2, 2, 2, 3, 3, 3, 4, 4, 4, 4, 4] : [ 0 - 5 ] : 2 : 4 : 1
-[1, 1, 1, 2, 2, 2, 2, 2, 3, 3, 3, 4, 4, 4, 4, 4] : [ 0 - 4 ] : 2 : 3 : 1
-[1, 1, 1, 2, 2, 2, 2, 2, 3, 3, 3, 4, 4, 4, 4, 4] : [ 0 - 3 ] : 2 : 3 : 0
-[1, 1, 1, 2, 2, 2, 2, 2, 3, 3, 3, 4, 4, 4, 4, 4] : [ 0 - 3 ] : 1 : 1 : 1
+[1, 1, 1, 2, 2, 2, 2, 2, 3, 3, 3, 4, 4, 4, 4, 4] : [ 0 - 15 ] : 4 : 13 : 2
+[1, 1, 1, 2, 2, 2, 2, 2, 3, 3, 3, 4, 4, 4, 4, 4] : [ 0 - 13 ] : 2 : 5 : 2
+[1, 1, 1, 2, 2, 2, 2, 2, 3, 3, 3, 4, 4, 4, 4, 4] : [ 0 - 5 ] : 1 : 1 : 1
 [1, 1, 1, 2, 2, 2, 2, 2, 3, 3, 3, 4, 4, 4, 4, 4] : [ 0 - 1 ] : 1 : 0 : 1
+[1, 1, 1, 2, 2, 2, 2, 2, 3, 3, 3, 4, 4, 4, 4, 4] : [ 2 - 5 ] : 2 : 4 : 1
+[1, 1, 1, 2, 2, 2, 2, 2, 3, 3, 3, 4, 4, 4, 4, 4] : [ 2 - 4 ] : 2 : 3 : 1
 [1, 1, 1, 2, 2, 2, 2, 2, 3, 3, 3, 4, 4, 4, 4, 4] : [ 2 - 3 ] : 1 : 2 : 0
-[1, 1, 1, 2, 2, 2, 2, 2, 3, 3, 3, 4, 4, 4, 4, 4] : [ 6 - 15 ] : 2 : 6 : 1
-[1, 1, 1, 2, 2, 2, 2, 2, 3, 3, 3, 4, 4, 4, 4, 4] : [ 7 - 15 ] : 4 : 13 : 2
-[1, 1, 1, 2, 2, 2, 2, 2, 3, 3, 3, 4, 4, 4, 4, 4] : [ 7 - 13 ] : 2 : 7 : 0
-[1, 1, 1, 2, 2, 2, 2, 2, 3, 3, 3, 4, 4, 4, 4, 4] : [ 8 - 13 ] : 3 : 9 : 1
+[1, 1, 1, 2, 2, 2, 2, 2, 3, 3, 3, 4, 4, 4, 4, 4] : [ 6 - 13 ] : 3 : 9 : 1
+[1, 1, 1, 2, 2, 2, 2, 2, 3, 3, 3, 4, 4, 4, 4, 4] : [ 6 - 9 ] : 2 : 6 : 1
+[1, 1, 1, 2, 2, 2, 2, 2, 3, 3, 3, 4, 4, 4, 4, 4] : [ 7 - 9 ] : 2 : 7 : 0
 [1, 1, 1, 2, 2, 2, 2, 2, 3, 3, 3, 4, 4, 4, 4, 4] : [ 8 - 9 ] : 3 : 8 : 1
 [1, 1, 1, 2, 2, 2, 2, 2, 3, 3, 3, 4, 4, 4, 4, 4] : [ 10 - 13 ] : 4 : 12 : 1
 [1, 1, 1, 2, 2, 2, 2, 2, 3, 3, 3, 4, 4, 4, 4, 4] : [ 10 - 12 ] : 3 : 10 : 0
@@ -1804,58 +1839,62 @@ number of swaps: 14
 
 partition: HOARE - pivot: RANDOM
 --------------------------------------------------------------------------------
-duration [ns]: 53147
-number of partitions: 15
+duration [ns]: 59875
+number of partitions: 18
 number of swaps: 21
 [4, 2, 1, 2, 4, 2, 4, 2, 4, 3, 2, 3, 1, 3, 4, 1] : [ lo - hi ] : pv : ix : sw
-[1, 2, 1, 2, 4, 2, 3, 2, 1, 3, 2, 3, 4, 4, 4, 4] : [ 0 - 15 ] : 4 : 11 : 4
-[1, 2, 1, 2, 3, 2, 2, 2, 1, 3, 3, 4, 4, 4, 4, 4] : [ 0 - 11 ] : 3 : 9 : 2
-[1, 1, 2, 2, 3, 2, 2, 2, 1, 3, 3, 4, 4, 4, 4, 4] : [ 0 - 9 ] : 1 : 1 : 2
-[1, 1, 2, 2, 3, 2, 2, 2, 1, 3, 3, 4, 4, 4, 4, 4] : [ 0 - 1 ] : 1 : 0 : 1
-[1, 1, 1, 2, 2, 2, 3, 2, 2, 3, 3, 4, 4, 4, 4, 4] : [ 2 - 9 ] : 2 : 5 : 3
-[1, 1, 1, 2, 2, 2, 3, 2, 2, 3, 3, 4, 4, 4, 4, 4] : [ 2 - 5 ] : 1 : 2 : 0
-[1, 1, 1, 2, 2, 2, 3, 2, 2, 3, 3, 4, 4, 4, 4, 4] : [ 3 - 5 ] : 2 : 4 : 1
-[1, 1, 1, 2, 2, 2, 3, 2, 2, 3, 3, 4, 4, 4, 4, 4] : [ 3 - 4 ] : 2 : 3 : 1
-[1, 1, 1, 2, 2, 2, 2, 2, 3, 3, 3, 4, 4, 4, 4, 4] : [ 6 - 9 ] : 2 : 7 : 1
-[1, 1, 1, 2, 2, 2, 2, 2, 3, 3, 3, 4, 4, 4, 4, 4] : [ 6 - 7 ] : 2 : 6 : 1
-[1, 1, 1, 2, 2, 2, 2, 2, 3, 3, 3, 4, 4, 4, 4, 4] : [ 8 - 9 ] : 3 : 8 : 1
+[1, 2, 1, 2, 3, 2, 1, 2, 3, 2, 3, 4, 4, 4, 4, 4] : [ 0 - 15 ] : 3 : 9 : 5
+[1, 1, 2, 2, 3, 2, 1, 2, 3, 2, 3, 4, 4, 4, 4, 4] : [ 0 - 9 ] : 1 : 1 : 2
+[1, 1, 2, 2, 3, 2, 1, 2, 3, 2, 3, 4, 4, 4, 4, 4] : [ 0 - 1 ] : 1 : 0 : 1
+[1, 1, 2, 2, 1, 2, 3, 2, 3, 2, 3, 4, 4, 4, 4, 4] : [ 2 - 9 ] : 2 : 5 : 3
+[1, 1, 1, 2, 2, 2, 3, 2, 3, 2, 3, 4, 4, 4, 4, 4] : [ 2 - 5 ] : 1 : 2 : 1
+[1, 1, 1, 2, 2, 2, 3, 2, 3, 2, 3, 4, 4, 4, 4, 4] : [ 3 - 5 ] : 2 : 4 : 1
+[1, 1, 1, 2, 2, 2, 3, 2, 3, 2, 3, 4, 4, 4, 4, 4] : [ 3 - 4 ] : 2 : 3 : 1
+[1, 1, 1, 2, 2, 2, 2, 2, 3, 3, 3, 4, 4, 4, 4, 4] : [ 6 - 9 ] : 3 : 8 : 1
+[1, 1, 1, 2, 2, 2, 2, 2, 3, 3, 3, 4, 4, 4, 4, 4] : [ 6 - 8 ] : 2 : 6 : 1
+[1, 1, 1, 2, 2, 2, 2, 2, 3, 3, 3, 4, 4, 4, 4, 4] : [ 7 - 8 ] : 3 : 8 : 0
+[1, 1, 1, 2, 2, 2, 2, 2, 3, 3, 3, 4, 4, 4, 4, 4] : [ 7 - 8 ] : 2 : 7 : 0
+[1, 1, 1, 2, 2, 2, 2, 2, 3, 3, 3, 4, 4, 4, 4, 4] : [ 10 - 15 ] : 4 : 13 : 2
+[1, 1, 1, 2, 2, 2, 2, 2, 3, 3, 3, 4, 4, 4, 4, 4] : [ 10 - 13 ] : 4 : 12 : 1
+[1, 1, 1, 2, 2, 2, 2, 2, 3, 3, 3, 4, 4, 4, 4, 4] : [ 10 - 12 ] : 4 : 11 : 1
+[1, 1, 1, 2, 2, 2, 2, 2, 3, 3, 3, 4, 4, 4, 4, 4] : [ 10 - 11 ] : 4 : 11 : 0
+[1, 1, 1, 2, 2, 2, 2, 2, 3, 3, 3, 4, 4, 4, 4, 4] : [ 10 - 11 ] : 4 : 11 : 0
 [1, 1, 1, 2, 2, 2, 2, 2, 3, 3, 3, 4, 4, 4, 4, 4] : [ 10 - 11 ] : 3 : 10 : 0
-[1, 1, 1, 2, 2, 2, 2, 2, 3, 3, 3, 4, 4, 4, 4, 4] : [ 12 - 15 ] : 4 : 13 : 2
-[1, 1, 1, 2, 2, 2, 2, 2, 3, 3, 3, 4, 4, 4, 4, 4] : [ 12 - 13 ] : 4 : 12 : 1
 [1, 1, 1, 2, 2, 2, 2, 2, 3, 3, 3, 4, 4, 4, 4, 4] : [ 14 - 15 ] : 4 : 14 : 1
 
 
 partition: HOARE - pivot: RANDOM
 --------------------------------------------------------------------------------
-duration [ns]: 91058
-number of partitions: 20
+duration [ns]: 70622
+number of partitions: 21
 number of swaps: 17
 [1, 1, 4, 4, 2, 2, 2, 2, 3, 3, 3, 4, 4, 4, 1, 1] : [ lo - hi ] : pv : ix : sw
 [1, 1, 1, 1, 2, 2, 2, 2, 3, 3, 3, 4, 4, 4, 4, 4] : [ 0 - 15 ] : 3 : 9 : 3
-[1, 1, 1, 1, 2, 2, 2, 2, 3, 3, 3, 4, 4, 4, 4, 4] : [ 0 - 9 ] : 1 : 1 : 2
+[1, 1, 1, 1, 2, 2, 2, 2, 3, 3, 3, 4, 4, 4, 4, 4] : [ 0 - 9 ] : 2 : 5 : 2
+[1, 1, 1, 1, 2, 2, 2, 2, 3, 3, 3, 4, 4, 4, 4, 4] : [ 0 - 5 ] : 1 : 1 : 2
 [1, 1, 1, 1, 2, 2, 2, 2, 3, 3, 3, 4, 4, 4, 4, 4] : [ 0 - 1 ] : 1 : 0 : 1
-[1, 1, 1, 1, 2, 2, 2, 2, 3, 3, 3, 4, 4, 4, 4, 4] : [ 2 - 9 ] : 3 : 8 : 1
-[1, 1, 1, 1, 2, 2, 2, 2, 3, 3, 3, 4, 4, 4, 4, 4] : [ 2 - 8 ] : 2 : 5 : 2
-[1, 1, 1, 1, 2, 2, 2, 2, 3, 3, 3, 4, 4, 4, 4, 4] : [ 2 - 5 ] : 1 : 2 : 1
-[1, 1, 1, 1, 2, 2, 2, 2, 3, 3, 3, 4, 4, 4, 4, 4] : [ 3 - 5 ] : 2 : 4 : 1
+[1, 1, 1, 1, 2, 2, 2, 2, 3, 3, 3, 4, 4, 4, 4, 4] : [ 2 - 5 ] : 2 : 4 : 1
+[1, 1, 1, 1, 2, 2, 2, 2, 3, 3, 3, 4, 4, 4, 4, 4] : [ 2 - 4 ] : 2 : 4 : 0
+[1, 1, 1, 1, 2, 2, 2, 2, 3, 3, 3, 4, 4, 4, 4, 4] : [ 2 - 4 ] : 1 : 2 : 1
+[1, 1, 1, 1, 2, 2, 2, 2, 3, 3, 3, 4, 4, 4, 4, 4] : [ 3 - 4 ] : 2 : 4 : 0
 [1, 1, 1, 1, 2, 2, 2, 2, 3, 3, 3, 4, 4, 4, 4, 4] : [ 3 - 4 ] : 2 : 4 : 0
 [1, 1, 1, 1, 2, 2, 2, 2, 3, 3, 3, 4, 4, 4, 4, 4] : [ 3 - 4 ] : 2 : 4 : 0
 [1, 1, 1, 1, 2, 2, 2, 2, 3, 3, 3, 4, 4, 4, 4, 4] : [ 3 - 4 ] : 2 : 4 : 0
 [1, 1, 1, 1, 2, 2, 2, 2, 3, 3, 3, 4, 4, 4, 4, 4] : [ 3 - 4 ] : 1 : 3 : 0
+[1, 1, 1, 1, 2, 2, 2, 2, 3, 3, 3, 4, 4, 4, 4, 4] : [ 6 - 9 ] : 3 : 8 : 1
 [1, 1, 1, 1, 2, 2, 2, 2, 3, 3, 3, 4, 4, 4, 4, 4] : [ 6 - 8 ] : 2 : 6 : 1
 [1, 1, 1, 1, 2, 2, 2, 2, 3, 3, 3, 4, 4, 4, 4, 4] : [ 7 - 8 ] : 3 : 8 : 0
 [1, 1, 1, 1, 2, 2, 2, 2, 3, 3, 3, 4, 4, 4, 4, 4] : [ 7 - 8 ] : 2 : 7 : 0
 [1, 1, 1, 1, 2, 2, 2, 2, 3, 3, 3, 4, 4, 4, 4, 4] : [ 10 - 15 ] : 4 : 13 : 2
 [1, 1, 1, 1, 2, 2, 2, 2, 3, 3, 3, 4, 4, 4, 4, 4] : [ 10 - 13 ] : 4 : 12 : 1
 [1, 1, 1, 1, 2, 2, 2, 2, 3, 3, 3, 4, 4, 4, 4, 4] : [ 10 - 12 ] : 4 : 11 : 1
-[1, 1, 1, 1, 2, 2, 2, 2, 3, 3, 3, 4, 4, 4, 4, 4] : [ 10 - 11 ] : 4 : 11 : 0
 [1, 1, 1, 1, 2, 2, 2, 2, 3, 3, 3, 4, 4, 4, 4, 4] : [ 10 - 11 ] : 3 : 10 : 0
 [1, 1, 1, 1, 2, 2, 2, 2, 3, 3, 3, 4, 4, 4, 4, 4] : [ 14 - 15 ] : 4 : 14 : 1
 
 
 partition: HOARE - pivot: RANDOM
 --------------------------------------------------------------------------------
-duration [ns]: 63700
+duration [ns]: 56311
 number of partitions: 16
 number of swaps: 33
 [2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2] : [ lo - hi ] : pv : ix : sw
@@ -1879,15 +1918,15 @@ number of swaps: 33
 
 partition: HOARE - pivot: RANDOM
 --------------------------------------------------------------------------------
-duration [ns]: 52138
+duration [ns]: 63487
 number of partitions: 16
 number of swaps: 33
 [2, 2, 2, 2, 2, 2, 2, 2, 2, 1, 2, 2, 2, 2, 2, 2, 2] : [ lo - hi ] : pv : ix : sw
 [2, 2, 2, 2, 2, 2, 2, 1, 2, 2, 2, 2, 2, 2, 2, 2, 2] : [ 0 - 16 ] : 2 : 8 : 8
-[1, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2] : [ 0 - 8 ] : 1 : 0 : 1
-[1, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2] : [ 1 - 8 ] : 2 : 4 : 4
-[1, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2] : [ 1 - 4 ] : 2 : 2 : 2
-[1, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2] : [ 1 - 2 ] : 2 : 1 : 1
+[2, 1, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2] : [ 0 - 8 ] : 2 : 4 : 4
+[2, 1, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2] : [ 0 - 4 ] : 2 : 2 : 2
+[2, 1, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2] : [ 0 - 2 ] : 2 : 1 : 1
+[1, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2] : [ 0 - 1 ] : 2 : 0 : 1
 [1, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2] : [ 3 - 4 ] : 2 : 3 : 1
 [1, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2] : [ 5 - 8 ] : 2 : 6 : 2
 [1, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2] : [ 5 - 6 ] : 2 : 5 : 1
@@ -1903,7 +1942,7 @@ number of swaps: 33
 
 partition: HOARE - pivot: RANDOM
 --------------------------------------------------------------------------------
-duration [ns]: 62406
+duration [ns]: 66282
 number of partitions: 16
 number of swaps: 32
 [2, 2, 2, 2, 2, 2, 2, 2, 2, 3, 2, 2, 2, 2, 2, 2, 2] : [ lo - hi ] : pv : ix : sw
@@ -1920,15 +1959,15 @@ number of swaps: 32
 [2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 3, 2] : [ 8 - 10 ] : 2 : 9 : 1
 [2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 3, 2] : [ 8 - 9 ] : 2 : 8 : 1
 [2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 3, 2] : [ 11 - 12 ] : 2 : 11 : 1
-[2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 3] : [ 13 - 16 ] : 3 : 15 : 1
-[2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 3] : [ 13 - 15 ] : 2 : 14 : 1
-[2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 3] : [ 13 - 14 ] : 2 : 13 : 1
+[2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 3, 2] : [ 13 - 16 ] : 2 : 14 : 1
+[2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 3, 2] : [ 13 - 14 ] : 2 : 13 : 1
+[2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 3] : [ 15 - 16 ] : 3 : 15 : 1
 
 
 partition: HOARE - pivot: RANDOM
 --------------------------------------------------------------------------------
-duration [ns]: 61276
-number of partitions: 17
+duration [ns]: 68541
+number of partitions: 19
 number of swaps: 31
 [100, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 100] : [ lo - hi ] : pv : ix : sw
 [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 100, 2, 100] : [ 0 - 17 ] : 1 : 7 : 8
@@ -1945,15 +1984,17 @@ number of swaps: 31
 [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 100, 2, 100] : [ 10 - 11 ] : 1 : 10 : 1
 [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 100, 2, 100] : [ 12 - 17 ] : 1 : 13 : 1
 [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 100, 2, 100] : [ 12 - 13 ] : 1 : 12 : 1
-[1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 100, 2, 100] : [ 14 - 17 ] : 100 : 16 : 1
-[1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 100, 2, 100] : [ 14 - 16 ] : 1 : 14 : 0
-[1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 100, 100] : [ 15 - 16 ] : 100 : 15 : 1
+[1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 100, 100] : [ 14 - 17 ] : 2 : 15 : 1
+[1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 100, 100] : [ 14 - 15 ] : 2 : 15 : 0
+[1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 100, 100] : [ 14 - 15 ] : 2 : 15 : 0
+[1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 100, 100] : [ 14 - 15 ] : 1 : 14 : 0
+[1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 100, 100] : [ 16 - 17 ] : 100 : 16 : 1
 
 
 partition: HOARE - pivot: RANDOM
 --------------------------------------------------------------------------------
-duration [ns]: 66961
-number of partitions: 19
+duration [ns]: 106457
+number of partitions: 18
 number of swaps: 30
 [100, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 100, 2] : [ lo - hi ] : pv : ix : sw
 [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 100, 100, 2] : [ 0 - 17 ] : 1 : 7 : 8
@@ -1968,50 +2009,52 @@ number of swaps: 30
 [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 100, 100, 2] : [ 8 - 11 ] : 1 : 9 : 2
 [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 100, 100, 2] : [ 8 - 9 ] : 1 : 8 : 1
 [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 100, 100, 2] : [ 10 - 11 ] : 1 : 10 : 1
-[1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 100, 100, 2] : [ 12 - 17 ] : 1 : 13 : 1
-[1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 100, 100, 2] : [ 12 - 13 ] : 1 : 12 : 1
-[1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 100, 100] : [ 14 - 17 ] : 100 : 16 : 1
-[1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 100, 100] : [ 14 - 16 ] : 100 : 16 : 0
-[1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 100, 100] : [ 14 - 16 ] : 1 : 14 : 0
-[1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 100, 100] : [ 15 - 16 ] : 100 : 16 : 0
-[1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 100, 100] : [ 15 - 16 ] : 2 : 15 : 0
+[1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 100, 100] : [ 12 - 17 ] : 100 : 16 : 1
+[1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 100, 100] : [ 12 - 16 ] : 2 : 15 : 0
+[1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 100, 100] : [ 12 - 15 ] : 1 : 13 : 1
+[1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 100, 100] : [ 12 - 13 ] : 1 : 12 : 1
+[1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 100, 100] : [ 14 - 15 ] : 2 : 15 : 0
+[1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 100, 100] : [ 14 - 15 ] : 1 : 14 : 0
 
 
 partition: HOARE - pivot: RANDOM
 --------------------------------------------------------------------------------
-duration [ns]: 70823
-number of partitions: 21
-number of swaps: 15
+duration [ns]: 85799
+number of partitions: 24
+number of swaps: 16
 [16, 9, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 9, 16] : [ lo - hi ] : pv : ix : sw
-[9, 9, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 16, 16] : [ 0 - 18 ] : 11 : 13 : 1
-[0, 9, 9, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 16, 16] : [ 0 - 13 ] : 0 : 0 : 1
-[0, 2, 1, 9, 9, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 16, 16] : [ 1 - 13 ] : 2 : 2 : 2
-[0, 1, 2, 9, 9, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 16, 16] : [ 1 - 2 ] : 1 : 1 : 1
-[0, 1, 2, 8, 7, 3, 4, 5, 6, 9, 9, 9, 10, 11, 12, 13, 14, 16, 16] : [ 3 - 13 ] : 8 : 8 : 2
-[0, 1, 2, 6, 5, 3, 4, 7, 8, 9, 9, 9, 10, 11, 12, 13, 14, 16, 16] : [ 3 - 8 ] : 6 : 6 : 2
-[0, 1, 2, 3, 5, 6, 4, 7, 8, 9, 9, 9, 10, 11, 12, 13, 14, 16, 16] : [ 3 - 6 ] : 3 : 3 : 1
-[0, 1, 2, 3, 5, 4, 6, 7, 8, 9, 9, 9, 10, 11, 12, 13, 14, 16, 16] : [ 4 - 6 ] : 6 : 5 : 1
-[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 9, 9, 10, 11, 12, 13, 14, 16, 16] : [ 4 - 5 ] : 5 : 4 : 1
-[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 9, 9, 10, 11, 12, 13, 14, 16, 16] : [ 7 - 8 ] : 8 : 8 : 0
-[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 9, 9, 10, 11, 12, 13, 14, 16, 16] : [ 7 - 8 ] : 7 : 7 : 0
-[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 9, 9, 10, 11, 12, 13, 14, 16, 16] : [ 9 - 13 ] : 10 : 12 : 0
-[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 9, 9, 10, 11, 12, 13, 14, 16, 16] : [ 9 - 12 ] : 9 : 10 : 1
-[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 9, 9, 10, 11, 12, 13, 14, 16, 16] : [ 9 - 10 ] : 9 : 9 : 1
-[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 9, 9, 10, 11, 12, 13, 14, 16, 16] : [ 11 - 12 ] : 10 : 12 : 0
+[9, 9, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 16, 16] : [ 0 - 18 ] : 13 : 15 : 1
+[9, 8, 0, 1, 2, 3, 4, 5, 6, 7, 9, 9, 10, 11, 12, 13, 14, 16, 16] : [ 0 - 15 ] : 9 : 9 : 2
+[1, 0, 8, 9, 2, 3, 4, 5, 6, 7, 9, 9, 10, 11, 12, 13, 14, 16, 16] : [ 0 - 9 ] : 1 : 1 : 2
+[0, 1, 8, 9, 2, 3, 4, 5, 6, 7, 9, 9, 10, 11, 12, 13, 14, 16, 16] : [ 0 - 1 ] : 0 : 0 : 1
+[0, 1, 3, 2, 9, 8, 4, 5, 6, 7, 9, 9, 10, 11, 12, 13, 14, 16, 16] : [ 2 - 9 ] : 3 : 3 : 2
+[0, 1, 2, 3, 9, 8, 4, 5, 6, 7, 9, 9, 10, 11, 12, 13, 14, 16, 16] : [ 2 - 3 ] : 3 : 2 : 1
+[0, 1, 2, 3, 5, 4, 8, 9, 6, 7, 9, 9, 10, 11, 12, 13, 14, 16, 16] : [ 4 - 9 ] : 5 : 5 : 2
+[0, 1, 2, 3, 4, 5, 8, 9, 6, 7, 9, 9, 10, 11, 12, 13, 14, 16, 16] : [ 4 - 5 ] : 4 : 4 : 1
+[0, 1, 2, 3, 4, 5, 6, 9, 8, 7, 9, 9, 10, 11, 12, 13, 14, 16, 16] : [ 6 - 9 ] : 6 : 6 : 1
+[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 9, 9, 10, 11, 12, 13, 14, 16, 16] : [ 7 - 9 ] : 7 : 7 : 1
+[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 9, 9, 10, 11, 12, 13, 14, 16, 16] : [ 8 - 9 ] : 9 : 9 : 0
+[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 9, 9, 10, 11, 12, 13, 14, 16, 16] : [ 8 - 9 ] : 9 : 9 : 0
+[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 9, 9, 10, 11, 12, 13, 14, 16, 16] : [ 8 - 9 ] : 9 : 9 : 0
+[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 9, 9, 10, 11, 12, 13, 14, 16, 16] : [ 8 - 9 ] : 8 : 8 : 0
+[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 9, 9, 10, 11, 12, 13, 14, 16, 16] : [ 10 - 15 ] : 10 : 12 : 0
+[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 9, 9, 10, 11, 12, 13, 14, 16, 16] : [ 10 - 12 ] : 9 : 10 : 1
 [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 9, 9, 10, 11, 12, 13, 14, 16, 16] : [ 11 - 12 ] : 9 : 11 : 0
-[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 9, 9, 10, 11, 12, 13, 14, 16, 16] : [ 14 - 18 ] : 13 : 15 : 0
+[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 9, 9, 10, 11, 12, 13, 14, 16, 16] : [ 13 - 15 ] : 11 : 13 : 0
 [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 9, 9, 10, 11, 12, 13, 14, 16, 16] : [ 14 - 15 ] : 13 : 15 : 0
 [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 9, 9, 10, 11, 12, 13, 14, 16, 16] : [ 14 - 15 ] : 12 : 14 : 0
 [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 9, 9, 10, 11, 12, 13, 14, 16, 16] : [ 16 - 18 ] : 16 : 17 : 1
+[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 9, 9, 10, 11, 12, 13, 14, 16, 16] : [ 16 - 17 ] : 16 : 17 : 0
+[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 9, 9, 10, 11, 12, 13, 14, 16, 16] : [ 16 - 17 ] : 16 : 17 : 0
 [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 9, 9, 10, 11, 12, 13, 14, 16, 16] : [ 16 - 17 ] : 14 : 16 : 0
 
 total duration [ns]:
-11001753
+12942212
 
 
 partition: DNF - pivot: LOW
 --------------------------------------------------------------------------------
-duration [ns]: 6604
+duration [ns]: 7628
 number of partitions: 0
 number of swaps: 0
 [] : [ lo - hi ] : pv : dnf[ lo - hi ] : sw
@@ -2019,7 +2062,7 @@ number of swaps: 0
 
 partition: DNF - pivot: LOW
 --------------------------------------------------------------------------------
-duration [ns]: 1721
+duration [ns]: 2097
 number of partitions: 0
 number of swaps: 0
 [] : [ lo - hi ] : pv : dnf[ lo - hi ] : sw
@@ -2027,7 +2070,7 @@ number of swaps: 0
 
 partition: DNF - pivot: LOW
 --------------------------------------------------------------------------------
-duration [ns]: 1733
+duration [ns]: 2183
 number of partitions: 0
 number of swaps: 0
 [1] : [ lo - hi ] : pv : dnf[ lo - hi ] : sw
@@ -2035,7 +2078,7 @@ number of swaps: 0
 
 partition: DNF - pivot: LOW
 --------------------------------------------------------------------------------
-duration [ns]: 57633
+duration [ns]: 54021
 number of partitions: 1
 number of swaps: 1
 [2, 1] : [ lo - hi ] : pv : dnf[ lo - hi ] : sw
@@ -2044,7 +2087,7 @@ number of swaps: 1
 
 partition: DNF - pivot: LOW
 --------------------------------------------------------------------------------
-duration [ns]: 16930
+duration [ns]: 12212
 number of partitions: 2
 number of swaps: 2
 [1, 2, 3] : [ lo - hi ] : pv : dnf[ lo - hi ] : sw
@@ -2054,7 +2097,7 @@ number of swaps: 2
 
 partition: DNF - pivot: LOW
 --------------------------------------------------------------------------------
-duration [ns]: 13332
+duration [ns]: 11249
 number of partitions: 2
 number of swaps: 3
 [3, 2, 1] : [ lo - hi ] : pv : dnf[ lo - hi ] : sw
@@ -2064,7 +2107,7 @@ number of swaps: 3
 
 partition: DNF - pivot: LOW
 --------------------------------------------------------------------------------
-duration [ns]: 9779
+duration [ns]: 9698
 number of partitions: 1
 number of swaps: 0
 [1, 1, 1, 1] : [ lo - hi ] : pv : dnf[ lo - hi ] : sw
@@ -2073,7 +2116,7 @@ number of swaps: 0
 
 partition: DNF - pivot: LOW
 --------------------------------------------------------------------------------
-duration [ns]: 11249
+duration [ns]: 14312
 number of partitions: 2
 number of swaps: 5
 [1, 3, 3, 3, 3, 2] : [ lo - hi ] : pv : dnf[ lo - hi ] : sw
@@ -2083,7 +2126,7 @@ number of swaps: 5
 
 partition: DNF - pivot: LOW
 --------------------------------------------------------------------------------
-duration [ns]: 13816
+duration [ns]: 35451
 number of partitions: 3
 number of swaps: 4
 [1, 2, 3, 4, 2, 1, 1] : [ lo - hi ] : pv : dnf[ lo - hi ] : sw
@@ -2094,7 +2137,7 @@ number of swaps: 4
 
 partition: DNF - pivot: LOW
 --------------------------------------------------------------------------------
-duration [ns]: 50960
+duration [ns]: 29754
 number of partitions: 5
 number of swaps: 21
 [1000000, 10001, 10, 30, 40, 50, 1, 999] : [ lo - hi ] : pv : dnf[ lo - hi ] : sw
@@ -2107,7 +2150,7 @@ number of swaps: 21
 
 partition: DNF - pivot: LOW
 --------------------------------------------------------------------------------
-duration [ns]: 32859
+duration [ns]: 45705
 number of partitions: 4
 number of swaps: 23
 [1, 1, 1, 2, 2, 2, 2, 2, 3, 3, 3, 4, 4, 4, 4, 4] : [ lo - hi ] : pv : dnf[ lo - hi ] : sw
@@ -2119,7 +2162,7 @@ number of swaps: 23
 
 partition: DNF - pivot: LOW
 --------------------------------------------------------------------------------
-duration [ns]: 35283
+duration [ns]: 56909
 number of partitions: 4
 number of swaps: 17
 [4, 2, 1, 2, 4, 2, 4, 2, 4, 3, 2, 3, 1, 3, 4, 1] : [ lo - hi ] : pv : dnf[ lo - hi ] : sw
@@ -2131,7 +2174,7 @@ number of swaps: 17
 
 partition: DNF - pivot: LOW
 --------------------------------------------------------------------------------
-duration [ns]: 34762
+duration [ns]: 24915
 number of partitions: 4
 number of swaps: 22
 [1, 1, 4, 4, 2, 2, 2, 2, 3, 3, 3, 4, 4, 4, 1, 1] : [ lo - hi ] : pv : dnf[ lo - hi ] : sw
@@ -2143,7 +2186,7 @@ number of swaps: 22
 
 partition: DNF - pivot: LOW
 --------------------------------------------------------------------------------
-duration [ns]: 11566
+duration [ns]: 10147
 number of partitions: 1
 number of swaps: 0
 [2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2] : [ lo - hi ] : pv : dnf[ lo - hi ] : sw
@@ -2152,7 +2195,7 @@ number of swaps: 0
 
 partition: DNF - pivot: LOW
 --------------------------------------------------------------------------------
-duration [ns]: 10829
+duration [ns]: 11208
 number of partitions: 1
 number of swaps: 1
 [2, 2, 2, 2, 2, 2, 2, 2, 2, 1, 2, 2, 2, 2, 2, 2, 2] : [ lo - hi ] : pv : dnf[ lo - hi ] : sw
@@ -2161,7 +2204,7 @@ number of swaps: 1
 
 partition: DNF - pivot: LOW
 --------------------------------------------------------------------------------
-duration [ns]: 13909
+duration [ns]: 11505
 number of partitions: 1
 number of swaps: 1
 [2, 2, 2, 2, 2, 2, 2, 2, 2, 3, 2, 2, 2, 2, 2, 2, 2] : [ lo - hi ] : pv : dnf[ lo - hi ] : sw
@@ -2170,7 +2213,7 @@ number of swaps: 1
 
 partition: DNF - pivot: LOW
 --------------------------------------------------------------------------------
-duration [ns]: 23164
+duration [ns]: 17678
 number of partitions: 2
 number of swaps: 16
 [100, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 100] : [ lo - hi ] : pv : dnf[ lo - hi ] : sw
@@ -2180,7 +2223,7 @@ number of swaps: 16
 
 partition: DNF - pivot: LOW
 --------------------------------------------------------------------------------
-duration [ns]: 22947
+duration [ns]: 17848
 number of partitions: 2
 number of swaps: 16
 [100, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 100, 2] : [ lo - hi ] : pv : dnf[ lo - hi ] : sw
@@ -2190,7 +2233,7 @@ number of swaps: 16
 
 partition: DNF - pivot: LOW
 --------------------------------------------------------------------------------
-duration [ns]: 79183
+duration [ns]: 55567
 number of partitions: 11
 number of swaps: 55
 [16, 9, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 9, 16] : [ lo - hi ] : pv : dnf[ lo - hi ] : sw
@@ -2207,12 +2250,12 @@ number of swaps: 55
 [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 9, 9, 10, 11, 12, 13, 14, 16, 16] : [ 15 - 16 ] : 14 : [ 16 - 17 ] : 1
 
 total duration [ns]:
-10620498
+8849447
 
 
 partition: DNF - pivot: MID
 --------------------------------------------------------------------------------
-duration [ns]: 16744
+duration [ns]: 4077
 number of partitions: 0
 number of swaps: 0
 [] : [ lo - hi ] : pv : dnf[ lo - hi ] : sw
@@ -2220,7 +2263,7 @@ number of swaps: 0
 
 partition: DNF - pivot: MID
 --------------------------------------------------------------------------------
-duration [ns]: 1999
+duration [ns]: 1709
 number of partitions: 0
 number of swaps: 0
 [] : [ lo - hi ] : pv : dnf[ lo - hi ] : sw
@@ -2228,7 +2271,7 @@ number of swaps: 0
 
 partition: DNF - pivot: MID
 --------------------------------------------------------------------------------
-duration [ns]: 2653
+duration [ns]: 2481
 number of partitions: 0
 number of swaps: 0
 [1] : [ lo - hi ] : pv : dnf[ lo - hi ] : sw
@@ -2236,7 +2279,7 @@ number of swaps: 0
 
 partition: DNF - pivot: MID
 --------------------------------------------------------------------------------
-duration [ns]: 30311
+duration [ns]: 11026
 number of partitions: 1
 number of swaps: 1
 [2, 1] : [ lo - hi ] : pv : dnf[ lo - hi ] : sw
@@ -2245,7 +2288,7 @@ number of swaps: 1
 
 partition: DNF - pivot: MID
 --------------------------------------------------------------------------------
-duration [ns]: 7558
+duration [ns]: 11845
 number of partitions: 1
 number of swaps: 0
 [1, 2, 3] : [ lo - hi ] : pv : dnf[ lo - hi ] : sw
@@ -2254,7 +2297,7 @@ number of swaps: 0
 
 partition: DNF - pivot: MID
 --------------------------------------------------------------------------------
-duration [ns]: 6290
+duration [ns]: 10499
 number of partitions: 1
 number of swaps: 1
 [3, 2, 1] : [ lo - hi ] : pv : dnf[ lo - hi ] : sw
@@ -2263,7 +2306,7 @@ number of swaps: 1
 
 partition: DNF - pivot: MID
 --------------------------------------------------------------------------------
-duration [ns]: 8420
+duration [ns]: 7496
 number of partitions: 1
 number of swaps: 0
 [1, 1, 1, 1] : [ lo - hi ] : pv : dnf[ lo - hi ] : sw
@@ -2272,7 +2315,7 @@ number of swaps: 0
 
 partition: DNF - pivot: MID
 --------------------------------------------------------------------------------
-duration [ns]: 10918
+duration [ns]: 14170
 number of partitions: 2
 number of swaps: 1
 [1, 3, 3, 3, 3, 2] : [ lo - hi ] : pv : dnf[ lo - hi ] : sw
@@ -2282,7 +2325,7 @@ number of swaps: 1
 
 partition: DNF - pivot: MID
 --------------------------------------------------------------------------------
-duration [ns]: 15461
+duration [ns]: 20903
 number of partitions: 4
 number of swaps: 8
 [1, 2, 3, 4, 2, 1, 1] : [ lo - hi ] : pv : dnf[ lo - hi ] : sw
@@ -2294,7 +2337,7 @@ number of swaps: 8
 
 partition: DNF - pivot: MID
 --------------------------------------------------------------------------------
-duration [ns]: 19430
+duration [ns]: 23288
 number of partitions: 4
 number of swaps: 7
 [1000000, 10001, 10, 30, 40, 50, 1, 999] : [ lo - hi ] : pv : dnf[ lo - hi ] : sw
@@ -2306,7 +2349,7 @@ number of swaps: 7
 
 partition: DNF - pivot: MID
 --------------------------------------------------------------------------------
-duration [ns]: 19185
+duration [ns]: 31835
 number of partitions: 4
 number of swaps: 8
 [1, 1, 1, 2, 2, 2, 2, 2, 3, 3, 3, 4, 4, 4, 4, 4] : [ lo - hi ] : pv : dnf[ lo - hi ] : sw
@@ -2318,7 +2361,7 @@ number of swaps: 8
 
 partition: DNF - pivot: MID
 --------------------------------------------------------------------------------
-duration [ns]: 19084
+duration [ns]: 20927
 number of partitions: 4
 number of swaps: 11
 [4, 2, 1, 2, 4, 2, 4, 2, 4, 3, 2, 3, 1, 3, 4, 1] : [ lo - hi ] : pv : dnf[ lo - hi ] : sw
@@ -2330,7 +2373,7 @@ number of swaps: 11
 
 partition: DNF - pivot: MID
 --------------------------------------------------------------------------------
-duration [ns]: 16207
+duration [ns]: 17673
 number of partitions: 4
 number of swaps: 8
 [1, 1, 4, 4, 2, 2, 2, 2, 3, 3, 3, 4, 4, 4, 1, 1] : [ lo - hi ] : pv : dnf[ lo - hi ] : sw
@@ -2342,7 +2385,7 @@ number of swaps: 8
 
 partition: DNF - pivot: MID
 --------------------------------------------------------------------------------
-duration [ns]: 12371
+duration [ns]: 10443
 number of partitions: 1
 number of swaps: 0
 [2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2] : [ lo - hi ] : pv : dnf[ lo - hi ] : sw
@@ -2351,7 +2394,7 @@ number of swaps: 0
 
 partition: DNF - pivot: MID
 --------------------------------------------------------------------------------
-duration [ns]: 10924
+duration [ns]: 7276
 number of partitions: 1
 number of swaps: 1
 [2, 2, 2, 2, 2, 2, 2, 2, 2, 1, 2, 2, 2, 2, 2, 2, 2] : [ lo - hi ] : pv : dnf[ lo - hi ] : sw
@@ -2360,7 +2403,7 @@ number of swaps: 1
 
 partition: DNF - pivot: MID
 --------------------------------------------------------------------------------
-duration [ns]: 11699
+duration [ns]: 7749
 number of partitions: 1
 number of swaps: 1
 [2, 2, 2, 2, 2, 2, 2, 2, 2, 3, 2, 2, 2, 2, 2, 2, 2] : [ lo - hi ] : pv : dnf[ lo - hi ] : sw
@@ -2369,7 +2412,7 @@ number of swaps: 1
 
 partition: DNF - pivot: MID
 --------------------------------------------------------------------------------
-duration [ns]: 17788
+duration [ns]: 12593
 number of partitions: 2
 number of swaps: 3
 [100, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 100] : [ lo - hi ] : pv : dnf[ lo - hi ] : sw
@@ -2379,7 +2422,7 @@ number of swaps: 3
 
 partition: DNF - pivot: MID
 --------------------------------------------------------------------------------
-duration [ns]: 25054
+duration [ns]: 15435
 number of partitions: 3
 number of swaps: 5
 [100, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 100, 2] : [ lo - hi ] : pv : dnf[ lo - hi ] : sw
@@ -2390,7 +2433,7 @@ number of swaps: 5
 
 partition: DNF - pivot: MID
 --------------------------------------------------------------------------------
-duration [ns]: 50310
+duration [ns]: 32470
 number of partitions: 10
 number of swaps: 35
 [16, 9, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 9, 16] : [ lo - hi ] : pv : dnf[ lo - hi ] : sw
@@ -2406,12 +2449,12 @@ number of swaps: 35
 [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 9, 9, 10, 11, 12, 13, 14, 16, 16] : [ 15 - 16 ] : 14 : [ 16 - 17 ] : 1
 
 total duration [ns]:
-7128165
+6454014
 
 
 partition: DNF - pivot: MEDIAN
 --------------------------------------------------------------------------------
-duration [ns]: 2243
+duration [ns]: 2269
 number of partitions: 0
 number of swaps: 0
 [] : [ lo - hi ] : pv : dnf[ lo - hi ] : sw
@@ -2419,7 +2462,7 @@ number of swaps: 0
 
 partition: DNF - pivot: MEDIAN
 --------------------------------------------------------------------------------
-duration [ns]: 2105
+duration [ns]: 1450
 number of partitions: 0
 number of swaps: 0
 [] : [ lo - hi ] : pv : dnf[ lo - hi ] : sw
@@ -2427,7 +2470,7 @@ number of swaps: 0
 
 partition: DNF - pivot: MEDIAN
 --------------------------------------------------------------------------------
-duration [ns]: 2002
+duration [ns]: 1702
 number of partitions: 0
 number of swaps: 0
 [1] : [ lo - hi ] : pv : dnf[ lo - hi ] : sw
@@ -2435,7 +2478,7 @@ number of swaps: 0
 
 partition: DNF - pivot: MEDIAN
 --------------------------------------------------------------------------------
-duration [ns]: 13387
+duration [ns]: 10157
 number of partitions: 1
 number of swaps: 1
 [2, 1] : [ lo - hi ] : pv : dnf[ lo - hi ] : sw
@@ -2445,7 +2488,7 @@ number of swaps: 1
 
 partition: DNF - pivot: MEDIAN
 --------------------------------------------------------------------------------
-duration [ns]: 9957
+duration [ns]: 7423
 number of partitions: 1
 number of swaps: 2
 [1, 2, 3] : [ lo - hi ] : pv : dnf[ lo - hi ] : sw
@@ -2455,7 +2498,7 @@ number of swaps: 2
 
 partition: DNF - pivot: MEDIAN
 --------------------------------------------------------------------------------
-duration [ns]: 15963
+duration [ns]: 11299
 number of partitions: 2
 number of swaps: 3
 [3, 2, 1] : [ lo - hi ] : pv : dnf[ lo - hi ] : sw
@@ -2467,7 +2510,7 @@ number of swaps: 3
 
 partition: DNF - pivot: MEDIAN
 --------------------------------------------------------------------------------
-duration [ns]: 12138
+duration [ns]: 8385
 number of partitions: 1
 number of swaps: 0
 [1, 1, 1, 1] : [ lo - hi ] : pv : dnf[ lo - hi ] : sw
@@ -2477,7 +2520,7 @@ number of swaps: 0
 
 partition: DNF - pivot: MEDIAN
 --------------------------------------------------------------------------------
-duration [ns]: 18196
+duration [ns]: 11139
 number of partitions: 2
 number of swaps: 3
 [1, 3, 3, 3, 3, 2] : [ lo - hi ] : pv : dnf[ lo - hi ] : sw
@@ -2489,7 +2532,7 @@ number of swaps: 3
 
 partition: DNF - pivot: MEDIAN
 --------------------------------------------------------------------------------
-duration [ns]: 22097
+duration [ns]: 19349
 number of partitions: 3
 number of swaps: 6
 [1, 2, 3, 4, 2, 1, 1] : [ lo - hi ] : pv : dnf[ lo - hi ] : sw
@@ -2503,7 +2546,7 @@ number of swaps: 6
 
 partition: DNF - pivot: MEDIAN
 --------------------------------------------------------------------------------
-duration [ns]: 39150
+duration [ns]: 24437
 number of partitions: 5
 number of swaps: 13
 [1000000, 10001, 10, 30, 40, 50, 1, 999] : [ lo - hi ] : pv : dnf[ lo - hi ] : sw
@@ -2521,7 +2564,7 @@ number of swaps: 13
 
 partition: DNF - pivot: MEDIAN
 --------------------------------------------------------------------------------
-duration [ns]: 33084
+duration [ns]: 24000
 number of partitions: 4
 number of swaps: 9
 [1, 1, 1, 2, 2, 2, 2, 2, 3, 3, 3, 4, 4, 4, 4, 4] : [ lo - hi ] : pv : dnf[ lo - hi ] : sw
@@ -2537,7 +2580,7 @@ number of swaps: 9
 
 partition: DNF - pivot: MEDIAN
 --------------------------------------------------------------------------------
-duration [ns]: 34814
+duration [ns]: 23362
 number of partitions: 4
 number of swaps: 22
 [4, 2, 1, 2, 4, 2, 4, 2, 4, 3, 2, 3, 1, 3, 4, 1] : [ lo - hi ] : pv : dnf[ lo - hi ] : sw
@@ -2553,7 +2596,7 @@ number of swaps: 22
 
 partition: DNF - pivot: MEDIAN
 --------------------------------------------------------------------------------
-duration [ns]: 35158
+duration [ns]: 24186
 number of partitions: 4
 number of swaps: 17
 [1, 1, 4, 4, 2, 2, 2, 2, 3, 3, 3, 4, 4, 4, 1, 1] : [ lo - hi ] : pv : dnf[ lo - hi ] : sw
@@ -2569,7 +2612,7 @@ number of swaps: 17
 
 partition: DNF - pivot: MEDIAN
 --------------------------------------------------------------------------------
-duration [ns]: 14572
+duration [ns]: 12430
 number of partitions: 1
 number of swaps: 0
 [2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2] : [ lo - hi ] : pv : dnf[ lo - hi ] : sw
@@ -2579,7 +2622,7 @@ number of swaps: 0
 
 partition: DNF - pivot: MEDIAN
 --------------------------------------------------------------------------------
-duration [ns]: 14357
+duration [ns]: 19710
 number of partitions: 1
 number of swaps: 1
 [2, 2, 2, 2, 2, 2, 2, 2, 2, 1, 2, 2, 2, 2, 2, 2, 2] : [ lo - hi ] : pv : dnf[ lo - hi ] : sw
@@ -2589,7 +2632,7 @@ number of swaps: 1
 
 partition: DNF - pivot: MEDIAN
 --------------------------------------------------------------------------------
-duration [ns]: 11161
+duration [ns]: 11271
 number of partitions: 1
 number of swaps: 1
 [2, 2, 2, 2, 2, 2, 2, 2, 2, 3, 2, 2, 2, 2, 2, 2, 2] : [ lo - hi ] : pv : dnf[ lo - hi ] : sw
@@ -2599,7 +2642,7 @@ number of swaps: 1
 
 partition: DNF - pivot: MEDIAN
 --------------------------------------------------------------------------------
-duration [ns]: 21336
+duration [ns]: 16180
 number of partitions: 2
 number of swaps: 11
 [100, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 100] : [ lo - hi ] : pv : dnf[ lo - hi ] : sw
@@ -2611,7 +2654,7 @@ number of swaps: 11
 
 partition: DNF - pivot: MEDIAN
 --------------------------------------------------------------------------------
-duration [ns]: 28108
+duration [ns]: 18139
 number of partitions: 3
 number of swaps: 9
 [100, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 100, 2] : [ lo - hi ] : pv : dnf[ lo - hi ] : sw
@@ -2625,7 +2668,7 @@ number of swaps: 9
 
 partition: DNF - pivot: MEDIAN
 --------------------------------------------------------------------------------
-duration [ns]: 76432
+duration [ns]: 50067
 number of partitions: 10
 number of swaps: 37
 [16, 9, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 9, 16] : [ lo - hi ] : pv : dnf[ lo - hi ] : sw
@@ -2651,12 +2694,12 @@ number of swaps: 37
 [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 9, 9, 10, 11, 12, 13, 14, 16, 16] : [ 15 - 16 ] : 14 : [ 16 - 17 ] : 0
 
 total duration [ns]:
-7468940
+5678859
 
 
 partition: DNF - pivot: HIGH
 --------------------------------------------------------------------------------
-duration [ns]: 3476
+duration [ns]: 1439
 number of partitions: 0
 number of swaps: 0
 [] : [ lo - hi ] : pv : dnf[ lo - hi ] : sw
@@ -2664,7 +2707,7 @@ number of swaps: 0
 
 partition: DNF - pivot: HIGH
 --------------------------------------------------------------------------------
-duration [ns]: 1605
+duration [ns]: 1494
 number of partitions: 0
 number of swaps: 0
 [] : [ lo - hi ] : pv : dnf[ lo - hi ] : sw
@@ -2672,7 +2715,7 @@ number of swaps: 0
 
 partition: DNF - pivot: HIGH
 --------------------------------------------------------------------------------
-duration [ns]: 1866
+duration [ns]: 1665
 number of partitions: 0
 number of swaps: 0
 [1] : [ lo - hi ] : pv : dnf[ lo - hi ] : sw
@@ -2680,7 +2723,7 @@ number of swaps: 0
 
 partition: DNF - pivot: HIGH
 --------------------------------------------------------------------------------
-duration [ns]: 10459
+duration [ns]: 9914
 number of partitions: 1
 number of swaps: 1
 [2, 1] : [ lo - hi ] : pv : dnf[ lo - hi ] : sw
@@ -2689,7 +2732,7 @@ number of swaps: 1
 
 partition: DNF - pivot: HIGH
 --------------------------------------------------------------------------------
-duration [ns]: 7803
+duration [ns]: 7382
 number of partitions: 1
 number of swaps: 0
 [1, 2, 3] : [ lo - hi ] : pv : dnf[ lo - hi ] : sw
@@ -2698,7 +2741,7 @@ number of swaps: 0
 
 partition: DNF - pivot: HIGH
 --------------------------------------------------------------------------------
-duration [ns]: 7168
+duration [ns]: 5142
 number of partitions: 1
 number of swaps: 1
 [3, 2, 1] : [ lo - hi ] : pv : dnf[ lo - hi ] : sw
@@ -2707,7 +2750,7 @@ number of swaps: 1
 
 partition: DNF - pivot: HIGH
 --------------------------------------------------------------------------------
-duration [ns]: 6502
+duration [ns]: 6991
 number of partitions: 1
 number of swaps: 0
 [1, 1, 1, 1] : [ lo - hi ] : pv : dnf[ lo - hi ] : sw
@@ -2716,7 +2759,7 @@ number of swaps: 0
 
 partition: DNF - pivot: HIGH
 --------------------------------------------------------------------------------
-duration [ns]: 13025
+duration [ns]: 7522
 number of partitions: 2
 number of swaps: 1
 [1, 3, 3, 3, 3, 2] : [ lo - hi ] : pv : dnf[ lo - hi ] : sw
@@ -2726,7 +2769,7 @@ number of swaps: 1
 
 partition: DNF - pivot: HIGH
 --------------------------------------------------------------------------------
-duration [ns]: 15347
+duration [ns]: 10713
 number of partitions: 3
 number of swaps: 4
 [1, 2, 3, 4, 2, 1, 1] : [ lo - hi ] : pv : dnf[ lo - hi ] : sw
@@ -2737,7 +2780,7 @@ number of swaps: 4
 
 partition: DNF - pivot: HIGH
 --------------------------------------------------------------------------------
-duration [ns]: 25426
+duration [ns]: 17227
 number of partitions: 5
 number of swaps: 9
 [1000000, 10001, 10, 30, 40, 50, 1, 999] : [ lo - hi ] : pv : dnf[ lo - hi ] : sw
@@ -2750,7 +2793,7 @@ number of swaps: 9
 
 partition: DNF - pivot: HIGH
 --------------------------------------------------------------------------------
-duration [ns]: 24683
+duration [ns]: 22097
 number of partitions: 4
 number of swaps: 0
 [1, 1, 1, 2, 2, 2, 2, 2, 3, 3, 3, 4, 4, 4, 4, 4] : [ lo - hi ] : pv : dnf[ lo - hi ] : sw
@@ -2762,7 +2805,7 @@ number of swaps: 0
 
 partition: DNF - pivot: HIGH
 --------------------------------------------------------------------------------
-duration [ns]: 40798
+duration [ns]: 18850
 number of partitions: 4
 number of swaps: 18
 [4, 2, 1, 2, 4, 2, 4, 2, 4, 3, 2, 3, 1, 3, 4, 1] : [ lo - hi ] : pv : dnf[ lo - hi ] : sw
@@ -2774,7 +2817,7 @@ number of swaps: 18
 
 partition: DNF - pivot: HIGH
 --------------------------------------------------------------------------------
-duration [ns]: 24465
+duration [ns]: 18147
 number of partitions: 4
 number of swaps: 13
 [1, 1, 4, 4, 2, 2, 2, 2, 3, 3, 3, 4, 4, 4, 1, 1] : [ lo - hi ] : pv : dnf[ lo - hi ] : sw
@@ -2786,7 +2829,7 @@ number of swaps: 13
 
 partition: DNF - pivot: HIGH
 --------------------------------------------------------------------------------
-duration [ns]: 9837
+duration [ns]: 5396
 number of partitions: 1
 number of swaps: 0
 [2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2] : [ lo - hi ] : pv : dnf[ lo - hi ] : sw
@@ -2795,7 +2838,7 @@ number of swaps: 0
 
 partition: DNF - pivot: HIGH
 --------------------------------------------------------------------------------
-duration [ns]: 10882
+duration [ns]: 7450
 number of partitions: 1
 number of swaps: 1
 [2, 2, 2, 2, 2, 2, 2, 2, 2, 1, 2, 2, 2, 2, 2, 2, 2] : [ lo - hi ] : pv : dnf[ lo - hi ] : sw
@@ -2804,7 +2847,7 @@ number of swaps: 1
 
 partition: DNF - pivot: HIGH
 --------------------------------------------------------------------------------
-duration [ns]: 11844
+duration [ns]: 8143
 number of partitions: 1
 number of swaps: 1
 [2, 2, 2, 2, 2, 2, 2, 2, 2, 3, 2, 2, 2, 2, 2, 2, 2] : [ lo - hi ] : pv : dnf[ lo - hi ] : sw
@@ -2813,7 +2856,7 @@ number of swaps: 1
 
 partition: DNF - pivot: HIGH
 --------------------------------------------------------------------------------
-duration [ns]: 20668
+duration [ns]: 19192
 number of partitions: 3
 number of swaps: 17
 [100, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 100] : [ lo - hi ] : pv : dnf[ lo - hi ] : sw
@@ -2824,7 +2867,7 @@ number of swaps: 17
 
 partition: DNF - pivot: HIGH
 --------------------------------------------------------------------------------
-duration [ns]: 17018
+duration [ns]: 15995
 number of partitions: 2
 number of swaps: 16
 [100, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 100, 2] : [ lo - hi ] : pv : dnf[ lo - hi ] : sw
@@ -2834,7 +2877,7 @@ number of swaps: 16
 
 partition: DNF - pivot: HIGH
 --------------------------------------------------------------------------------
-duration [ns]: 48318
+duration [ns]: 42750
 number of partitions: 10
 number of swaps: 19
 [16, 9, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 9, 16] : [ lo - hi ] : pv : dnf[ lo - hi ] : sw
@@ -2850,12 +2893,12 @@ number of swaps: 19
 [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 9, 9, 10, 11, 12, 13, 14, 16, 16] : [ 12 - 13 ] : 11 : [ 13 - 14 ] : 1
 
 total duration [ns]:
-7237255
+5297526
 
 
 partition: DNF - pivot: RANDOM
 --------------------------------------------------------------------------------
-duration [ns]: 2336
+duration [ns]: 1747
 number of partitions: 0
 number of swaps: 0
 [] : [ lo - hi ] : pv : dnf[ lo - hi ] : sw
@@ -2863,7 +2906,7 @@ number of swaps: 0
 
 partition: DNF - pivot: RANDOM
 --------------------------------------------------------------------------------
-duration [ns]: 2020
+duration [ns]: 1494
 number of partitions: 0
 number of swaps: 0
 [] : [ lo - hi ] : pv : dnf[ lo - hi ] : sw
@@ -2871,7 +2914,7 @@ number of swaps: 0
 
 partition: DNF - pivot: RANDOM
 --------------------------------------------------------------------------------
-duration [ns]: 2189
+duration [ns]: 1812
 number of partitions: 0
 number of swaps: 0
 [1] : [ lo - hi ] : pv : dnf[ lo - hi ] : sw
@@ -2879,7 +2922,7 @@ number of swaps: 0
 
 partition: DNF - pivot: RANDOM
 --------------------------------------------------------------------------------
-duration [ns]: 12526
+duration [ns]: 10707
 number of partitions: 1
 number of swaps: 1
 [2, 1] : [ lo - hi ] : pv : dnf[ lo - hi ] : sw
@@ -2888,27 +2931,25 @@ number of swaps: 1
 
 partition: DNF - pivot: RANDOM
 --------------------------------------------------------------------------------
-duration [ns]: 12692
-number of partitions: 2
+duration [ns]: 9790
+number of partitions: 1
 number of swaps: 0
 [1, 2, 3] : [ lo - hi ] : pv : dnf[ lo - hi ] : sw
-[1, 2, 3] : [ 0 - 2 ] : 3 : [ 2 - 3 ] : 0
-[1, 2, 3] : [ 0 - 1 ] : 2 : [ 1 - 2 ] : 0
+[1, 2, 3] : [ 0 - 2 ] : 2 : [ 1 - 2 ] : 0
 
 
 partition: DNF - pivot: RANDOM
 --------------------------------------------------------------------------------
-duration [ns]: 13681
-number of partitions: 2
+duration [ns]: 7776
+number of partitions: 1
 number of swaps: 1
 [3, 2, 1] : [ lo - hi ] : pv : dnf[ lo - hi ] : sw
-[1, 2, 3] : [ 0 - 2 ] : 1 : [ 0 - 1 ] : 1
-[1, 2, 3] : [ 1 - 2 ] : 3 : [ 2 - 3 ] : 0
+[1, 2, 3] : [ 0 - 2 ] : 2 : [ 1 - 2 ] : 1
 
 
 partition: DNF - pivot: RANDOM
 --------------------------------------------------------------------------------
-duration [ns]: 9008
+duration [ns]: 7504
 number of partitions: 1
 number of swaps: 0
 [1, 1, 1, 1] : [ lo - hi ] : pv : dnf[ lo - hi ] : sw
@@ -2917,77 +2958,77 @@ number of swaps: 0
 
 partition: DNF - pivot: RANDOM
 --------------------------------------------------------------------------------
-duration [ns]: 15239
+duration [ns]: 15166
 number of partitions: 2
-number of swaps: 1
+number of swaps: 3
 [1, 3, 3, 3, 3, 2] : [ lo - hi ] : pv : dnf[ lo - hi ] : sw
-[1, 2, 3, 3, 3, 3] : [ 0 - 5 ] : 3 : [ 2 - 6 ] : 1
-[1, 2, 3, 3, 3, 3] : [ 0 - 1 ] : 2 : [ 1 - 2 ] : 0
+[1, 2, 3, 3, 3, 3] : [ 0 - 5 ] : 2 : [ 1 - 2 ] : 3
+[1, 2, 3, 3, 3, 3] : [ 2 - 5 ] : 3 : [ 2 - 6 ] : 0
 
 
 partition: DNF - pivot: RANDOM
 --------------------------------------------------------------------------------
-duration [ns]: 19896
+duration [ns]: 16034
 number of partitions: 3
-number of swaps: 6
+number of swaps: 5
 [1, 2, 3, 4, 2, 1, 1] : [ lo - hi ] : pv : dnf[ lo - hi ] : sw
-[1, 2, 3, 2, 1, 1, 4] : [ 0 - 6 ] : 4 : [ 6 - 7 ] : 3
-[1, 1, 1, 2, 3, 2, 4] : [ 0 - 5 ] : 1 : [ 0 - 3 ] : 2
-[1, 1, 1, 2, 2, 3, 4] : [ 3 - 5 ] : 2 : [ 3 - 5 ] : 1
+[1, 2, 1, 2, 1, 3, 4] : [ 0 - 6 ] : 3 : [ 5 - 6 ] : 4
+[1, 1, 1, 2, 2, 3, 4] : [ 0 - 4 ] : 1 : [ 0 - 3 ] : 1
+[1, 1, 1, 2, 2, 3, 4] : [ 3 - 4 ] : 2 : [ 3 - 5 ] : 0
 
 
 partition: DNF - pivot: RANDOM
 --------------------------------------------------------------------------------
-duration [ns]: 32278
+duration [ns]: 44419
 number of partitions: 5
-number of swaps: 17
+number of swaps: 11
 [1000000, 10001, 10, 30, 40, 50, 1, 999] : [ lo - hi ] : pv : dnf[ lo - hi ] : sw
 [999, 10, 30, 40, 50, 1, 10001, 1000000] : [ 0 - 7 ] : 10001 : [ 6 - 7 ] : 6
-[1, 30, 40, 50, 10, 999, 10001, 1000000] : [ 0 - 5 ] : 1 : [ 0 - 1 ] : 4
-[1, 10, 50, 40, 999, 30, 10001, 1000000] : [ 1 - 5 ] : 10 : [ 1 - 2 ] : 3
-[1, 10, 40, 30, 50, 999, 10001, 1000000] : [ 2 - 5 ] : 50 : [ 4 - 5 ] : 3
-[1, 10, 30, 40, 50, 999, 10001, 1000000] : [ 2 - 3 ] : 30 : [ 2 - 3 ] : 1
+[1, 10, 30, 50, 40, 999, 10001, 1000000] : [ 0 - 5 ] : 30 : [ 2 - 3 ] : 2
+[1, 10, 30, 50, 40, 999, 10001, 1000000] : [ 0 - 1 ] : 1 : [ 0 - 1 ] : 0
+[1, 10, 30, 40, 999, 50, 10001, 1000000] : [ 3 - 5 ] : 40 : [ 3 - 4 ] : 2
+[1, 10, 30, 40, 50, 999, 10001, 1000000] : [ 4 - 5 ] : 50 : [ 4 - 5 ] : 1
 
 
 partition: DNF - pivot: RANDOM
 --------------------------------------------------------------------------------
-duration [ns]: 37326
+duration [ns]: 25963
 number of partitions: 4
-number of swaps: 2
+number of swaps: 15
 [1, 1, 1, 2, 2, 2, 2, 2, 3, 3, 3, 4, 4, 4, 4, 4] : [ lo - hi ] : pv : dnf[ lo - hi ] : sw
-[1, 1, 1, 2, 2, 2, 2, 2, 3, 3, 3, 4, 4, 4, 4, 4] : [ 0 - 15 ] : 4 : [ 11 - 16 ] : 0
-[1, 1, 1, 2, 2, 2, 2, 2, 3, 3, 3, 4, 4, 4, 4, 4] : [ 0 - 10 ] : 2 : [ 3 - 8 ] : 2
-[1, 1, 1, 2, 2, 2, 2, 2, 3, 3, 3, 4, 4, 4, 4, 4] : [ 0 - 2 ] : 1 : [ 0 - 3 ] : 0
+[1, 1, 1, 2, 2, 2, 2, 3, 3, 3, 4, 4, 4, 4, 4, 2] : [ 0 - 15 ] : 1 : [ 0 - 3 ] : 12
+[1, 1, 1, 2, 2, 2, 2, 3, 3, 3, 2, 4, 4, 4, 4, 4] : [ 3 - 15 ] : 4 : [ 11 - 16 ] : 1
+[1, 1, 1, 2, 2, 2, 2, 2, 3, 3, 3, 4, 4, 4, 4, 4] : [ 3 - 10 ] : 2 : [ 3 - 8 ] : 2
 [1, 1, 1, 2, 2, 2, 2, 2, 3, 3, 3, 4, 4, 4, 4, 4] : [ 8 - 10 ] : 3 : [ 8 - 11 ] : 0
 
 
 partition: DNF - pivot: RANDOM
 --------------------------------------------------------------------------------
-duration [ns]: 29386
+duration [ns]: 27031
 number of partitions: 4
-number of swaps: 20
+number of swaps: 18
 [4, 2, 1, 2, 4, 2, 4, 2, 4, 3, 2, 3, 1, 3, 4, 1] : [ lo - hi ] : pv : dnf[ lo - hi ] : sw
-[1, 1, 1, 4, 2, 4, 2, 4, 3, 2, 3, 2, 3, 4, 2, 4] : [ 0 - 15 ] : 1 : [ 0 - 3 ] : 12
-[1, 1, 1, 2, 2, 2, 2, 2, 3, 3, 3, 4, 4, 4, 4, 4] : [ 3 - 15 ] : 3 : [ 8 - 11 ] : 8
+[2, 1, 2, 2, 2, 3, 2, 3, 1, 3, 1, 4, 4, 4, 4, 4] : [ 0 - 15 ] : 4 : [ 11 - 16 ] : 11
+[2, 1, 2, 2, 2, 2, 1, 1, 3, 3, 3, 4, 4, 4, 4, 4] : [ 0 - 10 ] : 3 : [ 8 - 11 ] : 3
+[1, 1, 1, 2, 2, 2, 2, 2, 3, 3, 3, 4, 4, 4, 4, 4] : [ 0 - 7 ] : 1 : [ 0 - 3 ] : 4
 [1, 1, 1, 2, 2, 2, 2, 2, 3, 3, 3, 4, 4, 4, 4, 4] : [ 3 - 7 ] : 2 : [ 3 - 8 ] : 0
-[1, 1, 1, 2, 2, 2, 2, 2, 3, 3, 3, 4, 4, 4, 4, 4] : [ 11 - 15 ] : 4 : [ 11 - 16 ] : 0
 
 
 partition: DNF - pivot: RANDOM
 --------------------------------------------------------------------------------
-duration [ns]: 26233
+duration [ns]: 24448
 number of partitions: 4
 number of swaps: 13
 [1, 1, 4, 4, 2, 2, 2, 2, 3, 3, 3, 4, 4, 4, 1, 1] : [ lo - hi ] : pv : dnf[ lo - hi ] : sw
-[1, 1, 2, 2, 2, 2, 3, 3, 3, 1, 1, 4, 4, 4, 4, 4] : [ 0 - 15 ] : 4 : [ 11 - 16 ] : 9
-[1, 1, 1, 1, 2, 2, 2, 2, 3, 3, 3, 4, 4, 4, 4, 4] : [ 0 - 10 ] : 2 : [ 4 - 8 ] : 4
-[1, 1, 1, 1, 2, 2, 2, 2, 3, 3, 3, 4, 4, 4, 4, 4] : [ 0 - 3 ] : 1 : [ 0 - 4 ] : 0
-[1, 1, 1, 1, 2, 2, 2, 2, 3, 3, 3, 4, 4, 4, 4, 4] : [ 8 - 10 ] : 3 : [ 8 - 11 ] : 0
+[1, 1, 1, 1, 2, 2, 2, 3, 3, 3, 4, 4, 4, 2, 4, 4] : [ 0 - 15 ] : 1 : [ 0 - 4 ] : 11
+[1, 1, 1, 1, 2, 2, 2, 3, 3, 3, 2, 4, 4, 4, 4, 4] : [ 4 - 15 ] : 4 : [ 11 - 16 ] : 1
+[1, 1, 1, 1, 2, 2, 2, 2, 3, 3, 3, 4, 4, 4, 4, 4] : [ 4 - 10 ] : 3 : [ 8 - 11 ] : 1
+[1, 1, 1, 1, 2, 2, 2, 2, 3, 3, 3, 4, 4, 4, 4, 4] : [ 4 - 7 ] : 2 : [ 4 - 8 ] : 0
 
 
 partition: DNF - pivot: RANDOM
 --------------------------------------------------------------------------------
-duration [ns]: 9843
+duration [ns]: 9595
 number of partitions: 1
 number of swaps: 0
 [2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2] : [ lo - hi ] : pv : dnf[ lo - hi ] : sw
@@ -2996,7 +3037,7 @@ number of swaps: 0
 
 partition: DNF - pivot: RANDOM
 --------------------------------------------------------------------------------
-duration [ns]: 16588
+duration [ns]: 18602
 number of partitions: 2
 number of swaps: 15
 [2, 2, 2, 2, 2, 2, 2, 2, 2, 1, 2, 2, 2, 2, 2, 2, 2] : [ lo - hi ] : pv : dnf[ lo - hi ] : sw
@@ -3006,7 +3047,7 @@ number of swaps: 15
 
 partition: DNF - pivot: RANDOM
 --------------------------------------------------------------------------------
-duration [ns]: 10161
+duration [ns]: 12460
 number of partitions: 1
 number of swaps: 1
 [2, 2, 2, 2, 2, 2, 2, 2, 2, 3, 2, 2, 2, 2, 2, 2, 2] : [ lo - hi ] : pv : dnf[ lo - hi ] : sw
@@ -3015,18 +3056,17 @@ number of swaps: 1
 
 partition: DNF - pivot: RANDOM
 --------------------------------------------------------------------------------
-duration [ns]: 21003
-number of partitions: 3
-number of swaps: 17
+duration [ns]: 18001
+number of partitions: 2
+number of swaps: 3
 [100, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 100] : [ lo - hi ] : pv : dnf[ lo - hi ] : sw
-[1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 100, 100] : [ 0 - 17 ] : 2 : [ 15 - 16 ] : 17
-[1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 100, 100] : [ 0 - 14 ] : 1 : [ 0 - 15 ] : 0
-[1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 100, 100] : [ 16 - 17 ] : 100 : [ 16 - 18 ] : 0
+[1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 100, 100] : [ 0 - 17 ] : 1 : [ 0 - 15 ] : 3
+[1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 100, 100] : [ 15 - 17 ] : 100 : [ 16 - 18 ] : 0
 
 
 partition: DNF - pivot: RANDOM
 --------------------------------------------------------------------------------
-duration [ns]: 28700
+duration [ns]: 20238
 number of partitions: 2
 number of swaps: 4
 [100, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 100, 2] : [ lo - hi ] : pv : dnf[ lo - hi ] : sw
@@ -3036,24 +3076,23 @@ number of swaps: 4
 
 partition: DNF - pivot: RANDOM
 --------------------------------------------------------------------------------
-duration [ns]: 59704
-number of partitions: 11
+duration [ns]: 57679
+number of partitions: 10
 number of swaps: 28
 [16, 9, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 9, 16] : [ lo - hi ] : pv : dnf[ lo - hi ] : sw
-[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 9, 9, 11, 12, 13, 14, 10, 16, 16] : [ 0 - 18 ] : 9 : [ 9 - 12 ] : 15
-[0, 1, 2, 3, 4, 5, 7, 8, 6, 9, 9, 9, 11, 12, 13, 14, 10, 16, 16] : [ 0 - 8 ] : 5 : [ 5 - 6 ] : 2
-[0, 1, 3, 4, 2, 5, 7, 8, 6, 9, 9, 9, 11, 12, 13, 14, 10, 16, 16] : [ 0 - 4 ] : 1 : [ 1 - 2 ] : 2
-[0, 1, 2, 3, 4, 5, 7, 8, 6, 9, 9, 9, 11, 12, 13, 14, 10, 16, 16] : [ 2 - 4 ] : 3 : [ 3 - 4 ] : 2
-[0, 1, 2, 3, 4, 5, 7, 6, 8, 9, 9, 9, 11, 12, 13, 14, 10, 16, 16] : [ 6 - 8 ] : 8 : [ 8 - 9 ] : 1
-[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 9, 9, 11, 12, 13, 14, 10, 16, 16] : [ 6 - 7 ] : 7 : [ 7 - 8 ] : 1
-[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 9, 9, 11, 12, 13, 10, 14, 16, 16] : [ 12 - 18 ] : 14 : [ 16 - 17 ] : 2
-[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 9, 9, 11, 12, 10, 13, 14, 16, 16] : [ 12 - 15 ] : 13 : [ 15 - 16 ] : 1
-[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 9, 9, 10, 12, 11, 13, 14, 16, 16] : [ 12 - 14 ] : 10 : [ 12 - 13 ] : 1
-[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 9, 9, 10, 11, 12, 13, 14, 16, 16] : [ 13 - 14 ] : 12 : [ 14 - 15 ] : 1
-[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 9, 9, 10, 11, 12, 13, 14, 16, 16] : [ 17 - 18 ] : 16 : [ 17 - 19 ] : 0
+[9, 9, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 16, 16] : [ 0 - 18 ] : 13 : [ 15 - 16 ] : 2
+[7, 0, 1, 2, 3, 4, 5, 6, 8, 9, 9, 10, 11, 12, 9, 13, 14, 16, 16] : [ 0 - 14 ] : 8 : [ 8 - 9 ] : 14
+[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 9, 10, 11, 12, 9, 13, 14, 16, 16] : [ 0 - 7 ] : 2 : [ 2 - 3 ] : 7
+[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 9, 10, 11, 12, 9, 13, 14, 16, 16] : [ 0 - 1 ] : 0 : [ 0 - 1 ] : 0
+[0, 1, 2, 3, 4, 5, 7, 6, 8, 9, 9, 10, 11, 12, 9, 13, 14, 16, 16] : [ 3 - 7 ] : 5 : [ 5 - 6 ] : 1
+[0, 1, 2, 3, 4, 5, 7, 6, 8, 9, 9, 10, 11, 12, 9, 13, 14, 16, 16] : [ 3 - 4 ] : 4 : [ 4 - 5 ] : 0
+[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 9, 10, 11, 12, 9, 13, 14, 16, 16] : [ 6 - 7 ] : 7 : [ 7 - 8 ] : 1
+[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 9, 10, 9, 11, 12, 13, 14, 16, 16] : [ 9 - 14 ] : 11 : [ 13 - 14 ] : 2
+[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 9, 9, 10, 11, 12, 13, 14, 16, 16] : [ 9 - 12 ] : 9 : [ 9 - 12 ] : 1
+[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 9, 9, 10, 11, 12, 13, 14, 16, 16] : [ 16 - 18 ] : 16 : [ 17 - 19 ] : 0
 
 total duration [ns]:
-7840105
+6019367
 
 
 
@@ -3067,153 +3106,153 @@ sorted:
 
 name: ORDERED - partition: HOARE - pivot: LOW
 --------------------------------------------------------------------------------
-loop: #0 - LOW - duration [ns]: 83133
-loop: #1 - LOW - duration [ns]: 45863
-loop: #2 - LOW - duration [ns]: 81409
-loop: #3 - LOW - duration [ns]: 40696
-loop: #4 - LOW - duration [ns]: 30443
-loop: #5 - LOW - duration [ns]: 62313
-loop: #6 - LOW - duration [ns]: 33584
-loop: #7 - LOW - duration [ns]: 33591
-loop: #8 - LOW - duration [ns]: 31852
-loop: #9 - LOW - duration [ns]: 30614
+loop: #0 - LOW - duration [ns]: 102680
+loop: #1 - LOW - duration [ns]: 42885
+loop: #2 - LOW - duration [ns]: 45000
+loop: #3 - LOW - duration [ns]: 35172
+loop: #4 - LOW - duration [ns]: 39712
+loop: #5 - LOW - duration [ns]: 50964
+loop: #6 - LOW - duration [ns]: 38210
+loop: #7 - LOW - duration [ns]: 38296
+loop: #8 - LOW - duration [ns]: 36766
+loop: #9 - LOW - duration [ns]: 36391
 
 name: ORDERED - partition: HOARE - pivot: MID
 --------------------------------------------------------------------------------
-loop: #0 - MID - duration [ns]: 30280
-loop: #1 - MID - duration [ns]: 39255
-loop: #2 - MID - duration [ns]: 35698
-loop: #3 - MID - duration [ns]: 25570
-loop: #4 - MID - duration [ns]: 25886
-loop: #5 - MID - duration [ns]: 23672
-loop: #6 - MID - duration [ns]: 28615
-loop: #7 - MID - duration [ns]: 16371
-loop: #8 - MID - duration [ns]: 15921
-loop: #9 - MID - duration [ns]: 16908
+loop: #0 - MID - duration [ns]: 31651
+loop: #1 - MID - duration [ns]: 35144
+loop: #2 - MID - duration [ns]: 35538
+loop: #3 - MID - duration [ns]: 21707
+loop: #4 - MID - duration [ns]: 17721
+loop: #5 - MID - duration [ns]: 26735
+loop: #6 - MID - duration [ns]: 15051
+loop: #7 - MID - duration [ns]: 16178
+loop: #8 - MID - duration [ns]: 15712
+loop: #9 - MID - duration [ns]: 15234
 
 name: ORDERED - partition: HOARE - pivot: MEDIAN
 --------------------------------------------------------------------------------
-loop: #0 - MEDIAN - duration [ns]: 52119
-loop: #1 - MEDIAN - duration [ns]: 56134
-loop: #2 - MEDIAN - duration [ns]: 56506
-loop: #3 - MEDIAN - duration [ns]: 52713
-loop: #4 - MEDIAN - duration [ns]: 58557
-loop: #5 - MEDIAN - duration [ns]: 60360
-loop: #6 - MEDIAN - duration [ns]: 33361
-loop: #7 - MEDIAN - duration [ns]: 14134
-loop: #8 - MEDIAN - duration [ns]: 13659
-loop: #9 - MEDIAN - duration [ns]: 13502
+loop: #0 - MEDIAN - duration [ns]: 60164
+loop: #1 - MEDIAN - duration [ns]: 54497
+loop: #2 - MEDIAN - duration [ns]: 64965
+loop: #3 - MEDIAN - duration [ns]: 57959
+loop: #4 - MEDIAN - duration [ns]: 56584
+loop: #5 - MEDIAN - duration [ns]: 37912
+loop: #6 - MEDIAN - duration [ns]: 21596
+loop: #7 - MEDIAN - duration [ns]: 21472
+loop: #8 - MEDIAN - duration [ns]: 20858
+loop: #9 - MEDIAN - duration [ns]: 18286
 
 name: ORDERED - partition: HOARE - pivot: HIGH
 --------------------------------------------------------------------------------
-loop: #0 - HIGH - duration [ns]: 44182
-loop: #1 - HIGH - duration [ns]: 36283
-loop: #2 - HIGH - duration [ns]: 25878
-loop: #3 - HIGH - duration [ns]: 26043
-loop: #4 - HIGH - duration [ns]: 24759
-loop: #5 - HIGH - duration [ns]: 25729
-loop: #6 - HIGH - duration [ns]: 33352
-loop: #7 - HIGH - duration [ns]: 30902
-loop: #8 - HIGH - duration [ns]: 31100
-loop: #9 - HIGH - duration [ns]: 42772
+loop: #0 - HIGH - duration [ns]: 59592
+loop: #1 - HIGH - duration [ns]: 42456
+loop: #2 - HIGH - duration [ns]: 41113
+loop: #3 - HIGH - duration [ns]: 38739
+loop: #4 - HIGH - duration [ns]: 39715
+loop: #5 - HIGH - duration [ns]: 37775
+loop: #6 - HIGH - duration [ns]: 37759
+loop: #7 - HIGH - duration [ns]: 32953
+loop: #8 - HIGH - duration [ns]: 33244
+loop: #9 - HIGH - duration [ns]: 33929
 
 name: ORDERED - partition: HOARE - pivot: RANDOM
 --------------------------------------------------------------------------------
-loop: #0 - RANDOM - duration [ns]: 89460
-loop: #1 - RANDOM - duration [ns]: 106031
-loop: #2 - RANDOM - duration [ns]: 80578
-loop: #3 - RANDOM - duration [ns]: 72926
-loop: #4 - RANDOM - duration [ns]: 75225
-loop: #5 - RANDOM - duration [ns]: 74495
-loop: #6 - RANDOM - duration [ns]: 89628
-loop: #7 - RANDOM - duration [ns]: 80274
-loop: #8 - RANDOM - duration [ns]: 81093
-loop: #9 - RANDOM - duration [ns]: 85939
+loop: #0 - RANDOM - duration [ns]: 99923
+loop: #1 - RANDOM - duration [ns]: 93616
+loop: #2 - RANDOM - duration [ns]: 78874
+loop: #3 - RANDOM - duration [ns]: 50186
+loop: #4 - RANDOM - duration [ns]: 52164
+loop: #5 - RANDOM - duration [ns]: 49139
+loop: #6 - RANDOM - duration [ns]: 32458
+loop: #7 - RANDOM - duration [ns]: 31702
+loop: #8 - RANDOM - duration [ns]: 29725
+loop: #9 - RANDOM - duration [ns]: 28702
 
 name: ORDERED - partition: HOARE - averages: 10 x array[100]
 --------------------------------------------------------------------------------
        pivot | duration [ns]
 --------------------------------------------------------------------------------
-         LOW |        47350
-         MID |        25818
-      MEDIAN |        41105
-        HIGH |        32100
-      RANDOM |        83565
+         LOW |        46608
+         MID |        23067
+      MEDIAN |        41429
+        HIGH |        39728
+      RANDOM |        54649
 
 name: ORDERED - partition: DNF - pivot: LOW
 --------------------------------------------------------------------------------
-loop: #0 - LOW - duration [ns]: 144713
-loop: #1 - LOW - duration [ns]: 153126
-loop: #2 - LOW - duration [ns]: 144232
-loop: #3 - LOW - duration [ns]: 141496
-loop: #4 - LOW - duration [ns]: 155327
-loop: #5 - LOW - duration [ns]: 163654
-loop: #6 - LOW - duration [ns]: 171389
-loop: #7 - LOW - duration [ns]: 173739
-loop: #8 - LOW - duration [ns]: 158886
-loop: #9 - LOW - duration [ns]: 165054
+loop: #0 - LOW - duration [ns]: 174406
+loop: #1 - LOW - duration [ns]: 196603
+loop: #2 - LOW - duration [ns]: 170098
+loop: #3 - LOW - duration [ns]: 199194
+loop: #4 - LOW - duration [ns]: 421038
+loop: #5 - LOW - duration [ns]: 210066
+loop: #6 - LOW - duration [ns]: 186468
+loop: #7 - LOW - duration [ns]: 183136
+loop: #8 - LOW - duration [ns]: 231448
+loop: #9 - LOW - duration [ns]: 189757
 
 name: ORDERED - partition: DNF - pivot: MID
 --------------------------------------------------------------------------------
-loop: #0 - MID - duration [ns]: 57443
-loop: #1 - MID - duration [ns]: 23583
-loop: #2 - MID - duration [ns]: 21600
-loop: #3 - MID - duration [ns]: 20372
-loop: #4 - MID - duration [ns]: 31565
-loop: #5 - MID - duration [ns]: 44566
-loop: #6 - MID - duration [ns]: 20803
-loop: #7 - MID - duration [ns]: 23610
-loop: #8 - MID - duration [ns]: 23361
-loop: #9 - MID - duration [ns]: 20122
+loop: #0 - MID - duration [ns]: 98375
+loop: #1 - MID - duration [ns]: 101530
+loop: #2 - MID - duration [ns]: 262018
+loop: #3 - MID - duration [ns]: 28183
+loop: #4 - MID - duration [ns]: 34901
+loop: #5 - MID - duration [ns]: 35227
+loop: #6 - MID - duration [ns]: 27180
+loop: #7 - MID - duration [ns]: 25598
+loop: #8 - MID - duration [ns]: 47724
+loop: #9 - MID - duration [ns]: 24757
 
 name: ORDERED - partition: DNF - pivot: MEDIAN
 --------------------------------------------------------------------------------
-loop: #0 - MEDIAN - duration [ns]: 64639
-loop: #1 - MEDIAN - duration [ns]: 23128
-loop: #2 - MEDIAN - duration [ns]: 37877
-loop: #3 - MEDIAN - duration [ns]: 18781
-loop: #4 - MEDIAN - duration [ns]: 21322
-loop: #5 - MEDIAN - duration [ns]: 23163
-loop: #6 - MEDIAN - duration [ns]: 21791
-loop: #7 - MEDIAN - duration [ns]: 21843
-loop: #8 - MEDIAN - duration [ns]: 20937
-loop: #9 - MEDIAN - duration [ns]: 22396
+loop: #0 - MEDIAN - duration [ns]: 65241
+loop: #1 - MEDIAN - duration [ns]: 32173
+loop: #2 - MEDIAN - duration [ns]: 31258
+loop: #3 - MEDIAN - duration [ns]: 27283
+loop: #4 - MEDIAN - duration [ns]: 27547
+loop: #5 - MEDIAN - duration [ns]: 26915
+loop: #6 - MEDIAN - duration [ns]: 27091
+loop: #7 - MEDIAN - duration [ns]: 27032
+loop: #8 - MEDIAN - duration [ns]: 25713
+loop: #9 - MEDIAN - duration [ns]: 25084
 
 name: ORDERED - partition: DNF - pivot: HIGH
 --------------------------------------------------------------------------------
-loop: #0 - HIGH - duration [ns]: 48039
-loop: #1 - HIGH - duration [ns]: 43708
-loop: #2 - HIGH - duration [ns]: 53760
-loop: #3 - HIGH - duration [ns]: 44936
-loop: #4 - HIGH - duration [ns]: 43062
-loop: #5 - HIGH - duration [ns]: 43052
-loop: #6 - HIGH - duration [ns]: 42379
-loop: #7 - HIGH - duration [ns]: 44688
-loop: #8 - HIGH - duration [ns]: 42170
-loop: #9 - HIGH - duration [ns]: 42394
+loop: #0 - HIGH - duration [ns]: 76100
+loop: #1 - HIGH - duration [ns]: 50076
+loop: #2 - HIGH - duration [ns]: 68938
+loop: #3 - HIGH - duration [ns]: 66762
+loop: #4 - HIGH - duration [ns]: 56159
+loop: #5 - HIGH - duration [ns]: 55394
+loop: #6 - HIGH - duration [ns]: 56685
+loop: #7 - HIGH - duration [ns]: 55043
+loop: #8 - HIGH - duration [ns]: 55423
+loop: #9 - HIGH - duration [ns]: 54956
 
 name: ORDERED - partition: DNF - pivot: RANDOM
 --------------------------------------------------------------------------------
-loop: #0 - RANDOM - duration [ns]: 45625
-loop: #1 - RANDOM - duration [ns]: 25284
-loop: #2 - RANDOM - duration [ns]: 23574
-loop: #3 - RANDOM - duration [ns]: 23478
-loop: #4 - RANDOM - duration [ns]: 26787
-loop: #5 - RANDOM - duration [ns]: 24777
-loop: #6 - RANDOM - duration [ns]: 27956
-loop: #7 - RANDOM - duration [ns]: 28885
-loop: #8 - RANDOM - duration [ns]: 27079
-loop: #9 - RANDOM - duration [ns]: 33277
+loop: #0 - RANDOM - duration [ns]: 30899
+loop: #1 - RANDOM - duration [ns]: 29345
+loop: #2 - RANDOM - duration [ns]: 47088
+loop: #3 - RANDOM - duration [ns]: 37937
+loop: #4 - RANDOM - duration [ns]: 39726
+loop: #5 - RANDOM - duration [ns]: 36495
+loop: #6 - RANDOM - duration [ns]: 41951
+loop: #7 - RANDOM - duration [ns]: 125384
+loop: #8 - RANDOM - duration [ns]: 41391
+loop: #9 - RANDOM - duration [ns]: 39368
 
 name: ORDERED - partition: DNF - averages: 10 x array[100]
 --------------------------------------------------------------------------------
        pivot | duration [ns]
 --------------------------------------------------------------------------------
-         LOW |       157162
-         MID |        28703
-      MEDIAN |        27588
-        HIGH |        44819
-      RANDOM |        28672
+         LOW |       216221
+         MID |        68549
+      MEDIAN |        31534
+        HIGH |        59554
+      RANDOM |        46958
 
 
 --------------------------------------------------------------------------------
@@ -3226,153 +3265,153 @@ sorted:
 
 name: REVERSE - partition: HOARE - pivot: LOW
 --------------------------------------------------------------------------------
-loop: #0 - LOW - duration [ns]: 59691
-loop: #1 - LOW - duration [ns]: 36622
-loop: #2 - LOW - duration [ns]: 35847
-loop: #3 - LOW - duration [ns]: 36248
-loop: #4 - LOW - duration [ns]: 33189
-loop: #5 - LOW - duration [ns]: 37962
-loop: #6 - LOW - duration [ns]: 38281
-loop: #7 - LOW - duration [ns]: 33458
-loop: #8 - LOW - duration [ns]: 36038
-loop: #9 - LOW - duration [ns]: 39956
+loop: #0 - LOW - duration [ns]: 53802
+loop: #1 - LOW - duration [ns]: 44482
+loop: #2 - LOW - duration [ns]: 56226
+loop: #3 - LOW - duration [ns]: 55084
+loop: #4 - LOW - duration [ns]: 43339
+loop: #5 - LOW - duration [ns]: 48125
+loop: #6 - LOW - duration [ns]: 50100
+loop: #7 - LOW - duration [ns]: 44720
+loop: #8 - LOW - duration [ns]: 53002
+loop: #9 - LOW - duration [ns]: 47778
 
 name: REVERSE - partition: HOARE - pivot: MID
 --------------------------------------------------------------------------------
-loop: #0 - MID - duration [ns]: 40649
-loop: #1 - MID - duration [ns]: 12417
-loop: #2 - MID - duration [ns]: 16567
-loop: #3 - MID - duration [ns]: 15526
-loop: #4 - MID - duration [ns]: 15233
-loop: #5 - MID - duration [ns]: 15883
-loop: #6 - MID - duration [ns]: 19175
-loop: #7 - MID - duration [ns]: 17559
-loop: #8 - MID - duration [ns]: 16835
-loop: #9 - MID - duration [ns]: 10776
+loop: #0 - MID - duration [ns]: 29859
+loop: #1 - MID - duration [ns]: 21679
+loop: #2 - MID - duration [ns]: 22346
+loop: #3 - MID - duration [ns]: 22017
+loop: #4 - MID - duration [ns]: 20838
+loop: #5 - MID - duration [ns]: 22815
+loop: #6 - MID - duration [ns]: 23825
+loop: #7 - MID - duration [ns]: 22388
+loop: #8 - MID - duration [ns]: 26257
+loop: #9 - MID - duration [ns]: 21225
 
 name: REVERSE - partition: HOARE - pivot: MEDIAN
 --------------------------------------------------------------------------------
-loop: #0 - MEDIAN - duration [ns]: 24602
-loop: #1 - MEDIAN - duration [ns]: 19607
-loop: #2 - MEDIAN - duration [ns]: 32366
-loop: #3 - MEDIAN - duration [ns]: 16246
-loop: #4 - MEDIAN - duration [ns]: 35240
-loop: #5 - MEDIAN - duration [ns]: 18445
-loop: #6 - MEDIAN - duration [ns]: 17667
-loop: #7 - MEDIAN - duration [ns]: 16524
-loop: #8 - MEDIAN - duration [ns]: 25833
-loop: #9 - MEDIAN - duration [ns]: 23626
+loop: #0 - MEDIAN - duration [ns]: 42386
+loop: #1 - MEDIAN - duration [ns]: 38339
+loop: #2 - MEDIAN - duration [ns]: 35234
+loop: #3 - MEDIAN - duration [ns]: 36989
+loop: #4 - MEDIAN - duration [ns]: 39874
+loop: #5 - MEDIAN - duration [ns]: 36122
+loop: #6 - MEDIAN - duration [ns]: 35473
+loop: #7 - MEDIAN - duration [ns]: 32230
+loop: #8 - MEDIAN - duration [ns]: 37463
+loop: #9 - MEDIAN - duration [ns]: 33393
 
 name: REVERSE - partition: HOARE - pivot: HIGH
 --------------------------------------------------------------------------------
-loop: #0 - HIGH - duration [ns]: 44003
-loop: #1 - HIGH - duration [ns]: 46453
-loop: #2 - HIGH - duration [ns]: 37421
-loop: #3 - HIGH - duration [ns]: 31704
-loop: #4 - HIGH - duration [ns]: 35876
-loop: #5 - HIGH - duration [ns]: 39551
-loop: #6 - HIGH - duration [ns]: 36658
-loop: #7 - HIGH - duration [ns]: 38484
-loop: #8 - HIGH - duration [ns]: 53195
-loop: #9 - HIGH - duration [ns]: 32885
+loop: #0 - HIGH - duration [ns]: 45442
+loop: #1 - HIGH - duration [ns]: 45570
+loop: #2 - HIGH - duration [ns]: 43671
+loop: #3 - HIGH - duration [ns]: 45920
+loop: #4 - HIGH - duration [ns]: 42775
+loop: #5 - HIGH - duration [ns]: 47744
+loop: #6 - HIGH - duration [ns]: 47635
+loop: #7 - HIGH - duration [ns]: 49977
+loop: #8 - HIGH - duration [ns]: 49200
+loop: #9 - HIGH - duration [ns]: 44611
 
 name: REVERSE - partition: HOARE - pivot: RANDOM
 --------------------------------------------------------------------------------
-loop: #0 - RANDOM - duration [ns]: 28589
-loop: #1 - RANDOM - duration [ns]: 41023
-loop: #2 - RANDOM - duration [ns]: 33192
-loop: #3 - RANDOM - duration [ns]: 32505
-loop: #4 - RANDOM - duration [ns]: 34647
-loop: #5 - RANDOM - duration [ns]: 28092
-loop: #6 - RANDOM - duration [ns]: 29567
-loop: #7 - RANDOM - duration [ns]: 35830
-loop: #8 - RANDOM - duration [ns]: 29292
-loop: #9 - RANDOM - duration [ns]: 54748
+loop: #0 - RANDOM - duration [ns]: 48776
+loop: #1 - RANDOM - duration [ns]: 42246
+loop: #2 - RANDOM - duration [ns]: 43982
+loop: #3 - RANDOM - duration [ns]: 41561
+loop: #4 - RANDOM - duration [ns]: 43873
+loop: #5 - RANDOM - duration [ns]: 59274
+loop: #6 - RANDOM - duration [ns]: 43548
+loop: #7 - RANDOM - duration [ns]: 46298
+loop: #8 - RANDOM - duration [ns]: 36920
+loop: #9 - RANDOM - duration [ns]: 37892
 
 name: REVERSE - partition: HOARE - averages: 10 x array[100]
 --------------------------------------------------------------------------------
        pivot | duration [ns]
 --------------------------------------------------------------------------------
-         LOW |        38729
-         MID |        18062
-      MEDIAN |        23016
-        HIGH |        39623
-      RANDOM |        34749
+         LOW |        49666
+         MID |        23325
+      MEDIAN |        36750
+        HIGH |        46255
+      RANDOM |        44437
 
 name: REVERSE - partition: DNF - pivot: LOW
 --------------------------------------------------------------------------------
-loop: #0 - LOW - duration [ns]: 45344
-loop: #1 - LOW - duration [ns]: 30360
-loop: #2 - LOW - duration [ns]: 31951
-loop: #3 - LOW - duration [ns]: 28283
-loop: #4 - LOW - duration [ns]: 27260
-loop: #5 - LOW - duration [ns]: 28100
-loop: #6 - LOW - duration [ns]: 28373
-loop: #7 - LOW - duration [ns]: 24993
-loop: #8 - LOW - duration [ns]: 23531
-loop: #9 - LOW - duration [ns]: 22230
+loop: #0 - LOW - duration [ns]: 130170
+loop: #1 - LOW - duration [ns]: 180124
+loop: #2 - LOW - duration [ns]: 122893
+loop: #3 - LOW - duration [ns]: 132958
+loop: #4 - LOW - duration [ns]: 127582
+loop: #5 - LOW - duration [ns]: 137906
+loop: #6 - LOW - duration [ns]: 126188
+loop: #7 - LOW - duration [ns]: 116391
+loop: #8 - LOW - duration [ns]: 130119
+loop: #9 - LOW - duration [ns]: 121631
 
 name: REVERSE - partition: DNF - pivot: MID
 --------------------------------------------------------------------------------
-loop: #0 - MID - duration [ns]: 31446
-loop: #1 - MID - duration [ns]: 12122
-loop: #2 - MID - duration [ns]: 11136
-loop: #3 - MID - duration [ns]: 10985
-loop: #4 - MID - duration [ns]: 12119
-loop: #5 - MID - duration [ns]: 10452
-loop: #6 - MID - duration [ns]: 10523
-loop: #7 - MID - duration [ns]: 10343
-loop: #8 - MID - duration [ns]: 10635
-loop: #9 - MID - duration [ns]: 10787
+loop: #0 - MID - duration [ns]: 35318
+loop: #1 - MID - duration [ns]: 29401
+loop: #2 - MID - duration [ns]: 30385
+loop: #3 - MID - duration [ns]: 28119
+loop: #4 - MID - duration [ns]: 27484
+loop: #5 - MID - duration [ns]: 30556
+loop: #6 - MID - duration [ns]: 28717
+loop: #7 - MID - duration [ns]: 30217
+loop: #8 - MID - duration [ns]: 24941
+loop: #9 - MID - duration [ns]: 26974
 
 name: REVERSE - partition: DNF - pivot: MEDIAN
 --------------------------------------------------------------------------------
-loop: #0 - MEDIAN - duration [ns]: 21017
-loop: #1 - MEDIAN - duration [ns]: 15852
-loop: #2 - MEDIAN - duration [ns]: 17150
-loop: #3 - MEDIAN - duration [ns]: 15970
-loop: #4 - MEDIAN - duration [ns]: 15166
-loop: #5 - MEDIAN - duration [ns]: 15279
-loop: #6 - MEDIAN - duration [ns]: 15061
-loop: #7 - MEDIAN - duration [ns]: 35170
-loop: #8 - MEDIAN - duration [ns]: 15615
-loop: #9 - MEDIAN - duration [ns]: 15350
+loop: #0 - MEDIAN - duration [ns]: 51486
+loop: #1 - MEDIAN - duration [ns]: 42029
+loop: #2 - MEDIAN - duration [ns]: 40562
+loop: #3 - MEDIAN - duration [ns]: 44679
+loop: #4 - MEDIAN - duration [ns]: 35353
+loop: #5 - MEDIAN - duration [ns]: 43440
+loop: #6 - MEDIAN - duration [ns]: 37518
+loop: #7 - MEDIAN - duration [ns]: 37130
+loop: #8 - MEDIAN - duration [ns]: 37707
+loop: #9 - MEDIAN - duration [ns]: 36799
 
 name: REVERSE - partition: DNF - pivot: HIGH
 --------------------------------------------------------------------------------
-loop: #0 - HIGH - duration [ns]: 26005
-loop: #1 - HIGH - duration [ns]: 25034
-loop: #2 - HIGH - duration [ns]: 23652
-loop: #3 - HIGH - duration [ns]: 21641
-loop: #4 - HIGH - duration [ns]: 20253
-loop: #5 - HIGH - duration [ns]: 30704
-loop: #6 - HIGH - duration [ns]: 24128
-loop: #7 - HIGH - duration [ns]: 26548
-loop: #8 - HIGH - duration [ns]: 21961
-loop: #9 - HIGH - duration [ns]: 21730
+loop: #0 - HIGH - duration [ns]: 74581
+loop: #1 - HIGH - duration [ns]: 65191
+loop: #2 - HIGH - duration [ns]: 65072
+loop: #3 - HIGH - duration [ns]: 74181
+loop: #4 - HIGH - duration [ns]: 49983
+loop: #5 - HIGH - duration [ns]: 25211
+loop: #6 - HIGH - duration [ns]: 23674
+loop: #7 - HIGH - duration [ns]: 22087
+loop: #8 - HIGH - duration [ns]: 20886
+loop: #9 - HIGH - duration [ns]: 18853
 
 name: REVERSE - partition: DNF - pivot: RANDOM
 --------------------------------------------------------------------------------
-loop: #0 - RANDOM - duration [ns]: 15320
-loop: #1 - RANDOM - duration [ns]: 16867
-loop: #2 - RANDOM - duration [ns]: 16977
-loop: #3 - RANDOM - duration [ns]: 409973
-loop: #4 - RANDOM - duration [ns]: 38251
-loop: #5 - RANDOM - duration [ns]: 28152
-loop: #6 - RANDOM - duration [ns]: 19826
-loop: #7 - RANDOM - duration [ns]: 22162
-loop: #8 - RANDOM - duration [ns]: 30710
-loop: #9 - RANDOM - duration [ns]: 34295
+loop: #0 - RANDOM - duration [ns]: 36064
+loop: #1 - RANDOM - duration [ns]: 18480
+loop: #2 - RANDOM - duration [ns]: 28687
+loop: #3 - RANDOM - duration [ns]: 39720
+loop: #4 - RANDOM - duration [ns]: 21822
+loop: #5 - RANDOM - duration [ns]: 33348
+loop: #6 - RANDOM - duration [ns]: 24346
+loop: #7 - RANDOM - duration [ns]: 53102
+loop: #8 - RANDOM - duration [ns]: 18876
+loop: #9 - RANDOM - duration [ns]: 17402
 
 name: REVERSE - partition: DNF - averages: 10 x array[100]
 --------------------------------------------------------------------------------
        pivot | duration [ns]
 --------------------------------------------------------------------------------
-         LOW |        29043
-         MID |        13055
-      MEDIAN |        18163
-        HIGH |        24166
-      RANDOM |        63253
+         LOW |       132596
+         MID |        29211
+      MEDIAN |        40670
+        HIGH |        43972
+      RANDOM |        29185
 
 
 --------------------------------------------------------------------------------
@@ -3385,474 +3424,481 @@ sorted:
 
 name: ONEOFF - partition: HOARE - pivot: LOW
 --------------------------------------------------------------------------------
-loop: #0 - LOW - duration [ns]: 100129
-loop: #1 - LOW - duration [ns]: 42250
-loop: #2 - LOW - duration [ns]: 41003
-loop: #3 - LOW - duration [ns]: 36945
-loop: #4 - LOW - duration [ns]: 33741
-loop: #5 - LOW - duration [ns]: 38417
-loop: #6 - LOW - duration [ns]: 30704
-loop: #7 - LOW - duration [ns]: 41332
-loop: #8 - LOW - duration [ns]: 31288
-loop: #9 - LOW - duration [ns]: 29978
+loop: #0 - LOW - duration [ns]: 55609
+loop: #1 - LOW - duration [ns]: 39656
+loop: #2 - LOW - duration [ns]: 38347
+loop: #3 - LOW - duration [ns]: 34044
+loop: #4 - LOW - duration [ns]: 35701
+loop: #5 - LOW - duration [ns]: 36208
+loop: #6 - LOW - duration [ns]: 36084
+loop: #7 - LOW - duration [ns]: 35141
+loop: #8 - LOW - duration [ns]: 33819
+loop: #9 - LOW - duration [ns]: 28942
 
 name: ONEOFF - partition: HOARE - pivot: MID
 --------------------------------------------------------------------------------
-loop: #0 - MID - duration [ns]: 16445
-loop: #1 - MID - duration [ns]: 14974
-loop: #2 - MID - duration [ns]: 15923
-loop: #3 - MID - duration [ns]: 16550
-loop: #4 - MID - duration [ns]: 14247
-loop: #5 - MID - duration [ns]: 14073
-loop: #6 - MID - duration [ns]: 14693
-loop: #7 - MID - duration [ns]: 16201
-loop: #8 - MID - duration [ns]: 14046
-loop: #9 - MID - duration [ns]: 14462
+loop: #0 - MID - duration [ns]: 18937
+loop: #1 - MID - duration [ns]: 17881
+loop: #2 - MID - duration [ns]: 14987
+loop: #3 - MID - duration [ns]: 17041
+loop: #4 - MID - duration [ns]: 16778
+loop: #5 - MID - duration [ns]: 15300
+loop: #6 - MID - duration [ns]: 29240
+loop: #7 - MID - duration [ns]: 17101
+loop: #8 - MID - duration [ns]: 16542
+loop: #9 - MID - duration [ns]: 17337
 
 name: ONEOFF - partition: HOARE - pivot: MEDIAN
 --------------------------------------------------------------------------------
-loop: #0 - MEDIAN - duration [ns]: 30668
-loop: #1 - MEDIAN - duration [ns]: 34951
-loop: #2 - MEDIAN - duration [ns]: 27261
-loop: #3 - MEDIAN - duration [ns]: 26558
-loop: #4 - MEDIAN - duration [ns]: 19921
-loop: #5 - MEDIAN - duration [ns]: 25026
-loop: #6 - MEDIAN - duration [ns]: 26848
-loop: #7 - MEDIAN - duration [ns]: 26580
-loop: #8 - MEDIAN - duration [ns]: 44323
-loop: #9 - MEDIAN - duration [ns]: 26536
+loop: #0 - MEDIAN - duration [ns]: 54023
+loop: #1 - MEDIAN - duration [ns]: 27378
+loop: #2 - MEDIAN - duration [ns]: 23562
+loop: #3 - MEDIAN - duration [ns]: 25839
+loop: #4 - MEDIAN - duration [ns]: 24734
+loop: #5 - MEDIAN - duration [ns]: 21427
+loop: #6 - MEDIAN - duration [ns]: 26344
+loop: #7 - MEDIAN - duration [ns]: 29829
+loop: #8 - MEDIAN - duration [ns]: 29825
+loop: #9 - MEDIAN - duration [ns]: 27091
 
 name: ONEOFF - partition: HOARE - pivot: HIGH
 --------------------------------------------------------------------------------
-loop: #0 - HIGH - duration [ns]: 29091
-loop: #1 - HIGH - duration [ns]: 33150
-loop: #2 - HIGH - duration [ns]: 35425
-loop: #3 - HIGH - duration [ns]: 32530
-loop: #4 - HIGH - duration [ns]: 33691
-loop: #5 - HIGH - duration [ns]: 33496
-loop: #6 - HIGH - duration [ns]: 32216
-loop: #7 - HIGH - duration [ns]: 35965
-loop: #8 - HIGH - duration [ns]: 34562
-loop: #9 - HIGH - duration [ns]: 32285
+loop: #0 - HIGH - duration [ns]: 42676
+loop: #1 - HIGH - duration [ns]: 39717
+loop: #2 - HIGH - duration [ns]: 39517
+loop: #3 - HIGH - duration [ns]: 39194
+loop: #4 - HIGH - duration [ns]: 34520
+loop: #5 - HIGH - duration [ns]: 36934
+loop: #6 - HIGH - duration [ns]: 38415
+loop: #7 - HIGH - duration [ns]: 36930
+loop: #8 - HIGH - duration [ns]: 37064
+loop: #9 - HIGH - duration [ns]: 36022
 
 name: ONEOFF - partition: HOARE - pivot: RANDOM
 --------------------------------------------------------------------------------
-loop: #0 - RANDOM - duration [ns]: 20838
-loop: #1 - RANDOM - duration [ns]: 22158
-loop: #2 - RANDOM - duration [ns]: 25112
-loop: #3 - RANDOM - duration [ns]: 23794
-loop: #4 - RANDOM - duration [ns]: 21820
-loop: #5 - RANDOM - duration [ns]: 22330
-loop: #6 - RANDOM - duration [ns]: 18503
-loop: #7 - RANDOM - duration [ns]: 25698
-loop: #8 - RANDOM - duration [ns]: 23600
-loop: #9 - RANDOM - duration [ns]: 21940
+loop: #0 - RANDOM - duration [ns]: 28842
+loop: #1 - RANDOM - duration [ns]: 24862
+loop: #2 - RANDOM - duration [ns]: 26653
+loop: #3 - RANDOM - duration [ns]: 23377
+loop: #4 - RANDOM - duration [ns]: 24116
+loop: #5 - RANDOM - duration [ns]: 34135
+loop: #6 - RANDOM - duration [ns]: 26729
+loop: #7 - RANDOM - duration [ns]: 28779
+loop: #8 - RANDOM - duration [ns]: 25232
+loop: #9 - RANDOM - duration [ns]: 28160
 
 name: ONEOFF - partition: HOARE - averages: 10 x array[100]
 --------------------------------------------------------------------------------
        pivot | duration [ns]
 --------------------------------------------------------------------------------
-         LOW |        42579
-         MID |        15161
-      MEDIAN |        28867
-        HIGH |        33241
-      RANDOM |        22579
+         LOW |        37355
+         MID |        18114
+      MEDIAN |        29005
+        HIGH |        38099
+      RANDOM |        27089
 
 name: ONEOFF - partition: DNF - pivot: LOW
 --------------------------------------------------------------------------------
-loop: #0 - LOW - duration [ns]: 10882
-loop: #1 - LOW - duration [ns]: 7869
-loop: #2 - LOW - duration [ns]: 6300
-loop: #3 - LOW - duration [ns]: 5937
-loop: #4 - LOW - duration [ns]: 6351
-loop: #5 - LOW - duration [ns]: 5784
-loop: #6 - LOW - duration [ns]: 5814
-loop: #7 - LOW - duration [ns]: 5888
-loop: #8 - LOW - duration [ns]: 5814
-loop: #9 - LOW - duration [ns]: 5771
+loop: #0 - LOW - duration [ns]: 20516
+loop: #1 - LOW - duration [ns]: 17016
+loop: #2 - LOW - duration [ns]: 14516
+loop: #3 - LOW - duration [ns]: 14964
+loop: #4 - LOW - duration [ns]: 15031
+loop: #5 - LOW - duration [ns]: 33643
+loop: #6 - LOW - duration [ns]: 24114
+loop: #7 - LOW - duration [ns]: 19782
+loop: #8 - LOW - duration [ns]: 17600
+loop: #9 - LOW - duration [ns]: 15561
 
 name: ONEOFF - partition: DNF - pivot: MID
 --------------------------------------------------------------------------------
-loop: #0 - MID - duration [ns]: 7423
-loop: #1 - MID - duration [ns]: 6443
-loop: #2 - MID - duration [ns]: 5354
-loop: #3 - MID - duration [ns]: 4681
-loop: #4 - MID - duration [ns]: 4171
-loop: #5 - MID - duration [ns]: 4267
-loop: #6 - MID - duration [ns]: 4041
-loop: #7 - MID - duration [ns]: 4560
-loop: #8 - MID - duration [ns]: 4276
-loop: #9 - MID - duration [ns]: 4250
+loop: #0 - MID - duration [ns]: 18040
+loop: #1 - MID - duration [ns]: 17197
+loop: #2 - MID - duration [ns]: 13240
+loop: #3 - MID - duration [ns]: 13543
+loop: #4 - MID - duration [ns]: 13348
+loop: #5 - MID - duration [ns]: 11436
+loop: #6 - MID - duration [ns]: 10652
+loop: #7 - MID - duration [ns]: 10508
+loop: #8 - MID - duration [ns]: 11671
+loop: #9 - MID - duration [ns]: 9180
 
 name: ONEOFF - partition: DNF - pivot: MEDIAN
 --------------------------------------------------------------------------------
-loop: #0 - MEDIAN - duration [ns]: 10358
-loop: #1 - MEDIAN - duration [ns]: 7740
-loop: #2 - MEDIAN - duration [ns]: 6810
-loop: #3 - MEDIAN - duration [ns]: 6730
-loop: #4 - MEDIAN - duration [ns]: 11154
-loop: #5 - MEDIAN - duration [ns]: 12282
-loop: #6 - MEDIAN - duration [ns]: 13057
-loop: #7 - MEDIAN - duration [ns]: 12110
-loop: #8 - MEDIAN - duration [ns]: 15012
-loop: #9 - MEDIAN - duration [ns]: 12454
+loop: #0 - MEDIAN - duration [ns]: 35959
+loop: #1 - MEDIAN - duration [ns]: 15253
+loop: #2 - MEDIAN - duration [ns]: 14711
+loop: #3 - MEDIAN - duration [ns]: 11768
+loop: #4 - MEDIAN - duration [ns]: 12432
+loop: #5 - MEDIAN - duration [ns]: 12132
+loop: #6 - MEDIAN - duration [ns]: 13692
+loop: #7 - MEDIAN - duration [ns]: 20171
+loop: #8 - MEDIAN - duration [ns]: 11196
+loop: #9 - MEDIAN - duration [ns]: 12924
 
 name: ONEOFF - partition: DNF - pivot: HIGH
 --------------------------------------------------------------------------------
-loop: #0 - HIGH - duration [ns]: 15829
-loop: #1 - HIGH - duration [ns]: 17093
-loop: #2 - HIGH - duration [ns]: 14615
-loop: #3 - HIGH - duration [ns]: 14559
-loop: #4 - HIGH - duration [ns]: 15301
-loop: #5 - HIGH - duration [ns]: 14517
-loop: #6 - HIGH - duration [ns]: 14481
-loop: #7 - HIGH - duration [ns]: 14464
-loop: #8 - HIGH - duration [ns]: 14770
-loop: #9 - HIGH - duration [ns]: 15449
+loop: #0 - HIGH - duration [ns]: 29325
+loop: #1 - HIGH - duration [ns]: 31709
+loop: #2 - HIGH - duration [ns]: 33136
+loop: #3 - HIGH - duration [ns]: 29389
+loop: #4 - HIGH - duration [ns]: 24417
+loop: #5 - HIGH - duration [ns]: 28509
+loop: #6 - HIGH - duration [ns]: 26261
+loop: #7 - HIGH - duration [ns]: 28394
+loop: #8 - HIGH - duration [ns]: 27424
+loop: #9 - HIGH - duration [ns]: 27486
 
 name: ONEOFF - partition: DNF - pivot: RANDOM
 --------------------------------------------------------------------------------
-loop: #0 - RANDOM - duration [ns]: 9908
-loop: #1 - RANDOM - duration [ns]: 10972
-loop: #2 - RANDOM - duration [ns]: 8334
-loop: #3 - RANDOM - duration [ns]: 8048
-loop: #4 - RANDOM - duration [ns]: 7997
-loop: #5 - RANDOM - duration [ns]: 7718
-loop: #6 - RANDOM - duration [ns]: 8235
-loop: #7 - RANDOM - duration [ns]: 7543
-loop: #8 - RANDOM - duration [ns]: 7565
-loop: #9 - RANDOM - duration [ns]: 7683
+loop: #0 - RANDOM - duration [ns]: 16067
+loop: #1 - RANDOM - duration [ns]: 17435
+loop: #2 - RANDOM - duration [ns]: 15300
+loop: #3 - RANDOM - duration [ns]: 14209
+loop: #4 - RANDOM - duration [ns]: 14217
+loop: #5 - RANDOM - duration [ns]: 16454
+loop: #6 - RANDOM - duration [ns]: 15248
+loop: #7 - RANDOM - duration [ns]: 16127
+loop: #8 - RANDOM - duration [ns]: 15496
+loop: #9 - RANDOM - duration [ns]: 15819
 
 name: ONEOFF - partition: DNF - averages: 10 x array[100]
 --------------------------------------------------------------------------------
        pivot | duration [ns]
 --------------------------------------------------------------------------------
-         LOW |         6641
-         MID |         4947
-      MEDIAN |        10771
-        HIGH |        15108
-      RANDOM |         8400
+         LOW |        19274
+         MID |        12882
+      MEDIAN |        16024
+        HIGH |        28605
+      RANDOM |        15637
 
 
 --------------------------------------------------------------------------------
 QUICKSORT: 10 x array[100] - SHUFFLED
 --------------------------------------------------------------------------------
 original:
-[100, 21, 63, 75, 62, 72, 81, 53, 43, 28, 56, 45, 31, 11, 78, 80, 95, 47, 4, 9, 74, 66, 24, 96, 71, 1, 77, 87, 42, 94, 2, 55, 91, 17, 18, 44, 6, 25, 20, 46, 93, 37, 19, 88, 97, 67, 48, 38, 99, 83, 33, 84, 65, 61, 73, 10, 90, 89, 7, 92, 85, 54, 76, 52, 27, 12, 14, 68, 30, 69, 41, 58, 15, 23, 70, 79, 51, 29, 26, 82, 5, 39, 13, 86, 64, 36, 32, 3, 34, 98, 57, 59, 40, 16, 49, 8, 50, 22, 60, 35]
+[53, 48, 2, 89, 9, 28, 86, 60, 57, 15, 23, 55, 27, 8, 18, 35, 26, 29, 3, 61, 65, 13, 45, 31, 79, 97, 54, 69, 70, 16, 11, 7, 33, 85, 66, 62, 47, 21, 25, 1, 4, 87, 100, 42, 24, 56, 32, 51, 92, 99, 6, 12, 78, 10, 72, 67, 77, 30, 88, 75, 91, 64, 43, 5, 63, 49, 73, 98, 17, 81, 82, 93, 84, 36, 38, 22, 34, 71, 37, 39, 80, 94, 76, 58, 96, 40, 90, 95, 46, 50, 52, 44, 41, 68, 74, 59, 83, 20, 19, 14]
 sorted:
 [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79, 80, 81, 82, 83, 84, 85, 86, 87, 88, 89, 90, 91, 92, 93, 94, 95, 96, 97, 98, 99, 100]
 
 name: SHUFFLED - partition: HOARE - pivot: LOW
 --------------------------------------------------------------------------------
-loop: #0 - LOW - duration [ns]: 27500
-loop: #1 - LOW - duration [ns]: 19656
-loop: #2 - LOW - duration [ns]: 18168
-loop: #3 - LOW - duration [ns]: 20003
-loop: #4 - LOW - duration [ns]: 20360
-loop: #5 - LOW - duration [ns]: 15848
-loop: #6 - LOW - duration [ns]: 15379
-loop: #7 - LOW - duration [ns]: 15638
-loop: #8 - LOW - duration [ns]: 18060
-loop: #9 - LOW - duration [ns]: 11852
+loop: #0 - LOW - duration [ns]: 30206
+loop: #1 - LOW - duration [ns]: 24684
+loop: #2 - LOW - duration [ns]: 20168
+loop: #3 - LOW - duration [ns]: 19713
+loop: #4 - LOW - duration [ns]: 21519
+loop: #5 - LOW - duration [ns]: 19385
+loop: #6 - LOW - duration [ns]: 19303
+loop: #7 - LOW - duration [ns]: 20533
+loop: #8 - LOW - duration [ns]: 30931
+loop: #9 - LOW - duration [ns]: 19163
 
 name: SHUFFLED - partition: HOARE - pivot: MID
 --------------------------------------------------------------------------------
-loop: #0 - MID - duration [ns]: 14545
-loop: #1 - MID - duration [ns]: 14483
-loop: #2 - MID - duration [ns]: 9096
-loop: #3 - MID - duration [ns]: 9082
-loop: #4 - MID - duration [ns]: 9296
-loop: #5 - MID - duration [ns]: 7928
-loop: #6 - MID - duration [ns]: 7648
-loop: #7 - MID - duration [ns]: 7786
-loop: #8 - MID - duration [ns]: 9936
-loop: #9 - MID - duration [ns]: 11972
+loop: #0 - MID - duration [ns]: 33540
+loop: #1 - MID - duration [ns]: 24464
+loop: #2 - MID - duration [ns]: 22489
+loop: #3 - MID - duration [ns]: 19835
+loop: #4 - MID - duration [ns]: 21358
+loop: #5 - MID - duration [ns]: 19576
+loop: #6 - MID - duration [ns]: 19561
+loop: #7 - MID - duration [ns]: 21491
+loop: #8 - MID - duration [ns]: 21567
+loop: #9 - MID - duration [ns]: 19211
 
 name: SHUFFLED - partition: HOARE - pivot: MEDIAN
 --------------------------------------------------------------------------------
-loop: #0 - MEDIAN - duration [ns]: 16154
-loop: #1 - MEDIAN - duration [ns]: 12222
-loop: #2 - MEDIAN - duration [ns]: 11669
-loop: #3 - MEDIAN - duration [ns]: 10865
-loop: #4 - MEDIAN - duration [ns]: 10120
-loop: #5 - MEDIAN - duration [ns]: 25650
-loop: #6 - MEDIAN - duration [ns]: 10043
-loop: #7 - MEDIAN - duration [ns]: 10359
-loop: #8 - MEDIAN - duration [ns]: 10400
-loop: #9 - MEDIAN - duration [ns]: 9818
+loop: #0 - MEDIAN - duration [ns]: 27931
+loop: #1 - MEDIAN - duration [ns]: 56720
+loop: #2 - MEDIAN - duration [ns]: 34706
+loop: #3 - MEDIAN - duration [ns]: 24920
+loop: #4 - MEDIAN - duration [ns]: 22735
+loop: #5 - MEDIAN - duration [ns]: 25574
+loop: #6 - MEDIAN - duration [ns]: 25519
+loop: #7 - MEDIAN - duration [ns]: 23976
+loop: #8 - MEDIAN - duration [ns]: 23098
+loop: #9 - MEDIAN - duration [ns]: 22035
 
 name: SHUFFLED - partition: HOARE - pivot: HIGH
 --------------------------------------------------------------------------------
-loop: #0 - HIGH - duration [ns]: 13225
-loop: #1 - HIGH - duration [ns]: 10800
-loop: #2 - HIGH - duration [ns]: 11365
-loop: #3 - HIGH - duration [ns]: 8144
-loop: #4 - HIGH - duration [ns]: 7494
-loop: #5 - HIGH - duration [ns]: 7539
-loop: #6 - HIGH - duration [ns]: 7507
-loop: #7 - HIGH - duration [ns]: 8174
-loop: #8 - HIGH - duration [ns]: 14207
-loop: #9 - HIGH - duration [ns]: 9391
+loop: #0 - HIGH - duration [ns]: 25249
+loop: #1 - HIGH - duration [ns]: 32318
+loop: #2 - HIGH - duration [ns]: 18658
+loop: #3 - HIGH - duration [ns]: 31721
+loop: #4 - HIGH - duration [ns]: 19210
+loop: #5 - HIGH - duration [ns]: 19194
+loop: #6 - HIGH - duration [ns]: 20825
+loop: #7 - HIGH - duration [ns]: 14108
+loop: #8 - HIGH - duration [ns]: 27940
+loop: #9 - HIGH - duration [ns]: 17489
 
 name: SHUFFLED - partition: HOARE - pivot: RANDOM
 --------------------------------------------------------------------------------
-loop: #0 - RANDOM - duration [ns]: 26575
-loop: #1 - RANDOM - duration [ns]: 16767
-loop: #2 - RANDOM - duration [ns]: 36708
-loop: #3 - RANDOM - duration [ns]: 25499
-loop: #4 - RANDOM - duration [ns]: 18600
-loop: #5 - RANDOM - duration [ns]: 16516
-loop: #6 - RANDOM - duration [ns]: 17504
-loop: #7 - RANDOM - duration [ns]: 17506
-loop: #8 - RANDOM - duration [ns]: 20517
-loop: #9 - RANDOM - duration [ns]: 16700
+loop: #0 - RANDOM - duration [ns]: 33105
+loop: #1 - RANDOM - duration [ns]: 43100
+loop: #2 - RANDOM - duration [ns]: 35516
+loop: #3 - RANDOM - duration [ns]: 31496
+loop: #4 - RANDOM - duration [ns]: 32349
+loop: #5 - RANDOM - duration [ns]: 30819
+loop: #6 - RANDOM - duration [ns]: 28626
+loop: #7 - RANDOM - duration [ns]: 31756
+loop: #8 - RANDOM - duration [ns]: 43968
+loop: #9 - RANDOM - duration [ns]: 32773
 
 name: SHUFFLED - partition: HOARE - averages: 10 x array[100]
 --------------------------------------------------------------------------------
        pivot | duration [ns]
 --------------------------------------------------------------------------------
-         LOW |        18246
-         MID |        10177
-      MEDIAN |        12730
-        HIGH |         9785
-      RANDOM |        21289
+         LOW |        22561
+         MID |        22309
+      MEDIAN |        28721
+        HIGH |        22671
+      RANDOM |        34351
 
 name: SHUFFLED - partition: DNF - pivot: LOW
 --------------------------------------------------------------------------------
-loop: #0 - LOW - duration [ns]: 9767
-loop: #1 - LOW - duration [ns]: 21044
-loop: #2 - LOW - duration [ns]: 6231
-loop: #3 - LOW - duration [ns]: 5221
-loop: #4 - LOW - duration [ns]: 4920
-loop: #5 - LOW - duration [ns]: 4774
-loop: #6 - LOW - duration [ns]: 4622
-loop: #7 - LOW - duration [ns]: 4638
-loop: #8 - LOW - duration [ns]: 4536
-loop: #9 - LOW - duration [ns]: 5409
+loop: #0 - LOW - duration [ns]: 17735
+loop: #1 - LOW - duration [ns]: 14254
+loop: #2 - LOW - duration [ns]: 10575
+loop: #3 - LOW - duration [ns]: 10651
+loop: #4 - LOW - duration [ns]: 10121
+loop: #5 - LOW - duration [ns]: 11116
+loop: #6 - LOW - duration [ns]: 9091
+loop: #7 - LOW - duration [ns]: 9574
+loop: #8 - LOW - duration [ns]: 9478
+loop: #9 - LOW - duration [ns]: 9080
 
 name: SHUFFLED - partition: DNF - pivot: MID
 --------------------------------------------------------------------------------
-loop: #0 - MID - duration [ns]: 9226
-loop: #1 - MID - duration [ns]: 7158
-loop: #2 - MID - duration [ns]: 5670
-loop: #3 - MID - duration [ns]: 4904
-loop: #4 - MID - duration [ns]: 4627
-loop: #5 - MID - duration [ns]: 4735
-loop: #6 - MID - duration [ns]: 5198
-loop: #7 - MID - duration [ns]: 25535
-loop: #8 - MID - duration [ns]: 12089
-loop: #9 - MID - duration [ns]: 9527
+loop: #0 - MID - duration [ns]: 13767
+loop: #1 - MID - duration [ns]: 23559
+loop: #2 - MID - duration [ns]: 12847
+loop: #3 - MID - duration [ns]: 14697
+loop: #4 - MID - duration [ns]: 11118
+loop: #5 - MID - duration [ns]: 10547
+loop: #6 - MID - duration [ns]: 14423
+loop: #7 - MID - duration [ns]: 12050
+loop: #8 - MID - duration [ns]: 59908
+loop: #9 - MID - duration [ns]: 11613
 
 name: SHUFFLED - partition: DNF - pivot: MEDIAN
 --------------------------------------------------------------------------------
-loop: #0 - MEDIAN - duration [ns]: 15307
-loop: #1 - MEDIAN - duration [ns]: 13933
-loop: #2 - MEDIAN - duration [ns]: 9309
-loop: #3 - MEDIAN - duration [ns]: 41509
-loop: #4 - MEDIAN - duration [ns]: 7751
-loop: #5 - MEDIAN - duration [ns]: 6529
-loop: #6 - MEDIAN - duration [ns]: 4943
-loop: #7 - MEDIAN - duration [ns]: 4912
-loop: #8 - MEDIAN - duration [ns]: 7724
-loop: #9 - MEDIAN - duration [ns]: 6397
+loop: #0 - MEDIAN - duration [ns]: 15335
+loop: #1 - MEDIAN - duration [ns]: 13234
+loop: #2 - MEDIAN - duration [ns]: 98750
+loop: #3 - MEDIAN - duration [ns]: 12516
+loop: #4 - MEDIAN - duration [ns]: 10976
+loop: #5 - MEDIAN - duration [ns]: 10889
+loop: #6 - MEDIAN - duration [ns]: 10684
+loop: #7 - MEDIAN - duration [ns]: 11516
+loop: #8 - MEDIAN - duration [ns]: 9534
+loop: #9 - MEDIAN - duration [ns]: 12000
 
 name: SHUFFLED - partition: DNF - pivot: HIGH
 --------------------------------------------------------------------------------
-loop: #0 - HIGH - duration [ns]: 11909
-loop: #1 - HIGH - duration [ns]: 8007
-loop: #2 - HIGH - duration [ns]: 22987
-loop: #3 - HIGH - duration [ns]: 9218
-loop: #4 - HIGH - duration [ns]: 5581
-loop: #5 - HIGH - duration [ns]: 6199
-loop: #6 - HIGH - duration [ns]: 6090
-loop: #7 - HIGH - duration [ns]: 6106
-loop: #8 - HIGH - duration [ns]: 4647
-loop: #9 - HIGH - duration [ns]: 5056
+loop: #0 - HIGH - duration [ns]: 13849
+loop: #1 - HIGH - duration [ns]: 11478
+loop: #2 - HIGH - duration [ns]: 13215
+loop: #3 - HIGH - duration [ns]: 10047
+loop: #4 - HIGH - duration [ns]: 9654
+loop: #5 - HIGH - duration [ns]: 9910
+loop: #6 - HIGH - duration [ns]: 9872
+loop: #7 - HIGH - duration [ns]: 11634
+loop: #8 - HIGH - duration [ns]: 10659
+loop: #9 - HIGH - duration [ns]: 10229
 
 name: SHUFFLED - partition: DNF - pivot: RANDOM
 --------------------------------------------------------------------------------
-loop: #0 - RANDOM - duration [ns]: 11774
-loop: #1 - RANDOM - duration [ns]: 10541
-loop: #2 - RANDOM - duration [ns]: 9798
-loop: #3 - RANDOM - duration [ns]: 9293
-loop: #4 - RANDOM - duration [ns]: 8619
-loop: #5 - RANDOM - duration [ns]: 9691
-loop: #6 - RANDOM - duration [ns]: 9690
-loop: #7 - RANDOM - duration [ns]: 8763
-loop: #8 - RANDOM - duration [ns]: 18139
-loop: #9 - RANDOM - duration [ns]: 14986
+loop: #0 - RANDOM - duration [ns]: 14691
+loop: #1 - RANDOM - duration [ns]: 14116
+loop: #2 - RANDOM - duration [ns]: 13397
+loop: #3 - RANDOM - duration [ns]: 13398
+loop: #4 - RANDOM - duration [ns]: 14502
+loop: #5 - RANDOM - duration [ns]: 12559
+loop: #6 - RANDOM - duration [ns]: 12669
+loop: #7 - RANDOM - duration [ns]: 13925
+loop: #8 - RANDOM - duration [ns]: 12615
+loop: #9 - RANDOM - duration [ns]: 12421
 
 name: SHUFFLED - partition: DNF - averages: 10 x array[100]
 --------------------------------------------------------------------------------
        pivot | duration [ns]
 --------------------------------------------------------------------------------
-         LOW |         7116
-         MID |         8867
-      MEDIAN |        11831
-        HIGH |         8580
-      RANDOM |        11129
+         LOW |        11168
+         MID |        18453
+      MEDIAN |        20543
+        HIGH |        11055
+      RANDOM |        13429
 
 
 --------------------------------------------------------------------------------
 QUICKSORT: 10 x array[100] - RANDOM
 --------------------------------------------------------------------------------
 original:
-[65, 19, 33, 1, 55, 12, 61, 28, 20, 83, 15, 68, 91, 91, 22, 40, 25, 92, 58, 37, 99, 53, 86, 40, 24, 23, 87, 74, 52, 9, 58, 83, 37, 88, 21, 12, 36, 81, 71, 26, 14, 58, 65, 9, 45, 58, 40, 75, 75, 8, 33, 10, 43, 7, 61, 12, 64, 1, 19, 16, 62, 25, 32, 68, 34, 80, 21, 19, 6, 60, 92, 57, 32, 80, 21, 10, 53, 52, 27, 2, 25, 85, 8, 92, 97, 68, 53, 30, 0, 88, 83, 70, 84, 75, 76, 31, 95, 35, 63, 81]
+[40, 85, 30, 40, 48, 22, 24, 22, 44, 34, 19, 60, 47, 1, 98, 70, 75, 23, 21, 33, 94, 11, 67, 70, 53, 59, 64, 8, 70, 44, 14, 5, 36, 80, 6, 82, 29, 72, 95, 27, 76, 41, 24, 50, 84, 79, 76, 72, 94, 12, 0, 38, 11, 23, 56, 61, 94, 84, 78, 41, 86, 68, 64, 37, 54, 23, 0, 75, 79, 98, 27, 52, 11, 44, 24, 62, 47, 77, 20, 86, 97, 57, 19, 83, 11, 80, 44, 48, 52, 2, 53, 55, 81, 82, 66, 18, 27, 56, 65, 26]
 sorted:
-[0, 1, 1, 2, 6, 7, 8, 8, 9, 9, 10, 10, 12, 12, 12, 14, 15, 16, 19, 19, 19, 20, 21, 21, 21, 22, 23, 24, 25, 25, 25, 26, 27, 28, 30, 31, 32, 32, 33, 33, 34, 35, 36, 37, 37, 40, 40, 40, 43, 45, 52, 52, 53, 53, 53, 55, 57, 58, 58, 58, 58, 60, 61, 61, 62, 63, 64, 65, 65, 68, 68, 68, 70, 71, 74, 75, 75, 75, 76, 80, 80, 81, 81, 83, 83, 83, 84, 85, 86, 87, 88, 88, 91, 91, 92, 92, 92, 95, 97, 99]
+[0, 0, 1, 2, 5, 6, 8, 11, 11, 11, 11, 12, 14, 18, 19, 19, 20, 21, 22, 22, 23, 23, 23, 24, 24, 24, 26, 27, 27, 27, 29, 30, 33, 34, 36, 37, 38, 40, 40, 41, 41, 44, 44, 44, 44, 47, 47, 48, 48, 50, 52, 52, 53, 53, 54, 55, 56, 56, 57, 59, 60, 61, 62, 64, 64, 65, 66, 67, 68, 70, 70, 70, 72, 72, 75, 75, 76, 76, 77, 78, 79, 79, 80, 80, 81, 82, 82, 83, 84, 84, 85, 86, 86, 94, 94, 94, 95, 97, 98, 98]
 
 name: RANDOM - partition: HOARE - pivot: LOW
 --------------------------------------------------------------------------------
-loop: #0 - LOW - duration [ns]: 17100
-loop: #1 - LOW - duration [ns]: 13027
-loop: #2 - LOW - duration [ns]: 13756
-loop: #3 - LOW - duration [ns]: 10702
-loop: #4 - LOW - duration [ns]: 9338
-loop: #5 - LOW - duration [ns]: 9775
-loop: #6 - LOW - duration [ns]: 11214
-loop: #7 - LOW - duration [ns]: 7876
-loop: #8 - LOW - duration [ns]: 14519
-loop: #9 - LOW - duration [ns]: 16701
+loop: #0 - LOW - duration [ns]: 26076
+loop: #1 - LOW - duration [ns]: 22088
+loop: #2 - LOW - duration [ns]: 21291
+loop: #3 - LOW - duration [ns]: 16176
+loop: #4 - LOW - duration [ns]: 17600
+loop: #5 - LOW - duration [ns]: 16447
+loop: #6 - LOW - duration [ns]: 19945
+loop: #7 - LOW - duration [ns]: 17431
+loop: #8 - LOW - duration [ns]: 17440
+loop: #9 - LOW - duration [ns]: 19973
 
 name: RANDOM - partition: HOARE - pivot: MID
 --------------------------------------------------------------------------------
-loop: #0 - MID - duration [ns]: 15906
-loop: #1 - MID - duration [ns]: 11630
-loop: #2 - MID - duration [ns]: 10095
-loop: #3 - MID - duration [ns]: 9829
-loop: #4 - MID - duration [ns]: 19334
-loop: #5 - MID - duration [ns]: 17007
-loop: #6 - MID - duration [ns]: 17984
-loop: #7 - MID - duration [ns]: 18232
-loop: #8 - MID - duration [ns]: 16922
-loop: #9 - MID - duration [ns]: 11409
+loop: #0 - MID - duration [ns]: 20923
+loop: #1 - MID - duration [ns]: 19855
+loop: #2 - MID - duration [ns]: 17433
+loop: #3 - MID - duration [ns]: 16197
+loop: #4 - MID - duration [ns]: 16305
+loop: #5 - MID - duration [ns]: 16255
+loop: #6 - MID - duration [ns]: 17989
+loop: #7 - MID - duration [ns]: 15633
+loop: #8 - MID - duration [ns]: 15460
+loop: #9 - MID - duration [ns]: 15948
 
 name: RANDOM - partition: HOARE - pivot: MEDIAN
 --------------------------------------------------------------------------------
-loop: #0 - MEDIAN - duration [ns]: 15684
-loop: #1 - MEDIAN - duration [ns]: 12847
-loop: #2 - MEDIAN - duration [ns]: 11358
-loop: #3 - MEDIAN - duration [ns]: 13552
-loop: #4 - MEDIAN - duration [ns]: 18714
-loop: #5 - MEDIAN - duration [ns]: 10841
-loop: #6 - MEDIAN - duration [ns]: 11189
-loop: #7 - MEDIAN - duration [ns]: 9770
-loop: #8 - MEDIAN - duration [ns]: 23615
-loop: #9 - MEDIAN - duration [ns]: 8797
+loop: #0 - MEDIAN - duration [ns]: 24199
+loop: #1 - MEDIAN - duration [ns]: 25035
+loop: #2 - MEDIAN - duration [ns]: 23635
+loop: #3 - MEDIAN - duration [ns]: 26150
+loop: #4 - MEDIAN - duration [ns]: 25127
+loop: #5 - MEDIAN - duration [ns]: 25021
+loop: #6 - MEDIAN - duration [ns]: 25143
+loop: #7 - MEDIAN - duration [ns]: 33630
+loop: #8 - MEDIAN - duration [ns]: 24826
+loop: #9 - MEDIAN - duration [ns]: 23759
 
 name: RANDOM - partition: HOARE - pivot: HIGH
 --------------------------------------------------------------------------------
-loop: #0 - HIGH - duration [ns]: 16419
-loop: #1 - HIGH - duration [ns]: 10891
-loop: #2 - HIGH - duration [ns]: 10863
-loop: #3 - HIGH - duration [ns]: 8582
-loop: #4 - HIGH - duration [ns]: 9516
-loop: #5 - HIGH - duration [ns]: 8556
-loop: #6 - HIGH - duration [ns]: 9520
-loop: #7 - HIGH - duration [ns]: 12771
-loop: #8 - HIGH - duration [ns]: 9645
-loop: #9 - HIGH - duration [ns]: 8275
+loop: #0 - HIGH - duration [ns]: 24972
+loop: #1 - HIGH - duration [ns]: 22297
+loop: #2 - HIGH - duration [ns]: 21459
+loop: #3 - HIGH - duration [ns]: 22203
+loop: #4 - HIGH - duration [ns]: 21436
+loop: #5 - HIGH - duration [ns]: 51357
+loop: #6 - HIGH - duration [ns]: 38303
+loop: #7 - HIGH - duration [ns]: 21324
+loop: #8 - HIGH - duration [ns]: 21385
+loop: #9 - HIGH - duration [ns]: 21371
 
 name: RANDOM - partition: HOARE - pivot: RANDOM
 --------------------------------------------------------------------------------
-loop: #0 - RANDOM - duration [ns]: 16806
-loop: #1 - RANDOM - duration [ns]: 16135
-loop: #2 - RANDOM - duration [ns]: 15685
-loop: #3 - RANDOM - duration [ns]: 25867
-loop: #4 - RANDOM - duration [ns]: 27715
-loop: #5 - RANDOM - duration [ns]: 17855
-loop: #6 - RANDOM - duration [ns]: 14344
-loop: #7 - RANDOM - duration [ns]: 16111
-loop: #8 - RANDOM - duration [ns]: 19182
-loop: #9 - RANDOM - duration [ns]: 15492
+loop: #0 - RANDOM - duration [ns]: 30345
+loop: #1 - RANDOM - duration [ns]: 24418
+loop: #2 - RANDOM - duration [ns]: 23542
+loop: #3 - RANDOM - duration [ns]: 27253
+loop: #4 - RANDOM - duration [ns]: 22623
+loop: #5 - RANDOM - duration [ns]: 24470
+loop: #6 - RANDOM - duration [ns]: 22545
+loop: #7 - RANDOM - duration [ns]: 21662
+loop: #8 - RANDOM - duration [ns]: 22276
+loop: #9 - RANDOM - duration [ns]: 23338
 
 name: RANDOM - partition: HOARE - averages: 10 x array[100]
 --------------------------------------------------------------------------------
        pivot | duration [ns]
 --------------------------------------------------------------------------------
-         LOW |        12401
-         MID |        14835
-      MEDIAN |        13637
-        HIGH |        10504
-      RANDOM |        18519
+         LOW |        19447
+         MID |        17200
+      MEDIAN |        25653
+        HIGH |        26611
+      RANDOM |        24247
 
 name: RANDOM - partition: DNF - pivot: LOW
 --------------------------------------------------------------------------------
-loop: #0 - LOW - duration [ns]: 10085
-loop: #1 - LOW - duration [ns]: 6177
-loop: #2 - LOW - duration [ns]: 10074
-loop: #3 - LOW - duration [ns]: 4528
-loop: #4 - LOW - duration [ns]: 6895
-loop: #5 - LOW - duration [ns]: 6304
-loop: #6 - LOW - duration [ns]: 4690
-loop: #7 - LOW - duration [ns]: 4549
-loop: #8 - LOW - duration [ns]: 5425
-loop: #9 - LOW - duration [ns]: 3389
+loop: #0 - LOW - duration [ns]: 12527
+loop: #1 - LOW - duration [ns]: 6465
+loop: #2 - LOW - duration [ns]: 4605
+loop: #3 - LOW - duration [ns]: 4474
+loop: #4 - LOW - duration [ns]: 6852
+loop: #5 - LOW - duration [ns]: 7317
+loop: #6 - LOW - duration [ns]: 7110
+loop: #7 - LOW - duration [ns]: 6808
+loop: #8 - LOW - duration [ns]: 7514
+loop: #9 - LOW - duration [ns]: 8278
 
 name: RANDOM - partition: DNF - pivot: MID
 --------------------------------------------------------------------------------
-loop: #0 - MID - duration [ns]: 8537
-loop: #1 - MID - duration [ns]: 6552
-loop: #2 - MID - duration [ns]: 4975
-loop: #3 - MID - duration [ns]: 4129
-loop: #4 - MID - duration [ns]: 5462
-loop: #5 - MID - duration [ns]: 6658
-loop: #6 - MID - duration [ns]: 4947
-loop: #7 - MID - duration [ns]: 10766
-loop: #8 - MID - duration [ns]: 7701
-loop: #9 - MID - duration [ns]: 9165
+loop: #0 - MID - duration [ns]: 12153
+loop: #1 - MID - duration [ns]: 9695
+loop: #2 - MID - duration [ns]: 8868
+loop: #3 - MID - duration [ns]: 8275
+loop: #4 - MID - duration [ns]: 8055
+loop: #5 - MID - duration [ns]: 7505
+loop: #6 - MID - duration [ns]: 7310
+loop: #7 - MID - duration [ns]: 6930
+loop: #8 - MID - duration [ns]: 7252
+loop: #9 - MID - duration [ns]: 6604
 
 name: RANDOM - partition: DNF - pivot: MEDIAN
 --------------------------------------------------------------------------------
-loop: #0 - MEDIAN - duration [ns]: 15312
-loop: #1 - MEDIAN - duration [ns]: 12215
-loop: #2 - MEDIAN - duration [ns]: 10063
-loop: #3 - MEDIAN - duration [ns]: 10712
-loop: #4 - MEDIAN - duration [ns]: 10201
-loop: #5 - MEDIAN - duration [ns]: 13285
-loop: #6 - MEDIAN - duration [ns]: 16765
-loop: #7 - MEDIAN - duration [ns]: 9810
-loop: #8 - MEDIAN - duration [ns]: 10444
-loop: #9 - MEDIAN - duration [ns]: 14921
+loop: #0 - MEDIAN - duration [ns]: 13790
+loop: #1 - MEDIAN - duration [ns]: 9563
+loop: #2 - MEDIAN - duration [ns]: 8551
+loop: #3 - MEDIAN - duration [ns]: 7595
+loop: #4 - MEDIAN - duration [ns]: 7183
+loop: #5 - MEDIAN - duration [ns]: 7597
+loop: #6 - MEDIAN - duration [ns]: 6981
+loop: #7 - MEDIAN - duration [ns]: 6963
+loop: #8 - MEDIAN - duration [ns]: 7381
+loop: #9 - MEDIAN - duration [ns]: 6646
 
 name: RANDOM - partition: DNF - pivot: HIGH
 --------------------------------------------------------------------------------
-loop: #0 - HIGH - duration [ns]: 13941
-loop: #1 - HIGH - duration [ns]: 14192
-loop: #2 - HIGH - duration [ns]: 13618
-loop: #3 - HIGH - duration [ns]: 14002
-loop: #4 - HIGH - duration [ns]: 11963
-loop: #5 - HIGH - duration [ns]: 13628
-loop: #6 - HIGH - duration [ns]: 14363
-loop: #7 - HIGH - duration [ns]: 18559
-loop: #8 - HIGH - duration [ns]: 12260
-loop: #9 - HIGH - duration [ns]: 12111
+loop: #0 - HIGH - duration [ns]: 13752
+loop: #1 - HIGH - duration [ns]: 9459
+loop: #2 - HIGH - duration [ns]: 8857
+loop: #3 - HIGH - duration [ns]: 7922
+loop: #4 - HIGH - duration [ns]: 7835
+loop: #5 - HIGH - duration [ns]: 7391
+loop: #6 - HIGH - duration [ns]: 7465
+loop: #7 - HIGH - duration [ns]: 7034
+loop: #8 - HIGH - duration [ns]: 7449
+loop: #9 - HIGH - duration [ns]: 7040
 
 name: RANDOM - partition: DNF - pivot: RANDOM
 --------------------------------------------------------------------------------
-loop: #0 - RANDOM - duration [ns]: 18971
-loop: #1 - RANDOM - duration [ns]: 16228
-loop: #2 - RANDOM - duration [ns]: 17160
-loop: #3 - RANDOM - duration [ns]: 15715
-loop: #4 - RANDOM - duration [ns]: 15856
-loop: #5 - RANDOM - duration [ns]: 14379
-loop: #6 - RANDOM - duration [ns]: 14873
-loop: #7 - RANDOM - duration [ns]: 14503
-loop: #8 - RANDOM - duration [ns]: 19802
-loop: #9 - RANDOM - duration [ns]: 17012
+loop: #0 - RANDOM - duration [ns]: 12784
+loop: #1 - RANDOM - duration [ns]: 12963
+loop: #2 - RANDOM - duration [ns]: 11669
+loop: #3 - RANDOM - duration [ns]: 11669
+loop: #4 - RANDOM - duration [ns]: 11405
+loop: #5 - RANDOM - duration [ns]: 11250
+loop: #6 - RANDOM - duration [ns]: 11486
+loop: #7 - RANDOM - duration [ns]: 11354
+loop: #8 - RANDOM - duration [ns]: 10428
+loop: #9 - RANDOM - duration [ns]: 10108
 
 name: RANDOM - partition: DNF - averages: 10 x array[100]
 --------------------------------------------------------------------------------
        pivot | duration [ns]
 --------------------------------------------------------------------------------
-         LOW |         6212
-         MID |         6889
-      MEDIAN |        12373
-        HIGH |        13864
-      RANDOM |        16450
-Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.423 sec
+         LOW |         7195
+         MID |         8265
+      MEDIAN |         8225
+        HIGH |         8420
+      RANDOM |        11512
+Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.354 sec
 
 Results :
 
 Tests run: 6, Failures: 0, Errors: 0, Skipped: 0
+
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time: 2.522 s
+[INFO] Finished at: 2018-12-01T20:43:28+03:00
+[INFO] ------------------------------------------------------------------------
 ```
