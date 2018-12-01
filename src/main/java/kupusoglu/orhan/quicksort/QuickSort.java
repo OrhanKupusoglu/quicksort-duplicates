@@ -125,21 +125,25 @@ public class QuickSort {
 
     // FACTORY METHOD PATTERN - Pivots
 
-    class PivotLow implements Pivot {
+    private interface Pivot {
+        int getPivot(int lo, int hi);
+    }
+
+    private class PivotLow implements Pivot {
         @Override
         public int getPivot(int lo, int hi) {
             return arr[lo];
         }
     }
 
-    class PivotMid implements Pivot {
+    private class PivotMid implements Pivot {
         @Override
         public int getPivot(int lo, int hi) {
             return arr[lo + ((hi - lo) / 2)];
         }
     }
 
-    class PivotMedian implements Pivot {
+    private class PivotMedian implements Pivot {
         @Override
         public int getPivot(int lo, int hi) {
             long sw = numSwaps;
@@ -164,14 +168,14 @@ public class QuickSort {
         }
     }
 
-    class PivotHigh implements Pivot {
+    private class PivotHigh implements Pivot {
         @Override
         public int getPivot(int lo, int hi) {
             return arr[hi - 1];
         }
     }
 
-    class PivotRandom implements Pivot {
+    private class PivotRandom implements Pivot {
         @Override
         public int getPivot(int lo, int hi) {
             int r = random.nextInt(hi - lo + 1) + lo;
@@ -179,9 +183,13 @@ public class QuickSort {
         }
     }
 
-    public class PivotFactory extends BasePivotFactory {
+    private abstract class BasePivotFactory {
+        public abstract Pivot createPivot(QuickSort.PIVOT_TYPE type);
+    }
+
+    private class PivotFactory extends BasePivotFactory {
         @Override
-        public Pivot createPivot(PIVOT_TYPE type){
+        public Pivot createPivot(PIVOT_TYPE type) {
             Pivot pivot;
             switch (type)
             {
@@ -213,8 +221,12 @@ public class QuickSort {
     }
 
     // FACTORY METHOD PATTERN - Partitions
+    private interface Partition {
+        int[] getPartition(int lo, int hi);
+        String getHeadersLine();
+    }
 
-    class PartitionHoare implements Partition {
+    private class PartitionHoare implements Partition {
         /**
          * Hoare partition scheme
          * <br>
@@ -271,7 +283,7 @@ public class QuickSort {
         }
     }
 
-    class PartitionDNF implements Partition {
+    private class PartitionDNF implements Partition {
         /**
          * DNF partition scheme
          * <br>
@@ -329,9 +341,14 @@ public class QuickSort {
         }
     }
 
-    public class PartitionFactory extends BasePartitionFactory {
+
+    private abstract class BasePartitionFactory {
+        public abstract Partition createPartition(QuickSort.PARTITION_TYPE type);
+    }
+
+    private class PartitionFactory extends BasePartitionFactory {
         @Override
-        public Partition createPartition(PARTITION_TYPE type){
+        public Partition createPartition(PARTITION_TYPE type) {
             Partition partition;
             switch (type)
             {
