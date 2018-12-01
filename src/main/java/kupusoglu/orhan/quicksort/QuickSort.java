@@ -341,7 +341,6 @@ public class QuickSort {
         }
     }
 
-
     private abstract class BasePartitionFactory {
         public abstract Partition createPartition(QuickSort.PARTITION_TYPE type);
     }

@@ -83,28 +83,28 @@ $ mvn kupusoglu.orhan:sloc-maven-plugin:sloc
 [INFO] Inspecting build with total of 1 modules...
 [INFO] Installing Nexus Staging features:
 [INFO]   ... total of 1 executions of maven-deploy-plugin replaced with nexus-staging-maven-plugin
-[INFO]
+[INFO] 
 [INFO] ----------------< kupusoglu.orhan:quicksort-duplicates >----------------
 [INFO] Building quicksort-duplicates 0.3.1
 [INFO] --------------------------------[ jar ]---------------------------------
-[INFO]
+[INFO] 
 [INFO] --- sloc-maven-plugin:0.1.4:sloc (default-cli) @ quicksort-duplicates ---
 [INFO] SLOC - directory: /home/orhanku/ME/DEV/OK/quicksort-duplicates/src
 +------------------+--------------------+----------+----------+----------+----------+----------+----------+
 | Package Name     | File Name          | Type     | Blank    | JavaDoc  | Comment  | Code     | Total    |
 +------------------+--------------------+----------+----------+----------+----------+----------+----------+
-| quicksort        | QuickSort.java     | src      |       60 |       20 |        5 |      284 |      369 |
+| quicksort        | QuickSort.java     | src      |       59 |       20 |        5 |      284 |      368 |
 | quicksort        | QuickSortMeta.java | src      |       12 |        0 |        1 |       41 |       54 |
 | quicksort        | QuickSortTest.java | test     |       50 |        9 |        4 |      195 |      258 |
 +------------------+--------------------+----------+----------+----------+----------+----------+----------+
-| 1 package(s)     | 3 file(s)          | java     |      122 |       29 |       10 |      520 |      681 |
+| 1 package(s)     | 3 file(s)          | java     |      121 |       29 |       10 |      520 |      680 |
 +------------------+--------------------+----------+----------+----------+----------+----------+----------+
 
 [INFO] ------------------------------------------------------------------------
 [INFO] BUILD SUCCESS
 [INFO] ------------------------------------------------------------------------
-[INFO] Total time: 0.836 s
-[INFO] Finished at: 2018-12-01T20:40:09+03:00
+[INFO] Total time: 0.870 s
+[INFO] Finished at: 2018-12-02T02:38:18+03:00
 [INFO] ------------------------------------------------------------------------
 ```
 &nbsp;
