@@ -5,7 +5,7 @@ java_library(
     resources = [
     ],
     deps = [
-        "@junit_junit_4_12//jar",
+        "@junit_junit_4_13_1//jar",
         "@org_hamcrest_hamcrest_core_1_3//jar",
     ],
 )
