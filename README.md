@@ -83,11 +83,11 @@ $ mvn kupusoglu.orhan:sloc-maven-plugin:sloc
 [INFO] Inspecting build with total of 1 modules...
 [INFO] Installing Nexus Staging features:
 [INFO]   ... total of 1 executions of maven-deploy-plugin replaced with nexus-staging-maven-plugin
-[INFO] 
+[INFO]
 [INFO] ----------------< kupusoglu.orhan:quicksort-duplicates >----------------
 [INFO] Building quicksort-duplicates 0.3.1
 [INFO] --------------------------------[ jar ]---------------------------------
-[INFO] 
+[INFO]
 [INFO] --- sloc-maven-plugin:0.1.4:sloc (default-cli) @ quicksort-duplicates ---
 [INFO] SLOC - directory: /home/orhanku/ME/DEV/OK/quicksort-duplicates/src
 +------------------+--------------------+----------+----------+----------+----------+----------+----------+
@@ -120,23 +120,38 @@ To build and test with Maven:
 ```
 $ mvn clean test
 ```
-### Google Bazel
+### Google Bazel with Bazelisk
 
-To build and test with Bazel:
+The Maven script is migrated to Google Bazel with the [Bazelize Maven Plugin](https://github.com/OrhanKupusoglu/bazelize-maven-plugin).
+But this plugin uses an old version of Bazel, therefore [Bazelisk](https://github.com/bazelbuild/bazelisk) is required.
+
+> Bazelisk<br>
+> A user-friendly launcher for Bazel.
+
+A Bash script, [bazelize.sh](./bazelize.sh), is provided for convenience.
+This script needs to be customized for the path of Bazelisk.
 
 ```
-$ bazel build
+## check options
+$ ./bazelize.sh -h
+usage:
+	./bazelize.sh <option>
+options:
+	migrate to bazel: -m | --migrate | -g | --generate
+	clean bazel:      -c | --clean
+	build with bazel: -b | --build
+	test with bazel:  -t | --test
+	run with bazel:   -r | --run
+requires Bazelisk for Bazel v0.14.1:
+	/home/unknown/dev/bazelisk/bin/bazelisk-linux-amd64
 
-$ bazel test ... --test_output all
+## already migrated, build
+$ ./bazelize.sh -b
+
+## test
+$ ./bazelize.sh -t
 ```
-Or you can use the [bazelize.sh](./bazelize.sh) script:
-```
-$ ./bazelize.sh
-```
-If the pom.xml changes, you can re-genearate the Bazel scripts by the [Bazelize Maven Plugin](https://github.com/OrhanKupusoglu/bazelize-maven-plugin).
-```
-$ ./bazelize.sh -g
-```
+
 &nbsp;
 
 ## Test Results
